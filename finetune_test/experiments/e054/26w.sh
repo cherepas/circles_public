@@ -1,2 +1,0 @@
-#!/bin/bash
-python -u D:/circles/finetune_test/main.py -expdescr "original pose dataset, rotation of output, zero angle" -bn 1000 -epoch 300 -bs 15 -lr 1e-4 -expnum e054 -cmscrop 550 -hidden_dim "hidden_dim = np.hstack((np.repeat(32, 1),1500))" -lb "pc" -criterion "L1" -inputt "img" -outputt "single_f_n" -num_input_images 1 -csvname "598csv9" -no_rot_dirs -rotate_output -pc_scale 100 -machine "workstation" -wandb "e054" -parallel "torch" -no_view_sep -zero_angle
