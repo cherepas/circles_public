@@ -1,0 +1,641 @@
+True
+True
+True True
+iscuda= True
+PyTorch Version:  1.10.0
+Torchvision Version:  0.11.1
+opt:
+ Namespace(ampl=441, batch_output=50, bn=1000, bs=70, center=False, chidden_dim='chidden_dim = np.hstack((96,128,np.repeat(256, 3)))', classicnorm=False, cmscrop=550, criterion='L1', csvname='598csv9', downsample=1, epoch=1000, expdescr='', expnum='e057', feature_extract=False, gradient_predivide_factor=1.0, haf=True, hidden_dim='hidden_dim = np.hstack((np.repeat(32, 1),1500))', inputt='img', kernel_sizes='kernel_sizes = np.hstack((7,np.repeat(3, 5)))', lb='pc', localexp='', lr=0.001, machine='lenovo', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging_order='color_channel', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet', 'decoder', 'encoder'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=3, num_sam_points=500, num_workers=0, outputt='single_f_n', parallel='torch', pc_scale=5.0, pin_memory=False, rand_angle=False, rescale=250, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=None, steplr=['30', '0.1'], transappendix='_image_angles_path', updates_per_epoch=5000, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['C:/circles/finetune_test/main.py', '-epoch', '1000', '-bn', '1000', '-bs', '70', '-lr', '1e-3', '-no_minmax', '-no_normalize', '-no_center', '-no_classicnorm', '-ampl', '441', '-cmscrop', '550', '-rescale', '250', '-no_use_adasum', '-expnum', 'e057', '-hidden_dim', 'hidden_dim = np.hstack((np.repeat(32, 1),1500))', '-inputt', 'img', '-num_input_images', '3', '-specie', '598', '-lb', 'pc', '-no_rand_angle', '-zero_angle', '-outputt', 'single_f_n', '-csvname', '598csv9', '-pc_scale', '100', '-no_view_sep', '-no_rot_dirs', '-parallel', 'torch', '-machine', 'lenovo', '-wandb', '', '-no_measure_time', '-updates_per_epoch', '4000', '-localexp', '', '-steplr', '30', '0.1', '-merging_order', 'color_channel', '-no_rotate_output', '-updates_per_epoch', '5000']
+seed =  0
+path were main.py is located= C:/circles\finetune_test
+homepath is  C:/
+opt.wandb =  
+{'train': Compose(
+    <__main__.CmsCrop object at 0x00000225D667B130>
+    <__main__.Rescale object at 0x00000225D667B730>
+    <__main__.Standardize object at 0x00000225D667B610>
+), 'val': Compose(
+    <__main__.CmsCrop object at 0x00000225D667B550>
+    <__main__.Rescale object at 0x00000225D667B400>
+    <__main__.Standardize object at 0x00000225D667B490>
+)}
+pts C:/circles\finetune_test\csv\pathes_to_598.csv
+False True True
+True
+lframe's length after laoding =  5270
+lframe len after excluding all exceptions= 5203
+len train =  4162
+30 <class 'str'> 0.1 <class 'str'>
+Tue Nov  9 23:47:30 2021
+train consists of 59 full batches with 70 tensors with 3 views
+the last batch has size of 32 tensors with 3 views
+val consists of 14 full batches with 70 tensors with 3 views
+the last batch has size of 61 tensors with 3 views
+Epoch 0/999
+----------
+Tue Nov  9 23:47:39 2021
+batch 0 was done in 2.232794 seconds, train loss = 0.824580
+Tue Nov  9 23:48:18 2021
+curloss for train phase for 0 epoch for 0 batch = 0.736531
+Tue Nov  9 23:48:20 2021
+batch 10 was done in 0.405907 seconds, train loss = 4.133974
+Tue Nov  9 23:54:13 2021
+batch 20 was done in 0.410912 seconds, train loss = 1.687596
+Wed Nov 10 00:00:15 2021
+batch 30 was done in 0.755191 seconds, train loss = 0.870592
+Wed Nov 10 00:06:25 2021
+batch 40 was done in 0.767690 seconds, train loss = 0.672534
+Wed Nov 10 00:12:34 2021
+batch 50 was done in 0.769075 seconds, train loss = 0.930193
+Wed Nov 10 00:18:43 2021
+curloss for train phase for 0 epoch for 50 batch = 1.167964
+Wed Nov 10 00:18:44 2021
+img stat= (0.0, 0.870025, 0.23294823, 0.26833615)
+curloss for train phase for 0 epoch = 0.927965
+train Loss: 3.633040
+
+batch 0 was done in 0.519024 seconds, val loss = 0.739956
+Wed Nov 10 00:24:32 2021
+curloss for val phase for 0 epoch for 0 batch = 0.581634
+Wed Nov 10 00:24:34 2021
+batch 10 was done in 0.534204 seconds, val loss = 0.709260
+Wed Nov 10 00:30:39 2021
+img stat= (0.0, 0.8397397, 0.13581435, 0.22563197)
+curloss for val phase for 0 epoch = 0.598072
+val Loss: 0.703444
+
+epoch 0 was done for 2724.712933 seconds
+Epoch 1/999
+----------
+Wed Nov 10 00:33:04 2021
+batch 0 was done in 0.755147 seconds, train loss = 0.708970
+Wed Nov 10 00:33:40 2021
+curloss for train phase for 1 epoch for 0 batch = 0.575876
+Wed Nov 10 00:33:41 2021
+batch 10 was done in 0.750310 seconds, train loss = 0.853568
+Wed Nov 10 00:39:41 2021
+batch 20 was done in 0.752616 seconds, train loss = 1.541994
+Wed Nov 10 00:45:42 2021
+batch 30 was done in 0.765453 seconds, train loss = 1.314352
+Wed Nov 10 00:51:42 2021
+batch 40 was done in 0.747684 seconds, train loss = 1.240395
+Wed Nov 10 00:57:42 2021
+batch 50 was done in 0.738051 seconds, train loss = 0.654786
+Wed Nov 10 01:03:44 2021
+curloss for train phase for 1 epoch for 50 batch = 0.806511
+Wed Nov 10 01:03:45 2021
+curloss for train phase for 1 epoch = 0.811220
+train Loss: 0.878489
+
+batch 0 was done in 0.537083 seconds, val loss = 0.869644
+Wed Nov 10 01:09:28 2021
+curloss for val phase for 1 epoch for 0 batch = 0.681905
+Wed Nov 10 01:09:29 2021
+batch 10 was done in 0.527808 seconds, val loss = 0.824965
+Wed Nov 10 01:15:27 2021
+curloss for val phase for 1 epoch = 0.629456
+val Loss: 0.814402
+
+epoch 1 was done for 2685.159725 seconds
+Epoch 2/999
+----------
+Wed Nov 10 01:17:49 2021
+batch 0 was done in 0.755057 seconds, train loss = 0.651160
+Wed Nov 10 01:18:25 2021
+curloss for train phase for 2 epoch for 0 batch = 0.663320
+Wed Nov 10 01:18:26 2021
+batch 10 was done in 0.754018 seconds, train loss = 0.613776
+Wed Nov 10 01:24:24 2021
+batch 20 was done in 0.754700 seconds, train loss = 0.590232
+Wed Nov 10 01:30:24 2021
+batch 30 was done in 0.755065 seconds, train loss = 0.554986
+Wed Nov 10 01:36:24 2021
+batch 40 was done in 0.754879 seconds, train loss = 0.556584
+Wed Nov 10 01:42:25 2021
+batch 50 was done in 0.748592 seconds, train loss = 0.537071
+Wed Nov 10 01:48:25 2021
+curloss for train phase for 2 epoch for 50 batch = 0.588737
+Wed Nov 10 01:48:27 2021
+curloss for train phase for 2 epoch = 0.603114
+train Loss: 0.612896
+
+batch 0 was done in 0.524197 seconds, val loss = 0.907612
+Wed Nov 10 01:54:12 2021
+curloss for val phase for 2 epoch for 0 batch = 0.770682
+Wed Nov 10 01:54:13 2021
+batch 10 was done in 0.531079 seconds, val loss = 0.864795
+Wed Nov 10 02:00:12 2021
+curloss for val phase for 2 epoch = 0.659978
+val Loss: 0.846687
+
+epoch 2 was done for 2685.871092 seconds
+Epoch 3/999
+----------
+Wed Nov 10 02:02:35 2021
+batch 0 was done in 0.747033 seconds, train loss = 0.618499
+Wed Nov 10 02:03:11 2021
+curloss for train phase for 3 epoch for 0 batch = 0.770172
+Wed Nov 10 02:03:12 2021
+batch 10 was done in 0.728242 seconds, train loss = 0.529826
+Wed Nov 10 02:09:14 2021
+batch 20 was done in 0.714016 seconds, train loss = 0.486313
+Wed Nov 10 02:15:16 2021
+batch 30 was done in 0.717857 seconds, train loss = 0.422140
+Wed Nov 10 02:21:16 2021
+batch 40 was done in 0.717008 seconds, train loss = 0.496445
+Wed Nov 10 02:27:15 2021
+batch 50 was done in 0.721637 seconds, train loss = 0.466451
+Wed Nov 10 02:33:15 2021
+curloss for train phase for 3 epoch for 50 batch = 0.552754
+Wed Nov 10 02:33:16 2021
+curloss for train phase for 3 epoch = 0.534791
+train Loss: 0.497765
+
+batch 0 was done in 0.505533 seconds, val loss = 0.899984
+Wed Nov 10 02:39:01 2021
+curloss for val phase for 3 epoch for 0 batch = 0.743143
+Wed Nov 10 02:39:02 2021
+batch 10 was done in 0.523596 seconds, val loss = 0.852112
+Wed Nov 10 02:45:09 2021
+curloss for val phase for 3 epoch = 0.615595
+val Loss: 0.836166
+
+epoch 3 was done for 2696.957310 seconds
+Epoch 4/999
+----------
+Wed Nov 10 02:47:32 2021
+batch 0 was done in 0.732420 seconds, train loss = 0.607808
+Wed Nov 10 02:48:08 2021
+curloss for train phase for 4 epoch for 0 batch = 0.739584
+Wed Nov 10 02:48:09 2021
+batch 10 was done in 0.724993 seconds, train loss = 0.451307
+Wed Nov 10 02:54:08 2021
+batch 20 was done in 0.725752 seconds, train loss = 0.424693
+Wed Nov 10 03:00:09 2021
+batch 30 was done in 0.718634 seconds, train loss = 0.360523
+Wed Nov 10 03:06:09 2021
+batch 40 was done in 0.719078 seconds, train loss = 0.369937
+Wed Nov 10 03:12:08 2021
+batch 50 was done in 0.711869 seconds, train loss = 0.387924
+Wed Nov 10 03:18:10 2021
+curloss for train phase for 4 epoch for 50 batch = 0.466826
+Wed Nov 10 03:18:11 2021
+curloss for train phase for 4 epoch = 0.570506
+train Loss: 0.417751
+
+batch 0 was done in 0.493564 seconds, val loss = 0.913384
+Wed Nov 10 03:23:55 2021
+curloss for val phase for 4 epoch for 0 batch = 0.740409
+Wed Nov 10 03:23:57 2021
+batch 10 was done in 0.506043 seconds, val loss = 0.861297
+Wed Nov 10 03:29:55 2021
+curloss for val phase for 4 epoch = 0.602167
+val Loss: 0.847056
+
+epoch 4 was done for 2685.856726 seconds
+Epoch 5/999
+----------
+Wed Nov 10 03:32:17 2021
+batch 0 was done in 0.718727 seconds, train loss = 0.380378
+Wed Nov 10 03:32:54 2021
+curloss for train phase for 5 epoch for 0 batch = 0.419380
+Wed Nov 10 03:32:55 2021
+batch 10 was done in 0.723888 seconds, train loss = 0.362817
+Wed Nov 10 03:38:54 2021
+batch 20 was done in 0.723066 seconds, train loss = 0.454989
+Wed Nov 10 03:44:55 2021
+batch 30 was done in 0.713082 seconds, train loss = 0.356133
+Wed Nov 10 03:50:56 2021
+batch 40 was done in 0.720376 seconds, train loss = 0.337609
+Wed Nov 10 03:56:56 2021
+batch 50 was done in 0.727604 seconds, train loss = 0.371191
+Wed Nov 10 04:02:55 2021
+curloss for train phase for 5 epoch for 50 batch = 0.363934
+Wed Nov 10 04:02:56 2021
+curloss for train phase for 5 epoch = 0.642474
+train Loss: 0.371618
+
+batch 0 was done in 0.498804 seconds, val loss = 0.908536
+Wed Nov 10 04:08:42 2021
+curloss for val phase for 5 epoch for 0 batch = 0.738887
+Wed Nov 10 04:08:44 2021
+batch 10 was done in 0.514359 seconds, val loss = 0.856321
+Wed Nov 10 04:14:41 2021
+curloss for val phase for 5 epoch = 0.613745
+val Loss: 0.842973
+
+epoch 5 was done for 2690.323998 seconds
+Epoch 6/999
+----------
+Wed Nov 10 04:17:08 2021
+batch 0 was done in 0.733222 seconds, train loss = 0.369689
+Wed Nov 10 04:17:44 2021
+curloss for train phase for 6 epoch for 0 batch = 0.467056
+Wed Nov 10 04:17:45 2021
+batch 10 was done in 0.726070 seconds, train loss = 0.351706
+Wed Nov 10 04:23:53 2021
+batch 20 was done in 0.712099 seconds, train loss = 0.363798
+Wed Nov 10 04:30:04 2021
+batch 30 was done in 0.715304 seconds, train loss = 0.316909
+Wed Nov 10 04:36:13 2021
+batch 40 was done in 0.732359 seconds, train loss = 0.318083
+Wed Nov 10 04:42:23 2021
+batch 50 was done in 0.726467 seconds, train loss = 0.353327
+Wed Nov 10 04:48:32 2021
+curloss for train phase for 6 epoch for 50 batch = 0.348748
+Wed Nov 10 04:48:34 2021
+curloss for train phase for 6 epoch = 0.531290
+train Loss: 0.333614
+
+batch 0 was done in 0.496538 seconds, val loss = 0.896448
+Wed Nov 10 04:54:29 2021
+curloss for val phase for 6 epoch for 0 batch = 0.723486
+Wed Nov 10 04:54:31 2021
+batch 10 was done in 0.511639 seconds, val loss = 0.843631
+Wed Nov 10 05:00:38 2021
+curloss for val phase for 6 epoch = 0.597703
+val Loss: 0.831142
+
+epoch 6 was done for 2755.875957 seconds
+Epoch 7/999
+----------
+Wed Nov 10 05:03:04 2021
+batch 0 was done in 0.727509 seconds, train loss = 0.330732
+Wed Nov 10 05:03:40 2021
+curloss for train phase for 7 epoch for 0 batch = 0.472677
+Wed Nov 10 05:03:41 2021
+batch 10 was done in 0.729211 seconds, train loss = 0.323473
+Wed Nov 10 05:09:42 2021
+batch 20 was done in 0.722976 seconds, train loss = 0.340378
+Wed Nov 10 05:15:43 2021
+batch 30 was done in 0.723672 seconds, train loss = 0.315823
+Wed Nov 10 05:21:43 2021
+batch 40 was done in 0.725014 seconds, train loss = 0.314123
+Wed Nov 10 05:27:42 2021
+batch 50 was done in 0.709052 seconds, train loss = 0.351488
+Wed Nov 10 05:33:42 2021
+curloss for train phase for 7 epoch for 50 batch = 0.360451
+Wed Nov 10 05:33:43 2021
+curloss for train phase for 7 epoch = 0.610651
+train Loss: 0.326715
+
+batch 0 was done in 0.508354 seconds, val loss = 0.883592
+Wed Nov 10 05:39:29 2021
+curloss for val phase for 7 epoch for 0 batch = 0.710252
+Wed Nov 10 05:39:31 2021
+batch 10 was done in 0.509339 seconds, val loss = 0.832390
+Wed Nov 10 05:45:29 2021
+curloss for val phase for 7 epoch = 0.577212
+val Loss: 0.818503
+
+epoch 7 was done for 2689.162805 seconds
+Epoch 8/999
+----------
+Wed Nov 10 05:47:53 2021
+batch 0 was done in 0.744329 seconds, train loss = 0.343479
+Wed Nov 10 05:48:29 2021
+curloss for train phase for 8 epoch for 0 batch = 0.376586
+Wed Nov 10 05:48:30 2021
+batch 10 was done in 0.711944 seconds, train loss = 0.319331
+Wed Nov 10 05:54:30 2021
+batch 20 was done in 0.730177 seconds, train loss = 0.349184
+Wed Nov 10 06:00:31 2021
+batch 30 was done in 0.721080 seconds, train loss = 0.312822
+Wed Nov 10 06:06:31 2021
+batch 40 was done in 0.709379 seconds, train loss = 0.323361
+Wed Nov 10 06:12:31 2021
+batch 50 was done in 0.721625 seconds, train loss = 0.350210
+Wed Nov 10 06:18:32 2021
+curloss for train phase for 8 epoch for 50 batch = 0.377085
+Wed Nov 10 06:18:33 2021
+curloss for train phase for 8 epoch = 0.672528
+train Loss: 0.331294
+
+batch 0 was done in 0.517616 seconds, val loss = 0.879447
+Wed Nov 10 06:24:19 2021
+curloss for val phase for 8 epoch for 0 batch = 0.709610
+Wed Nov 10 06:24:20 2021
+batch 10 was done in 0.517469 seconds, val loss = 0.826808
+Wed Nov 10 06:30:17 2021
+curloss for val phase for 8 epoch = 0.582357
+val Loss: 0.814518
+
+epoch 8 was done for 2688.464725 seconds
+Epoch 9/999
+----------
+Wed Nov 10 06:32:41 2021
+batch 0 was done in 0.711676 seconds, train loss = 0.346259
+Wed Nov 10 06:33:18 2021
+curloss for train phase for 9 epoch for 0 batch = 0.313304
+Wed Nov 10 06:33:19 2021
+batch 10 was done in 0.713759 seconds, train loss = 0.320563
+Wed Nov 10 06:39:20 2021
+batch 20 was done in 0.738746 seconds, train loss = 0.335149
+Wed Nov 10 06:45:21 2021
+batch 30 was done in 0.716897 seconds, train loss = 0.330552
+Wed Nov 10 06:51:21 2021
+batch 40 was done in 0.737957 seconds, train loss = 0.370882
+Wed Nov 10 06:57:22 2021
+batch 50 was done in 0.724211 seconds, train loss = 0.372014
+Wed Nov 10 07:03:23 2021
+curloss for train phase for 9 epoch for 50 batch = 0.315998
+Wed Nov 10 07:03:25 2021
+curloss for train phase for 9 epoch = 0.583184
+train Loss: 0.336001
+
+batch 0 was done in 0.515128 seconds, val loss = 0.860513
+Wed Nov 10 07:09:12 2021
+curloss for val phase for 9 epoch for 0 batch = 0.689717
+Wed Nov 10 07:09:13 2021
+batch 10 was done in 0.499168 seconds, val loss = 0.807945
+Wed Nov 10 07:15:11 2021
+curloss for val phase for 9 epoch = 0.562522
+val Loss: 0.795358
+
+epoch 9 was done for 2693.975213 seconds
+Epoch 10/999
+----------
+Wed Nov 10 07:17:35 2021
+batch 0 was done in 0.726405 seconds, train loss = 0.357399
+Wed Nov 10 07:18:11 2021
+curloss for train phase for 10 epoch for 0 batch = 0.308495
+Wed Nov 10 07:18:13 2021
+batch 10 was done in 0.716210 seconds, train loss = 0.319602
+Wed Nov 10 07:24:12 2021
+batch 20 was done in 0.719007 seconds, train loss = 0.344800
+Wed Nov 10 07:30:12 2021
+batch 30 was done in 0.722264 seconds, train loss = 0.324627
+Wed Nov 10 07:36:13 2021
+batch 40 was done in 0.716774 seconds, train loss = 0.315652
+Wed Nov 10 07:42:12 2021
+batch 50 was done in 0.732737 seconds, train loss = 0.346311
+Wed Nov 10 07:48:13 2021
+curloss for train phase for 10 epoch for 50 batch = 0.358566
+Wed Nov 10 07:48:14 2021
+curloss for train phase for 10 epoch = 0.402566
+train Loss: 0.331047
+
+batch 0 was done in 0.502710 seconds, val loss = 0.835870
+Wed Nov 10 07:54:02 2021
+curloss for val phase for 10 epoch for 0 batch = 0.669984
+Wed Nov 10 07:54:03 2021
+batch 10 was done in 0.502011 seconds, val loss = 0.784735
+Wed Nov 10 08:00:00 2021
+curloss for val phase for 10 epoch = 0.542162
+val Loss: 0.772293
+
+epoch 10 was done for 2689.130054 seconds
+Epoch 11/999
+----------
+Wed Nov 10 08:02:24 2021
+batch 0 was done in 0.720751 seconds, train loss = 0.329114
+Wed Nov 10 08:03:00 2021
+curloss for train phase for 11 epoch for 0 batch = 0.315200
+Wed Nov 10 08:03:02 2021
+batch 10 was done in 0.719898 seconds, train loss = 0.317610
+Wed Nov 10 08:09:02 2021
+batch 20 was done in 0.727124 seconds, train loss = 0.335065
+Wed Nov 10 08:15:03 2021
+batch 30 was done in 0.723210 seconds, train loss = 0.309525
+Wed Nov 10 08:21:04 2021
+batch 40 was done in 0.718729 seconds, train loss = 0.314756
+Wed Nov 10 08:27:03 2021
+batch 50 was done in 0.712097 seconds, train loss = 0.352444
+Wed Nov 10 08:33:03 2021
+curloss for train phase for 11 epoch for 50 batch = 0.339610
+Wed Nov 10 08:33:04 2021
+curloss for train phase for 11 epoch = 0.390551
+train Loss: 0.323752
+
+batch 0 was done in 0.504683 seconds, val loss = 0.797782
+Wed Nov 10 08:38:53 2021
+curloss for val phase for 11 epoch for 0 batch = 0.630609
+Wed Nov 10 08:38:54 2021
+batch 10 was done in 0.504935 seconds, val loss = 0.748118
+Wed Nov 10 08:44:50 2021
+curloss for val phase for 11 epoch = 0.509563
+val Loss: 0.735904
+
+epoch 11 was done for 2690.407990 seconds
+Epoch 12/999
+----------
+Wed Nov 10 08:47:15 2021
+batch 0 was done in 0.710129 seconds, train loss = 0.324150
+Wed Nov 10 08:47:51 2021
+curloss for train phase for 12 epoch for 0 batch = 0.329778
+Wed Nov 10 08:47:52 2021
+batch 10 was done in 0.718933 seconds, train loss = 0.330729
+Wed Nov 10 08:53:52 2021
+batch 20 was done in 0.403924 seconds, train loss = 0.327219
+Wed Nov 10 08:59:53 2021
+batch 30 was done in 0.727127 seconds, train loss = 0.306415
+Wed Nov 10 09:05:54 2021
+batch 40 was done in 0.723022 seconds, train loss = 0.315441
+Wed Nov 10 09:11:54 2021
+batch 50 was done in 0.731698 seconds, train loss = 0.357383
+Wed Nov 10 09:17:55 2021
+curloss for train phase for 12 epoch for 50 batch = 0.335641
+Wed Nov 10 09:17:56 2021
+curloss for train phase for 12 epoch = 0.386399
+train Loss: 0.320716
+
+batch 0 was done in 0.515855 seconds, val loss = 0.787276
+Wed Nov 10 09:23:44 2021
+curloss for val phase for 12 epoch for 0 batch = 0.626471
+Wed Nov 10 09:23:45 2021
+batch 10 was done in 0.522160 seconds, val loss = 0.737944
+Wed Nov 10 09:29:42 2021
+curloss for val phase for 12 epoch = 0.501972
+val Loss: 0.725754
+
+epoch 12 was done for 2692.610551 seconds
+Epoch 13/999
+----------
+Wed Nov 10 09:32:07 2021
+batch 0 was done in 0.733255 seconds, train loss = 0.328377
+Wed Nov 10 09:32:43 2021
+curloss for train phase for 13 epoch for 0 batch = 0.369407
+Wed Nov 10 09:32:45 2021
+batch 10 was done in 0.722320 seconds, train loss = 0.317240
+Wed Nov 10 09:38:45 2021
+batch 20 was done in 0.727572 seconds, train loss = 0.332014
+Wed Nov 10 09:44:46 2021
+batch 30 was done in 0.733711 seconds, train loss = 0.310751
+Wed Nov 10 09:50:46 2021
+batch 40 was done in 0.728055 seconds, train loss = 0.304345
+Wed Nov 10 09:56:46 2021
+batch 50 was done in 0.737067 seconds, train loss = 0.352315
+Wed Nov 10 10:02:46 2021
+curloss for train phase for 13 epoch for 50 batch = 0.401020
+Wed Nov 10 10:02:47 2021
+curloss for train phase for 13 epoch = 0.375046
+train Loss: 0.318435
+
+batch 0 was done in 0.507513 seconds, val loss = 0.762114
+Wed Nov 10 10:08:37 2021
+curloss for val phase for 13 epoch for 0 batch = 0.602183
+Wed Nov 10 10:08:39 2021
+batch 10 was done in 0.186505 seconds, val loss = 0.713652
+Wed Nov 10 10:14:45 2021
+curloss for val phase for 13 epoch = 0.476801
+val Loss: 0.701133
+
+epoch 13 was done for 2709.443326 seconds
+Epoch 14/999
+----------
+Wed Nov 10 10:17:17 2021
+batch 0 was done in 0.394945 seconds, train loss = 0.337701
+Wed Nov 10 10:17:54 2021
+curloss for train phase for 14 epoch for 0 batch = 0.412570
+Wed Nov 10 10:17:55 2021
+batch 10 was done in 0.406908 seconds, train loss = 0.308045
+Wed Nov 10 10:24:20 2021
+batch 20 was done in 0.396942 seconds, train loss = 0.326244
+Wed Nov 10 10:30:37 2021
+batch 30 was done in 0.403919 seconds, train loss = 0.320320
+Wed Nov 10 10:36:56 2021
+batch 40 was done in 0.721083 seconds, train loss = 0.301983
+Wed Nov 10 10:43:10 2021
+batch 50 was done in 0.723640 seconds, train loss = 0.350890
+Wed Nov 10 10:49:17 2021
+curloss for train phase for 14 epoch for 50 batch = 0.391640
+Wed Nov 10 10:49:19 2021
+curloss for train phase for 14 epoch = 0.401934
+train Loss: 0.312301
+
+batch 0 was done in 0.205451 seconds, val loss = 0.734204
+Wed Nov 10 10:55:39 2021
+curloss for val phase for 14 epoch for 0 batch = 0.579899
+Wed Nov 10 10:55:40 2021
+batch 10 was done in 0.202487 seconds, val loss = 0.688751
+Wed Nov 10 11:01:54 2021
+curloss for val phase for 14 epoch = 0.444139
+val Loss: 0.674141
+
+epoch 14 was done for 2842.583640 seconds
+Epoch 15/999
+----------
+Wed Nov 10 11:04:39 2021
+batch 0 was done in 0.416885 seconds, train loss = 0.320451
+Wed Nov 10 11:05:19 2021
+curloss for train phase for 15 epoch for 0 batch = 0.355585
+Wed Nov 10 11:05:21 2021
+batch 10 was done in 0.403937 seconds, train loss = 0.307276
+Wed Nov 10 11:11:57 2021
+batch 20 was done in 0.420878 seconds, train loss = 0.323951
+Wed Nov 10 11:18:33 2021
+batch 30 was done in 0.415962 seconds, train loss = 0.314186
+Wed Nov 10 11:25:19 2021
+batch 40 was done in 0.401926 seconds, train loss = 0.298777
+Wed Nov 10 11:32:04 2021
+batch 50 was done in 0.398776 seconds, train loss = 0.349342
+Wed Nov 10 11:39:11 2021
+curloss for train phase for 15 epoch for 50 batch = 0.407746
+Wed Nov 10 11:39:12 2021
+curloss for train phase for 15 epoch = 0.401984
+train Loss: 0.310596
+
+batch 0 was done in 0.217419 seconds, val loss = 0.755459
+Wed Nov 10 11:45:56 2021
+curloss for val phase for 15 epoch for 0 batch = 0.595536
+Wed Nov 10 11:45:58 2021
+batch 10 was done in 0.204452 seconds, val loss = 0.706744
+Wed Nov 10 11:52:51 2021
+curloss for val phase for 15 epoch = 0.471053
+val Loss: 0.694980
+
+epoch 15 was done for 3063.340066 seconds
+Epoch 16/999
+----------
+Wed Nov 10 11:55:43 2021
+batch 0 was done in 0.401926 seconds, train loss = 0.321440
+Wed Nov 10 11:56:25 2021
+curloss for train phase for 16 epoch for 0 batch = 0.335038
+Wed Nov 10 11:56:26 2021
+batch 10 was done in 0.444305 seconds, train loss = 0.315799
+Wed Nov 10 12:03:37 2021
+batch 20 was done in 0.451299 seconds, train loss = 0.329407
+Wed Nov 10 12:10:53 2021
+batch 30 was done in 0.403919 seconds, train loss = 0.304994
+Wed Nov 10 12:17:54 2021
+batch 40 was done in 0.373011 seconds, train loss = 0.300615
+Wed Nov 10 12:24:26 2021
+batch 50 was done in 0.386966 seconds, train loss = 0.344267
+Wed Nov 10 12:30:53 2021
+curloss for train phase for 16 epoch for 50 batch = 0.369300
+Wed Nov 10 12:30:54 2021
+curloss for train phase for 16 epoch = 0.348848
+train Loss: 0.312575
+
+batch 0 was done in 0.197472 seconds, val loss = 0.732533
+Wed Nov 10 12:37:20 2021
+curloss for val phase for 16 epoch for 0 batch = 0.576565
+Wed Nov 10 12:37:21 2021
+batch 10 was done in 0.199465 seconds, val loss = 0.685767
+Wed Nov 10 12:43:52 2021
+curloss for val phase for 16 epoch = 0.445963
+val Loss: 0.672721
+
+epoch 16 was done for 3049.268539 seconds
+Epoch 17/999
+----------
+Wed Nov 10 12:46:32 2021
+batch 0 was done in 0.391951 seconds, train loss = 0.325528
+Wed Nov 10 12:47:10 2021
+curloss for train phase for 17 epoch for 0 batch = 0.371165
+Wed Nov 10 12:47:11 2021
+batch 10 was done in 0.375995 seconds, train loss = 0.307705
+Wed Nov 10 12:53:40 2021
+batch 20 was done in 0.418886 seconds, train loss = 0.323241
+Wed Nov 10 13:00:23 2021
+batch 30 was done in 0.402936 seconds, train loss = 0.311174
+Wed Nov 10 13:06:51 2021
+batch 40 was done in 0.399931 seconds, train loss = 0.296908
+Wed Nov 10 13:13:09 2021
+batch 50 was done in 0.392956 seconds, train loss = 0.347011
+Wed Nov 10 13:19:25 2021
+curloss for train phase for 17 epoch for 50 batch = 0.387831
+Wed Nov 10 13:19:26 2021
+curloss for train phase for 17 epoch = 0.356921
+train Loss: 0.308172
+
+batch 0 was done in 0.197473 seconds, val loss = 0.726433
+Wed Nov 10 13:25:27 2021
+curloss for val phase for 17 epoch for 0 batch = 0.574011
+Wed Nov 10 13:25:29 2021
+batch 10 was done in 0.200465 seconds, val loss = 0.679672
+Wed Nov 10 13:31:40 2021
+curloss for val phase for 17 epoch = 0.445062
+val Loss: 0.666956
+
+epoch 17 was done for 2856.850640 seconds
+Epoch 18/999
+----------
+Wed Nov 10 13:34:09 2021
+batch 0 was done in 0.403916 seconds, train loss = 0.318351
+Wed Nov 10 13:34:45 2021
+curloss for train phase for 18 epoch for 0 batch = 0.353780
+Wed Nov 10 13:34:47 2021
+batch 10 was done in 0.381979 seconds, train loss = 0.304836
+Wed Nov 10 13:40:49 2021
+batch 20 was done in 0.757719 seconds, train loss = 0.323669
+Wed Nov 10 13:46:51 2021
+batch 30 was done in 0.383977 seconds, train loss = 0.312802
+Wed Nov 10 13:53:01 2021
+batch 40 was done in 0.414891 seconds, train loss = 0.295048
+Wed Nov 10 13:59:20 2021
+batch 50 was done in 0.391953 seconds, train loss = 0.344604
+Wed Nov 10 14:05:30 2021
+curloss for train phase for 18 epoch for 50 batch = 0.379377
+Wed Nov 10 14:05:31 2021
+curloss for train phase for 18 epoch = 0.343702
+train Loss: 0.306801
+
+batch 0 was done in 0.202459 seconds, val loss = 0.722063
+Wed Nov 10 14:11:24 2021
+curloss for val phase for 18 epoch for 0 batch = 0.570954
+Wed Nov 10 14:11:25 2021
+batch 10 was done in 0.198469 seconds, val loss = 0.675898
+Wed Nov 10 14:17:27 2021

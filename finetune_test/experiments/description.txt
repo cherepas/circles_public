@@ -1,0 +1,29 @@
+036 - ara data
+035 - vary nom with angle_rand = true
+034 - ply input, vary number of FC layers and FC size
+033 - vary number of input images like experiment 027, but less points; 
+        vary lr 5e-2; 5e-3; 5e-4
+        vary nom 1, 2, 3; train for 300 epochs, angle_rand = false
+        vary number of additional FC layers after HAF network with 128 neurons: [0, 1, 2, 3]
+        vary size of 3 additional FC layers: 256, 512
+        vary bn [10, 20, 50, 120]       
+032 - vary boolean choice parameters for input scaling
+031 - vary rescale size
+030 - vary kernel size
+029 - vary downsample factor
+028 - vary number of filters in 3 conv layers
+027 - vary number of input images
+026 - vary number of conv layers 
+025 - vary weight decay
+024 - vary network architectures
+023 - vary output size
+022 - 2d input, vary lr from 1e-4 to 1e-2
+021 - 2d input, vary size of FC layers from 50 to 150
+020 - 2d input, vary number of neurons in FC layers
+019 - 2d input, vary number of FC layers
+018 - 2d input, vary lr
+017 - fix minmax true, vary four other single choice variables (27 sh files)
+016 - vary four single choice variables (32 sh files)
+015 - fix number of FC layers, vary number of neurons in the layer (4 sh files)
+014 - vary number of FC layers (4 sh files)
+013 - vary single choice variables, but only one per experiment (7 files)

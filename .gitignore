@@ -1,0 +1,13 @@
+wandb/
+__pycache__/
+.ipynb_checkpoints/
+pathes_df_train.csv
+pathes_df_val.csv
+Average_loss_minibatch_train_log10(Loss).pdf
+Average_loss_minibatch_train_Loss.pdf
+Average_loss_minibatch_val_log10(Loss).pdf
+model_state
+latent_train_???
+latent_val_???
+plot_output/*/counter.txt
+

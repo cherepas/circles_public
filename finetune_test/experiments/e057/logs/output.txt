@@ -1,0 +1,42 @@
+True
+True
+True True
+iscuda= True
+PyTorch Version:  1.7.1
+Torchvision Version:  0.8.2
+opt:
+ Namespace(ampl=441, batch_output=50, bn=5, bs=24, center=False, chidden_dim='chidden_dim = np.hstack((96,128,np.repeat(256, 3)))', classicnorm=False, cmscrop=550, criterion='L1', csvname='598csv11', downsample=1, epoch=1000, expdescr='', expnum='e057', feature_extract=False, gradient_predivide_factor=1.0, gttype='single_f_n', haf=True, hidden_dim='hidden_dim = np.hstack((np.repeat(32, 1),1500))', inputt='img', kernel_sizes='kernel_sizes = np.hstack((7,np.repeat(3, 5)))', lb='f', localexp='', lr=0.001, machine='workstation', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging_order='color_channel', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet', 'decoder', 'encoder'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=18, num_sam_points=500, num_workers=0, outputt='single_f_n', parallel='torch', pc_scale=5.0, pin_memory=False, rand_angle=False, rescale=250, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=None, steplr=['30', '0.1'], transappendix='_image_angles_path', ufmodel=100000, updates_per_epoch=5000, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['D:/circles/finetune_test/main.py', '-epoch', '1000', '-bn', '5', '-bs', '24', '-lr', '1e-3', '-no_minmax', '-no_normalize', '-no_center', '-no_classicnorm', '-ampl', '441', '-cmscrop', '550', '-rescale', '250', '-no_use_adasum', '-expnum', 'e057', '-hidden_dim', 'hidden_dim = np.hstack((np.repeat(32, 1),1500))', '-inputt', 'img', '-num_input_images', '18', '-specie', '598', '-lb', 'f', '-no_rand_angle', '-zero_angle', '-outputt', 'single_f_n', '-csvname', '598csv11', '-pc_scale', '100', '-no_view_sep', '-no_rot_dirs', '-parallel', 'torch', '-machine', 'workstation', '-wandb', '', '-no_measure_time', '-merging_order', 'color_channel', '-updates_per_epoch', '5000', '-no_rotate_output', '-steplr', '30', '0.1']
+seed =  0
+path were main.py is located= D:/circles\finetune_test
+homepath is  D:/
+opt.wandb =  
+{'train': Compose(
+    <__main__.CmsCrop object at 0x000002C00EC1B880>
+    <__main__.Rescale object at 0x000002C00EC1B940>
+    <__main__.Standardize object at 0x000002C00EC1B5B0>
+), 'val': Compose(
+    <__main__.CmsCrop object at 0x000002C00EC1B190>
+    <__main__.Rescale object at 0x000002C00EC1B400>
+    <__main__.Standardize object at 0x000002C00EC2D700>
+)}
+pts D:/circles\finetune_test\csv\pathes_to_598.csv
+False True True
+True
+lframe's length after laoding =  5270
+lframe len after excluding all exceptions= 5203
+len train =  96
+30 <class 'str'> 0.1 <class 'str'>
+Thu Nov 11 00:12:13 2021
+train consists of 4 full batches with 24 tensors with 18 views
+val consists of 1 full batches with 24 tensors with 18 views
+Epoch 0/999
+----------
+Thu Nov 11 00:12:20 2021
+Traceback (most recent call last):
+  File "D:/circles/finetune_test/main.py", line 1738, in <module>
+    model, lossar, time_elapsed, dirname = train_model(
+  File "D:/circles/finetune_test/main.py", line 708, in train_model
+    torch.norm(opt.pc_scale*outputs_2,dim=1)))
+UnboundLocalError: local variable 'outputs_2' referenced before assignment

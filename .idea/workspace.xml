@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d9a949e7-2468-4e8b-8aaa-7c7d74d703f6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/circles.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.pylintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.style.yapf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.theanorc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/description.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/tmean.csv" beforeDir="false" afterPath="$PROJECT_DIR$/drafts/tmean.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/el_2d_input.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/el_3d_input.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/elfit.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=12bn16bs1epochs16net_name=Densenetlr0.01optimizer adamtime1620066185.408359.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=16bn128bs1epochs16net_name=Densenetlr0.0001optimizer adamt1m 41s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=16bn128bs1epochs16net_name=Densenetlr0.0001optimizer adamtime1619369043.209919.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=16bn128bs1epochs16net_name=Densenetlr0.0001optimizer adamtime1619369223.6607187.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=16bn128bs1epochs16net_name=Densenetlr0.0001optimizer adamtime1619369363.266765.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=16bn128bs1epochs16net_name=Densenetlr0.0001optimizer adamtime1619369380.4343503.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=16bn128bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619369847.8339934.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=16bn16bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619367505.4230616.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=16bn16bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619368613.1705613.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=16bn16bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619372385.589105.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=16bn16bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619372385.7512975.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=16bn512bs1epochs64net_name=Densenetlr5e-05optimizer adamt257m 51s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=4bn256bs1epochs16net_name=Densenetlr0.0001optimizer adamt31m 24s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn128bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619185111.646988.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn128bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619186541.855217.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn128bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619190944.4131243.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn128bs1epochs16net_name=Densenetlr0.01optimizer adamtime1620069056.3372116.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn16bs16epochs16net_name=Densenetlr0.01optimizer adamtime1619105609.9265249.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn16bs1epochs16net_name=Densenetlr0.0001optimizer adamt2m 10s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn16bs1epochs16net_name=Densenetlr0.0001optimizer adamt2m 11s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn16bs1epochs16net_name=Densenetlr0.0001optimizer adamt2m 7s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn16bs1epochs16net_name=Densenetlr0.0001optimizer adamt2m 9s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn16bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619180754.9576108.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn16bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619366709.9945834.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn16bs1epochs16net_name=Densenetlr0.01optimizer adamtime1620067218.1337645.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn16bs1epochs8net_name=Densenetlr0.0001optimizer adamt1m 4s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn1bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619178839.9485955.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn256bs1epochs10net_name=Densenetlr5e-05optimizer adamt20m 37s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn256bs1epochs16net_name=Densenetlr0.0001optimizer adamt31m 32s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn256bs1epochs16net_name=Densenetlr0.01optimizer adamtime1620125349.6856017.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn32bs1epochs16net_name=Densenetlr0.0001optimizer adamt4m 4s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn32bs1epochs32net_name=Densenetlr0.0001optimizer adamt8m 20s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn4bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619183184.6229389.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn4bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619183184.774013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn64bs16epochs16net_name=Densenetlr0.01optimizer adamtime1619116416.306345.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn64bs1epochs10net_name=Densenetlr5e-05optimizer adamt5m 14s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn64bs1epochs16net_name=Densenetlr0.0001optimizer adamt8m 15s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn64bs1epochs16net_name=Densenetlr0.0001optimizer adamt8m 18s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn64bs1epochs16net_name=Densenetlr0.0001optimizer adamt8m 21s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn64bs1epochs16net_name=Densenetlr0.0001optimizer adamt8m 9s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot output/num_ampl=9bn64bs1epochs16net_name=Densenetlr0.01optimizer adamtime1619182539.3326502.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/plot.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/sh_2d_input-pix2vox.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/sh_2d_input.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elfit/tmean.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/Untitled1.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/Untitled2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/experiments/e067/04l.sh" beforeDir="false" afterPath="$PROJECT_DIR$/finetune_test/experiments/e067/04l.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/main - full on 21_01_22.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/main - full on 5_11.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/main_e054_041.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/main_e054_041_or.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/main_e058_000w.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/nets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/preprocess.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/seed_everything.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/sh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/shplot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/snippet0.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/standard_models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/switcher.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/switcher2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/transform.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/transform_f_n.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/transform_image_angles_path.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/transform_img_path.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetune_test/untitled.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/read_prmat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/req.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/req/cirenv.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/req/ellipse.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/req/lossl.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/req/req.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/req/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/req/sh.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/req/shreg.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Jun10_16-54-36_IBG2282/events.out.tfevents.1623336876.IBG2282.1824.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Jun10_16-59-05_IBG2282/events.out.tfevents.1623337145.IBG2282.1824.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Jun10_16-59-41_IBG2282/events.out.tfevents.1623337181.IBG2282.1824.2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Jun10_17-03-20_IBG2282/events.out.tfevents.1623337400.IBG2282.1824.3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Jun10_17-15-32_IBG2282/events.out.tfevents.1623338132.IBG2282.1824.4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar10_15-53-23_LAPTOP-8BQD2VE3/events.out.tfevents.1615481050.LAPTOP-8BQD2VE3.1408.16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar11_17-44-08_LAPTOP-8BQD2VE3/events.out.tfevents.1615481048.LAPTOP-8BQD2VE3.1408.15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar11_17-44-28_LAPTOP-8BQD2VE3/events.out.tfevents.1615481068.LAPTOP-8BQD2VE3.1408.17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar23_19-06-43_IBG2282/events.out.tfevents.1616522803.IBG2282.1028.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar23_19-11-35_IBG2282/events.out.tfevents.1616523095.IBG2282.1028.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar23_19-21-45_IBG2282/events.out.tfevents.1616523705.IBG2282.11788.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar24_14-34-40_IBG2282/events.out.tfevents.1616592880.IBG2282.11788.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar24_14-38-35_IBG2282/events.out.tfevents.1616593115.IBG2282.11788.2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar24_19-55-18_IBG2282/events.out.tfevents.1616612118.IBG2282.11788.3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_12-28-37_IBG2282/events.out.tfevents.1616671717.IBG2282.11788.4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_12-39-59_LAPTOP-8BQD2VE3/events.out.tfevents.1616672399.LAPTOP-8BQD2VE3.1404.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_12-45-09_LAPTOP-8BQD2VE3/events.out.tfevents.1616672709.LAPTOP-8BQD2VE3.1404.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_12-47-06_LAPTOP-8BQD2VE3/events.out.tfevents.1616672826.LAPTOP-8BQD2VE3.1404.2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_12-51-59_LAPTOP-8BQD2VE3/events.out.tfevents.1616673119.LAPTOP-8BQD2VE3.1404.3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_13-34-12_LAPTOP-8BQD2VE3/events.out.tfevents.1616675652.LAPTOP-8BQD2VE3.1404.4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_13-44-35_LAPTOP-8BQD2VE3/events.out.tfevents.1616676275.LAPTOP-8BQD2VE3.1404.5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_14-46-57_LAPTOP-8BQD2VE3/events.out.tfevents.1616680017.LAPTOP-8BQD2VE3.1404.6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_14-49-26_LAPTOP-8BQD2VE3/events.out.tfevents.1616680166.LAPTOP-8BQD2VE3.1404.7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_14-51-41_LAPTOP-8BQD2VE3/events.out.tfevents.1616680301.LAPTOP-8BQD2VE3.1404.8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_14-57-24_LAPTOP-8BQD2VE3/events.out.tfevents.1616680644.LAPTOP-8BQD2VE3.1404.9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_16-10-55_LAPTOP-8BQD2VE3/events.out.tfevents.1616685055.LAPTOP-8BQD2VE3.1404.10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_16-42-09_LAPTOP-8BQD2VE3/events.out.tfevents.1616686929.LAPTOP-8BQD2VE3.1404.11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_16-44-43_LAPTOP-8BQD2VE3/events.out.tfevents.1616687083.LAPTOP-8BQD2VE3.1404.12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_16-50-47_LAPTOP-8BQD2VE3/events.out.tfevents.1616687447.LAPTOP-8BQD2VE3.1404.13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_16-55-42_LAPTOP-8BQD2VE3/events.out.tfevents.1616687742.LAPTOP-8BQD2VE3.1404.14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-02-36_IBG2282/events.out.tfevents.1616688156.IBG2282.11788.5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-04-09_IBG2282/events.out.tfevents.1616688249.IBG2282.11788.6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-04-54_IBG2282/events.out.tfevents.1616688294.IBG2282.11788.7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-05-55_IBG2282/events.out.tfevents.1616688355.IBG2282.11788.8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-07-48_IBG2282/events.out.tfevents.1616688468.IBG2282.11788.9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-11-20_IBG2282/events.out.tfevents.1616688680.IBG2282.11788.10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-30-06_IBG2282/events.out.tfevents.1616689806.IBG2282.11788.11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-31-31_IBG2282/events.out.tfevents.1616689891.IBG2282.11788.12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-32-45_IBG2282/events.out.tfevents.1616689965.IBG2282.11788.13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-33-26_IBG2282/events.out.tfevents.1616690006.IBG2282.11788.14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-34-38_IBG2282/events.out.tfevents.1616690078.IBG2282.11788.15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-44-48_IBG2282/events.out.tfevents.1616690688.IBG2282.11788.16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-45-12_IBG2282/events.out.tfevents.1616690712.IBG2282.11788.17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-46-50_IBG2282/events.out.tfevents.1616690810.IBG2282.11788.18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-47-33_IBG2282/events.out.tfevents.1616690853.IBG2282.11788.19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-56-48_IBG2282/events.out.tfevents.1616691408.IBG2282.11788.20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_17-58-41_IBG2282/events.out.tfevents.1616691521.IBG2282.11788.21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_18-16-47_IBG2282/events.out.tfevents.1616692607.IBG2282.11788.22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_18-31-05_IBG2282/events.out.tfevents.1616693465.IBG2282.11788.23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_18-32-10_IBG2282/events.out.tfevents.1616693530.IBG2282.11788.24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_18-33-04_IBG2282/events.out.tfevents.1616693584.IBG2282.11788.25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_18-36-52_IBG2282/events.out.tfevents.1616693812.IBG2282.11788.26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_18-38-33_IBG2282/events.out.tfevents.1616693913.IBG2282.11788.27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar25_18-41-38_IBG2282/events.out.tfevents.1616694098.IBG2282.11788.28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_11-58-02_IBG2282/events.out.tfevents.1616756282.IBG2282.11788.29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_12-00-17_IBG2282/events.out.tfevents.1616756417.IBG2282.11788.30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_16-21-38_LAPTOP-8BQD2VE3/events.out.tfevents.1616772098.LAPTOP-8BQD2VE3.1404.15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_16-36-36_LAPTOP-8BQD2VE3/events.out.tfevents.1616772996.LAPTOP-8BQD2VE3.1404.16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_16-45-48_LAPTOP-8BQD2VE3/events.out.tfevents.1616773548.LAPTOP-8BQD2VE3.1404.17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_16-47-19_LAPTOP-8BQD2VE3/events.out.tfevents.1616773639.LAPTOP-8BQD2VE3.1404.18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_16-48-22_LAPTOP-8BQD2VE3/events.out.tfevents.1616773702.LAPTOP-8BQD2VE3.1404.19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-08-05_LAPTOP-8BQD2VE3/events.out.tfevents.1616778485.LAPTOP-8BQD2VE3.1404.20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-15-30_LAPTOP-8BQD2VE3/events.out.tfevents.1616778930.LAPTOP-8BQD2VE3.1404.21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-17-13_LAPTOP-8BQD2VE3/events.out.tfevents.1616779033.LAPTOP-8BQD2VE3.1404.22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-18-01_LAPTOP-8BQD2VE3/events.out.tfevents.1616779081.LAPTOP-8BQD2VE3.1404.23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-18-47_LAPTOP-8BQD2VE3/events.out.tfevents.1616779127.LAPTOP-8BQD2VE3.1404.24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-20-25_LAPTOP-8BQD2VE3/events.out.tfevents.1616779225.LAPTOP-8BQD2VE3.1404.25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-21-55_LAPTOP-8BQD2VE3/events.out.tfevents.1616779315.LAPTOP-8BQD2VE3.1404.26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-22-39_LAPTOP-8BQD2VE3/events.out.tfevents.1616779359.LAPTOP-8BQD2VE3.1404.27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-26-52_LAPTOP-8BQD2VE3/events.out.tfevents.1616779612.LAPTOP-8BQD2VE3.1404.28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-32-38_LAPTOP-8BQD2VE3/events.out.tfevents.1616779958.LAPTOP-8BQD2VE3.1404.29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-36-14_LAPTOP-8BQD2VE3/events.out.tfevents.1616780174.LAPTOP-8BQD2VE3.1404.30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-38-55_LAPTOP-8BQD2VE3/events.out.tfevents.1616780335.LAPTOP-8BQD2VE3.1404.31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-39-38_LAPTOP-8BQD2VE3/events.out.tfevents.1616780378.LAPTOP-8BQD2VE3.1404.32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-40-48_LAPTOP-8BQD2VE3/events.out.tfevents.1616780448.LAPTOP-8BQD2VE3.1404.33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-41-59_LAPTOP-8BQD2VE3/events.out.tfevents.1616780519.LAPTOP-8BQD2VE3.1404.34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-42-57_LAPTOP-8BQD2VE3/events.out.tfevents.1616780577.LAPTOP-8BQD2VE3.1404.35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-43-02_LAPTOP-8BQD2VE3/events.out.tfevents.1616780582.LAPTOP-8BQD2VE3.1404.36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-44-02_LAPTOP-8BQD2VE3/events.out.tfevents.1616780642.LAPTOP-8BQD2VE3.1404.37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-45-02_LAPTOP-8BQD2VE3/events.out.tfevents.1616780702.LAPTOP-8BQD2VE3.1404.38" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-47-38_LAPTOP-8BQD2VE3/events.out.tfevents.1616780858.LAPTOP-8BQD2VE3.1404.39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar26_18-48-58_LAPTOP-8BQD2VE3/events.out.tfevents.1616780938.LAPTOP-8BQD2VE3.1404.40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/Mar27_12-52-22_LAPTOP-8BQD2VE3/events.out.tfevents.1616845942.LAPTOP-8BQD2VE3.6884.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmean.csv" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="23ucFIiRkL89481ZO3kklk3GVeF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9a949e7-2468-4e8b-8aaa-7c7d74d703f6" name="Changes" comment="" />
+      <created>1642587306170</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642587306170</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

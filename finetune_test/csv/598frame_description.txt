@@ -1,0 +1,6 @@
+zero_angle - angle from 0 to 35 (0 for 0 degrees, 35 for 350 degrees), with the most horizontal pose
+x_cms, y_cms, z_cms - coordinates of the center of masses for the surface point cloud
+moment0, .., moment5 - six values of upper-triangular matrix of (X*X, X*Y, .., Z*Z) have gotten from original surface point cloud 
+mom0, .., mom5 - the same as moment, but from point cloud with subtracted mean
+orient - coefficients of the matrix, that convert current point cloud with subtracted mean to the point cloud in canonical view
+
