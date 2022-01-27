@@ -9,5 +9,4 @@ Average_loss_minibatch_val_log10(Loss).pdf
 model_state
 latent_train_???
 latent_val_???
-plot_output/*/counter.txt
 
