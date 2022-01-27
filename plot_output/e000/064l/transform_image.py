@@ -3,7 +3,6 @@ from skimage import transform
 
 isprint = False
 
-
 class CmsCrop(object):
     """Crop randomly the image in a sample.
 
@@ -55,8 +54,6 @@ class CmsCrop(object):
         if isprint:
             print('CmsCrop passed')
         return {'image': image}
-
-
 class CentralCrop(object):
     """Crop randomly the image in a sample.
 
@@ -91,8 +88,6 @@ class CentralCrop(object):
         if isprint:
             print('CmsCrop passed')
         return {'image': image}
-
-
 class Rescale(object):
     """Rescale the image in a sample to a given size.
     Args:
@@ -115,6 +110,9 @@ class Rescale(object):
             #     img = image
             # else:
             h, w = image[0].shape[0:2]
+            print(111, image.shape)
+            # print('output_size=',self.output_size)
+            # print('h,w',h,w)
             if h != self.output_size:
                 if isinstance(self.output_size, int):
                     if h > w:
@@ -144,8 +142,6 @@ class Rescale(object):
         if isprint:
             print('Rescale passed')
         return {'image': image}
-
-
 class Standardize(object):
     """standardize images on zero mean and unit variance"""
     def __init__(self, stand):
@@ -165,9 +161,26 @@ class Standardize(object):
         if isprint:
             print('Standardize passed')
         return {'image': image}
-
-
-
+# class AmpCrop(object):
+#     """Crop the label, spherical harmonics amplitude."""
+#
+#     def __init__(self, ampl):
+#         self.ampl = ampl
+#
+#     def __call__(self, sample):
+#         image = sample['image']
+#
+#         if self.ampl == 441:
+#             f_n = f_n
+#         else:
+#             f_n = f_n[:self.ampl]
+#         if isprint:
+#             print('ampcrop passed')
+#         return {'image': image, 'angles': angles,
+#
+#
+#
+#                 'path': path}
 class ToTensor(object):
     """Convert ndarrays in sample to Tensors."""
     def __init__(self, iscuda):
@@ -187,7 +200,6 @@ class ToTensor(object):
             print('ToTensor passed')
         return {'image': image}
 
-
 class Minmax3Dimage(object):
     """Normalize 3D input data to be laying in [0,1]"""
     def __init__(self, minv, maxv):
@@ -203,6 +215,28 @@ class Minmax3Dimage(object):
         return {'image': image}
 
 
+# class Minmax_f(object):
+#     """Normalize 3D input data to be laying in [0,1]"""
+#
+#     def __init__(self, minmax):
+#         minf = minmax[0]
+#         maxf = minmax[1]
+#         self.minf = minf
+#         self.maxf = maxf
+#
+#     def __call__(self, sample):
+#         image = sample['image']
+#
+#         far = (far-self.minf)/(self.maxf-self.minf)
+#         if isprint:
+#             print('Minmax_f passed')
+#         return {'image': image, 'angles': angles,
+#
+#
+#
+#                 'path': path}
+
+
 class Downsample(object):
     """Downsample the input ply file."""
 
@@ -216,6 +250,46 @@ class Downsample(object):
         if isprint:
             print('Downsample passed')
         return {'image': image}
+
+
+# class Shuffleinput(object):
+#     """Shuffle the rows of input ply file."""
+#
+#     def __init__(self, shuffle_seed):
+#         self.shuffle_seed = shuffle_seed
+#
+#     def __call__(self, sample):
+#         np.random.seed(self.shuffle_seed)
+#         image = sample['image']
+#
+#         np.random.shuffle(image)
+#         if isprint:
+#             print('Shuffleinpute passed')
+#         return {'image': image, 'angles': angles,
+#
+#
+#
+#                 'path': path}
+
+
+# class Minmax(object):
+#     """Normalize the input data to lay in [0,1]."""
+#
+#     def __init__(self, tmean):
+#         self.tmean = tmean
+#
+#     def __call__(self, sample):
+#         image = sample['image']
+#
+#         # f_n = ((f_n - np.min(self.tmean[2])) /
+#         #        (np.max(self.tmean[3])-np.min(self.tmean[2])))
+#         if isprint:
+#             print('Minmax passed')
+#         return {'image': image, 'angles': angles,
+#
+#
+#
+#                 'path': path}
 
 
 class Reshape(object):
@@ -280,62 +354,14 @@ class Center(object):
         if isprint:
             print('Center passed')
         return {'image': image}
-# class AmpCrop(object):
-#     """Crop the label, spherical harmonics amplitude."""
-#
-#     def __init__(self, ampl):
-#         self.ampl = ampl
-#
-#     def __call__(self, sample):
-#         image = sample['image']
-#
-#         if self.ampl == 441:
-#             f_n = f_n
-#         else:
-#             f_n = f_n[:self.ampl]
-#         if isprint:
-#             print('ampcrop passed')
-#         return {'image': image, 'angles': angles,
-#
-#
-#
-#                 'path': path}
-# class Shuffleinput(object):
-#     """Shuffle the rows of input ply file."""
-#
-#     def __init__(self, shuffle_seed):
-#         self.shuffle_seed = shuffle_seed
-#
-#     def __call__(self, sample):
-#         np.random.seed(self.shuffle_seed)
-#         image = sample['image']
-#
-#         np.random.shuffle(image)
-#         if isprint:
-#             print('Shuffleinpute passed')
-#         return {'image': image, 'angles': angles,
-#
-#
-#
-#                 'path': path}
-# class Minmax(object):
-#     """Normalize the input data to lay in [0,1]."""
-#
-#     def __init__(self, tmean):
-#         self.tmean = tmean
-#
-#     def __call__(self, sample):
-#         image = sample['image']
-#
-#         # f_n = ((f_n - np.min(self.tmean[2])) /
-#         #        (np.max(self.tmean[3])-np.min(self.tmean[2])))
-#         if isprint:
-#             print('Minmax passed')
-#         return {'image': image, 'angles': angles,
-#
-#
-#
-#                 'path': path}
+
+
+
+
+
+
+
+
 # class Divide255(object):
 #     """Normalize the input data to lay in [0,1]."""
 #
@@ -348,26 +374,6 @@ class Center(object):
 #         if isprint:
 #             print('Divide255 passed')
 #         image = image/255
-#         return {'image': image, 'angles': angles,
-#
-#
-#
-#                 'path': path}
-# class Minmax_f(object):
-#     """Normalize 3D input data to be laying in [0,1]"""
-#
-#     def __init__(self, minmax):
-#         minf = minmax[0]
-#         maxf = minmax[1]
-#         self.minf = minf
-#         self.maxf = maxf
-#
-#     def __call__(self, sample):
-#         image = sample['image']
-#
-#         far = (far-self.minf)/(self.maxf-self.minf)
-#         if isprint:
-#             print('Minmax_f passed')
 #         return {'image': image, 'angles': angles,
 #
 #

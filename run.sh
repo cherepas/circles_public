@@ -36,5 +36,5 @@ EXPNUM="e000"
 #python -u "${HOMEPATH}/circles/finetune_test/main.py" -epoch 120 -bs 15 -num_input_images 3 -framelim 500 -rescale 500 -cencrop 700 -criterion 'L1' -localexp "" -conTrain '000l' -lr 1e-3 -expnum "$EXPNUM" -hidden_dim 16 1500 -inputt "img" -lb "pc" -zero_angle -gttype "single_f_n" -outputt "pc" -csvname "598csv9" -parallel "torch" -machine "lenovo" -wandb "" -merging_order 'color_channel' -updateFraction 1 -steplr 1000 1 -batch_output 2 -cmscrop 0 -weight_decay
 #python -u "${HOMEPATH}/cherepashkin1/598test/plot_output/e058/000w/main.py"
 
-python -u "main.py" -datapath "../598dummy" -epoch 40 -bs 5 -num_input_images 1 -framelim 6000 -criterion 'L2' -localexp "" -lr 1e-4 -expnum "$EXPNUM" -hidden_dim 9 -inputt "img" -outputt "orient" -lb "orient" -no_loadh5 -minmax_fn "" -parallel "torch" -machine "lenovo" -merging "color" -no_view_sep -updateFraction 0.25 -steplr 1000 1 -print_minibatch 1
+python -u "main.py" -datapath "dummy" -epoch 1 -bs 5 -num_input_images 1 -framelim 40 -criterion 'L2' -localexp "" -lr 1e-4 -expnum "$EXPNUM" -hidden_dim 9 -inputt "img" -outputt "orient" -lb "orient" -no_loadh5 -minmax_fn "" -parallel "torch" -machine "lenovo" -merging "color" -aug_gt "orient" -updateFraction 0.25 -steplr 1000 1 -print_minibatch 1
 #python -u "${HOMEPATH}/circles/finetune_test/main.py"

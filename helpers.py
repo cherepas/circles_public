@@ -6,6 +6,8 @@ from os.path import join as jn
 import imageio
 from pathlib import Path
 from numpy import linalg as LA
+import csv
+
 def newfold(dir1, machine):
     i = 0
     while True:
@@ -19,6 +21,7 @@ def newfold(dir1, machine):
             i += 1
             continue
     return (dirname)
+
 def simple_time_tracker(log_fun):
     def _simple_time_tracker(fn):
         @wraps(fn)
@@ -63,7 +66,6 @@ def showpoints(ax, el, az, pcd, vox2mm, lims=None):
     ax.set_ylim(ax_lim[0], ax_lim[1])
     ax.set_zlim(ax_lim[0], ax_lim[1])
 
-
 def showmanypoints(cbs, nim, p, q, pathes, angles_list, phase, i_batch, cnt,
                    dirname, mo, vox2mm):
     fig = plt.figure(figsize=(15, 15))
@@ -100,7 +102,6 @@ def showmanypoints(cbs, nim, p, q, pathes, angles_list, phase, i_batch, cnt,
 
     # @simple_time_tracker(_log)
 
-
 def fn2p(y_n, f_n, dirs, nsp, vox2mm, iscuda):
     p = t.zeros( \
         y_n.shape[0], 3, nsp)
@@ -114,7 +115,6 @@ def fn2p(y_n, f_n, dirs, nsp, vox2mm, iscuda):
         p[i, 2, :] = far * t.cos(dirs[i, :, 1])
     # p *= vox2mm
     return p
-
 
 def f2p(far, dirs, nsp, vox2mm):
     if isinstance(far, t.Tensor):
@@ -151,8 +151,6 @@ def f2p(far, dirs, nsp, vox2mm):
     return p
 
     # @simple_time_tracker(_log)
-
-
 def lossfig(dirname, lossar, ylabel, title, xlim, ylim, lb, xlabel):
     plt.rcParams["figure.figsize"] = (9, 5)
     fig = plt.figure()
@@ -206,6 +204,7 @@ def lossfig(dirname, lossar, ylabel, title, xlim, ylim, lb, xlabel):
     except:
         pass
     plt.close(fig)
+
 def lossout(fnm, xlabel, lossar, epp, dirname, lb):
     lossfig(jn(dirname, fnm), lossar,
         'Loss', fnm.replace('_',' '), (0, epp), (0, 1), lb, xlabel)
@@ -263,7 +262,6 @@ def backproject(prmat, img, pcd, dirname, rotate_output):
         pass
     plt.close(fig)
 
-
 def getstat(img):
     if isinstance(img, t.Tensor):
         tp = (float(t.min(img)), float(t.max(img)), float(t.mean(img)), float(t.std(img)))
@@ -290,7 +288,6 @@ def shplot(coef, dirname, cnt):
     cnt += 1
     return(cnt)
 
-
 def plot_Y(ax, coef, xyz, phi, theta):
     """Plot the spherical harmonic of degree el and order m on Axes ax."""
     f = np.zeros([100, 100]).astype('complex128')
@@ -305,7 +302,6 @@ def plot_Y(ax, coef, xyz, phi, theta):
     ax.plot_surface(Yx, Yy, Yz,
                     facecolors=cmap.to_rgba(f.real),
                     rstride=2, cstride=2)
-#     print(Yz.shape)
     # Draw a set of x, y, z axes for reference.
     ax_lim = 50
     ax.plot([-ax_lim, ax_lim], [0, 0], [0, 0], c='0.5', lw=1, zorder=10)
@@ -318,23 +314,26 @@ def plot_Y(ax, coef, xyz, phi, theta):
     ax.set_zlim(-ax_lim, ax_lim)
     ax.axis('on')
     return(Yx, Yy, Yz)
+
 def getcen(el):
     centre = [linalg.det(el[:,[1,2,3]]), -linalg.det(el[:,[0,2,3]]), linalg.det(el[:,[0,1,3]])]/(-linalg.det(el[:,[0,1,2]]))
     return centre
+
 def forwardproj(pcd, pr):
     pcd2 = np.concatenate((pcd, np.expand_dims(np.repeat(1, pcd.shape[0]), axis = 1)), axis=1)
     pcd2 = np.matmul(pcd2,pr.T)
     pcd2 = pcd2/np.repeat(np.expand_dims(pcd2[:,3], axis=1), 4, axis = 1)
     return(pcd2[:,:3])
+
 def getcenf(el):
     centre = [linalg.det(el[:,[1,2,3]]), -linalg.det(el[:,[0,2,3]]), linalg.det(el[:,[0,1,3]]), -linalg.det(el[:,[0,1,2]])]
     return centre
+
 def sf(fig, dirname):
     for i in ['.png', '.pdf']:
         fig.savefig('./'+dirname+'/'+str(int(os.listdir('./'+dirname+\
                                         '/')[-1].split('.')[0])+1).zfill(3)+i)
-#     fig.savefig('./'+dirname+'/'+str(int(os.listdir('./'+dirname+'/')[-1].split('.')[0])+1).zfill(3)+'.pdf')
-#     return('./'+dirname+'/'+str(int(os.listdir('./'+dirname+'/')[-1].replace('.png',''))+1).zfill(3)+'.png')
+
 def prmatread(path):
     with open(path, 'r') as f:
         prmatext = f.readlines()
@@ -345,14 +344,17 @@ def prmatread(path):
         pr3+=i
     pr4 = np.genfromtxt(StringIO(pr3), delimiter=',')
     return pr4
+
 def outliers(ar):
     return(list(np.where(np.abs(ar-np.mean(ar)) > 6*np.std(ar))[0]))
+
 def getstat(img):
     if isinstance(img, t.Tensor):
         tp = (float(t.min(img)), float(t.max(img)), float(t.mean(img)), float(t.std(img)))
     elif isinstance(img, np.ndarray):
         tp = (np.min(img), np.max(img), np.mean(img), np.std(img))
     return tp
+
 def viewpoints(pcd, lims = None):
     colors = ['tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple',
               'tab:brown', 'tab:pink', 'tab:gray', 'tab:olive', 'tab:cyan']
@@ -367,6 +369,7 @@ def viewpoints(pcd, lims = None):
         ax.set_ylim(lims[0], lims[1])
         ax.set_zlim(lims[0], lims[1])
     return fig, ax
+
 def makegif(dirname,phase):
     cip = []
     for root, directories, filenames in os.walk(dirname):
@@ -378,6 +381,7 @@ def makegif(dirname,phase):
     for filename in cip:
         images.append(imageio.imread(filename))
     imageio.mimsave(jn(dirname, phase+'_movie.gif'), images, duration=0.5)
+
 def namelist(path, fltr):
     cip = []
     for root, structure, files in os.walk(path):
@@ -385,11 +389,13 @@ def namelist(path, fltr):
             if fltr in file:
                 cip.append(os.path.join(root, file))
     return cip
+
 def pose6tomat(a):
     ar = np.array([[a[0], a[1], a[2]],
             [a[1], a[3], a[4]],
             [a[2], a[4], a[5]]])
     return(ar)
+
 def moments(pcd):
     if pcd.shape[0] < pcd.shape[1]:
         pcd = pcd.T
@@ -399,6 +405,7 @@ def moments(pcd):
     car = np.array([np.matmul(X, X.T), np.matmul(X, Y.T), np.matmul(X, Z.T),
             np.matmul(Y, Y.T), np.matmul(Y, Z.T), np.matmul(Z, Z.T)])
     return(car)
+
 def rot2eul(R):
     if np.abs(R[2,0]) > 1:
         R[2,0] = round(R[2,0])
@@ -413,9 +420,11 @@ def eul2rot(theta):
                   [-np.sin(theta[1]),                        np.sin(theta[0])*np.cos(theta[1]),                                                           np.cos(theta[0])*np.cos(theta[1])]])
 
     return R
+
 def pcd2eul(pcd):
     ans = rot2eul(LA.eig(pose6tomat(moments(pcd)))[1])
     return ans
+
 def namelist(path, fltr):
     cip = []
     for root, structure, files in os.walk(path):
@@ -423,6 +432,7 @@ def namelist(path, fltr):
             if fltr in file:
                 cip.append(os.path.join(root, file))
     return cip
+
 def rotplot(C):
     print('print me')
     try:
@@ -437,6 +447,7 @@ def rotplot(C):
     ax[0,0].set_ylabel('element of the matrix')
     fig1.suptitle('Elements of the rotation matrix from projection matricies')
     return fig1
+
 def getOri(pcd0, C, eigsort=True):
     print('439')
     mator1 = np.zeros([36,3,3])
@@ -453,6 +464,7 @@ def getOri(pcd0, C, eigsort=True):
             mator1[j,:,:] = v
         rotangles[j,:] = rot2eul(mator1[j,:,:])
     return mator1, rotangles
+
 def testfun():
     print('test')
     # sf(fig, 'figs')
@@ -480,3 +492,22 @@ def plotori(mator, tit, xtit, ylim = (-1, 1), figtype='scatter'):
 #     plt.show(fig)
     return fig
 
+def savelist(listf, filename):
+    with open(filename, "w") as f:
+        for element in listf:
+            f.write(element + "\n")
+
+class Bunch(object):
+    def __init__(self, adict):
+        self.__dict__.update(adict)
+
+def dic2csv(path, dct):
+    with open(path, 'w', newline='\n') as csv_file:
+        writer = csv.writer(csv_file, delimiter=',')
+        for key, value in dct.items():
+            writer.writerow([key, value])
+
+def csv2dic(path):
+    with open(path, 'r', newline='\n') as csv_file:
+        reader = csv.reader(csv_file, delimiter=',')
+        return Bunch(dict(reader))

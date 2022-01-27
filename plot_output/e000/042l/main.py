@@ -27,8 +27,7 @@ from torch.optim.lr_scheduler import StepLR
 from helpers import *
 from switcher import *
 from preprocess import *
-from transformdef import *
-# import csv
+import csv
 # from functools import wraps
 # from pathlib import Path
 # import imageio
@@ -40,7 +39,6 @@ from transformdef import *
 # import os
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-
     def setarg(parser, argname, dfl):
         parser.add_argument('-'+argname, dest=argname,
                             action='store_true')
@@ -54,146 +52,139 @@ if __name__ == '__main__':
     setarg(parser, 'minmax',False)
     # normalize input point cloud to have every coordinate between 0 and 1
     setarg(parser, 'minmax3dimage',False)
-    # normalize input point cloud, that it is in canonical view
+    #normalize input point cloud, that it is in canonical view
     setarg(parser, 'normalize',False)
-    # centerize input point cloud, to have it's center of masses in the origin
+    #centerize input point cloud, to have it's center of masses in the origin
     setarg(parser, 'center',False)
-    # linearly downsample input point cloud
+    #linearly downsample input point cloud
     parser.add_argument('-downsample', type=int, default=1)
-    # use f_n or f, that was gotten with normalization on canonical view before
-    # processing
+    #use f_n or f, that was gotten with normalization on canonical view before processing
     setarg(parser, 'classicnorm',False)
-    # cut the number of maximum SH amplitude to regress
+    #cut the number of maximum SH amplitude to regress
     parser.add_argument('-ampl', type=int, default=441)
-    # centerize seed on the input image and crop to this width
+    #centerize seed on the input image and crop to this width
     parser.add_argument('-cmscrop', type=int, default=0)
     parser.add_argument('-cencrop', type=int, default=700)
-    # rescale input image
+    #rescale input image
     parser.add_argument('-rescale', type=int, default=500)
     setarg(parser, 'use_adasum',False)
     parser.add_argument(
         '-gradient_predivide_factor', type=float, default=1.0,
         help='apply gradient predivide factor in optimizer (default: 1.0)')
-    # name of experiment directory
+    #name of experiment directory
     parser.add_argument('-expnum', type=str, default='111')
     # hidden_dim - size of appendix FC layers
     parser.add_argument(
         '-hidden_dim', nargs='+', type=int, default=[5000,2500,1000,441])
     parser.add_argument(
         '-chidden_dim', nargs='+', type=int, default=[96, 128, 256, 256, 256])
-    parser.add_argument('-kernel_sizes', nargs='+', default=[7, 3, 3, 3, 3, 3])
-    # number of input images that will be loaded
+    parser.add_argument('-kernel_sizes', nargs='+',  default=[7, 3, 3, 3, 3, 3])
+    #number of input images that will be loaded
     parser.add_argument('-num_input_images', type=int, default=1)
-    # name of standard model
+    #name of standard model
     parser.add_argument('-model_name', type=str, default='')
     parser.add_argument('-netname', nargs='+', default=['cnet'])
     setarg(parser, 'use_pretrained',False)
     parser.add_argument('-weight_decay', type=float, default=0)
-    # used to load images all in parallel, or merge them after output
-    # "separate" merging order means to get from Dataloader tensor like as for
+    #used to load images all in parallel, or merge them after output
+    #"separate" merging order means to get from Dataloader tensor like as for
     # color channel, that [15, 3, 1000, 1800], but then reshape this tensor to
     # the [45, 1, 1000, 1800] and work with it like with separate data points
     parser.add_argument('-merging', type=str,
                         choices=['color', 'latent', 'batch'], default='batch')
-    # take input image of random angle, if not, then image will
-    # be taken relative to the horizontal pose
+    #take input image of random angle, if not, then image will
+    #be taken relative to the horizontal pose
     setarg(parser, 'rand_angle',False)
-    # number of experiment from phenoseeder
+    #number of experiment from phenoseeder
     parser.add_argument('-specie', type=str, default='598')
-    # number of sampled directions to make subsampling after f_n
+    #number of sampled directions to make subsampling after f_n
     parser.add_argument('-num_sam_points', type=int, default=500)
-    # loss calculating between 'pc','f' or 'f_n'
+    #loss calculating between 'pc','f' or 'f_n'
     parser.add_argument('-lb', type=str, default='f')
-    # short description what exactly this job is up for
+    #short description what exactly this job is up for
     parser.add_argument('-expdescr', type=str, default='')
-    # use csv file with pathes to all input files together with
+    #use csv file with pathes to all input files together with
     # horizontal image index
     setarg(parser, 'use_existing_csv',True)
     setarg(parser, 'use_sep_csv',True)
-    # instead of input files noise is generating with random numbers
+    #instead of input files noise is generating with random numbers
     setarg(parser, 'noise_input',False)
-    # use convolutional part of the network or not
+    #use convolutional part of the network or not
     setarg(parser, 'haf',True)
-    # type of input data. can be 'img', 'f' or 'pc'
+    #type of input data. can be 'img', 'f' or 'pc'
     parser.add_argument('-inputt', type=str, default='img')
-    # normalize to make min = 0 and max = 1 for input f
+    #normalize to make min = 0 and max = 1 for input f
     setarg(parser, 'minmax_f',True)
-    # criterion to calculate loss
+    #criterion to calculate loss
     parser.add_argument('-criterion', type=str, default='L1')
-    # number of GPUs is used in the job
+    #number of GPUs is used in the job
     parser.add_argument('-ngpu', type=int, default=4)
-    # type of parallelization. 'hvd' means horovod, or 't'
-    parser.add_argument('-parallel', type=str, choices=['horovod', 'torch'],
-                        default='hvd')
-    # in case loading standard model, it can be use as feature extracting
-    # (when freezeing all layers except the last one)
+    #type of parallelization. 'hvd' means horovod, or 't'
+    parser.add_argument('-parallel', type=str, choices=['horovod', 'torch'], default='hvd')
+    #in case loading standard model, it can be use as feature extracting
+    #(when freezeing all layers except the last one)
     setarg(parser, 'feature_extract',False)
-    # if load only one image as input, this will be always image with index
-    # 000_rotation
-    # if load more than 1 image, then number of images will be spread evenly in
-    # the range (0,36)
-    # if false, images will be taking that first image in views will be with
-    # horizontal pose
+    #if load only one image as input, this will be always image with index 000_rotation
+    #if load more than 1 image, then number of images will be spread evenly in
+    #the range (0,36)
+    #if false, images will be taking that first image in views will be with
+    #horizontal pose
     setarg(parser, 'zero_angle',True)
-    # is used for testing computing time,
-    # where all needed files including data in one folder
+    #is used for testing computing time,
+    #where all needed files including data in one folder
     parser.add_argument('-single_folder',
                         dest='single_folder', action='store_true')
     parser.set_defaults(single_folder=False)
     parser.add_argument('-noise_output', dest='noise_output',
                         action='store_true')
     parser.set_defaults(noise_output=False)
-    # only log will be in the output
+    #only log will be in the output
     setarg(parser, 'save_output',True)
-    # type of data that is loaded for gt. for example, single_f_n
-    # means that only *f_n files will be used for GT in dataloader
-    # and maybe it will be singular loading of y_n
-    # it is used separate transform_f_n.py to not load more than is
-    # needed
-    # In case if gt is loaded not from dataloader, but from csv or from h5 file,
+    #type of data that is loaded for gt. for example, single_f_n
+    #means that only *f_n files will be used for GT in dataloader
+    #and maybe it will be singular loading of y_n
+    #it is used separate transform_f_n.py to not load more than is
+    #needed
+    #In case if gt is loaded not from dataloader, but from csv or from h5 file,
     # there is option "single_file"
     parser.add_argument('-gttype', type=str,
                         choices=['single_file'],
                         default='single_file')
-    # name of csv that will be used for loading GT
+    #name of csv that will be used for loading GT
     parser.add_argument('-csvname', type=str, default='598csv9')
-    # factor on which all output point cloud data will be normalized
+    #factor on which all output point cloud data will be normalized
     parser.add_argument('-pscale', type=int, default=100)
-    # if view_sep = True, and more than one image is loaded,
+    #if view_sep = True, and more than one image is loaded,
     # all input images will be treated as separate data elements
     # new dataframe will be created
     setarg(parser, 'view_sep',False)
-    # rotate directions together with angle from which
-    # current image were taken
+    #rotate directions together with angle from which
+    #current image were taken
     setarg(parser, 'rot_dirs',False)
-    # for dataloader
+    #for dataloader
     parser.add_argument('-num_workers', type=int, default=0)
     setarg(parser, 'pin_memory',False)
-    # manually calculate distance vector F out of point cloud output
+    #manually calculate distance vector F out of point cloud output
     setarg(parser, 'man_dist',False)
     setarg(parser, 'use_cuda',True)
     parser.add_argument('-machine', type=str,
-                        choices=['jureca', 'workstation', 'lenovo', 'huawei'],
-                        default='jureca')
+                        choices=['jureca', 'workstation', 'lenovo', 'huawei'], default='jureca')
     setarg(parser, 'maintain',False)
     setarg(parser, 'maintain_line',False)
     parser.add_argument('-wandb', type=str, default="")
     setarg(parser, 'measure_time',False)
     setarg(parser, 'rotate_output',False)
     parser.add_argument('-transappendix', type=str, default="_image")
-    # how often to save batch output intermediate in epoch
+    #how often to save batch output intermediate in epoch
     parser.add_argument('-batch_output', type=int, default=2)
-    # minmax fun for current ground truth preparation before training
-    parser.add_argument('-minmax_fn', type=str,
-                        choices=['min,max','mean,std', ''], default='')
+    #minmax fun for current ground truth preparation before training
+    parser.add_argument('-minmax_fn', type=str, choices=['min,max','mean,std', ''], default='')
     parser.add_argument('-updateFraction', type=float, default=3)
-    parser.add_argument('-standardize',  nargs='+', default=255)
+    parser.add_argument('-standardize',  nargs='+', default=None)
     # parser.add_argument('-standardize', default=(18.31589541, 39.63290785))
     parser.add_argument('-localexp', type=str, default='')
     parser.add_argument('-steplr',  nargs='+', type=float, default=(30,1))
-    parser.add_argument('-outputt', type=str,
-                        choices=['points','pose6', 'eul', 'orient'],
-                        default='points')
+    parser.add_argument('-outputt', type=str, choices=['points','pose6', 'eul', 'orient'], default='points')
     parser.add_argument('-ufmodel', type=int, default=100000)
     parser.add_argument('-framelim', type=int, default=int(1e20))
     parser.add_argument('-conTrain', type=str, default='')
@@ -202,8 +193,7 @@ if __name__ == '__main__':
     # for orientation there are two right GT, because it is a ray. That is why
     # augementation of ground truth is needed for evaluation
     parser.add_argument('-aug_gt', type=str, choices=['orient'], default='')
-    parser.add_argument('-datapath', type=str,
-                        default='C:/cherepashkin1/phenoseed')
+    parser.add_argument('-datapath', type=str, default='C:/cherepashkin1/phenoseed')
     setarg(parser, 'loadh5', False)
     opt = parser.parse_args()
     if opt.parallel == 'horovod':
@@ -215,8 +205,7 @@ if __name__ == '__main__':
     else:
         rank = 0
     homepath = __file__.replace(__file__.split('/')[-1], '')
-    dir1 = jn(__file__.replace(__file__.split('/')[-1], ''), 'plot_output',
-              opt.expnum)
+    dir1 = jn(__file__.replace(__file__.split('/')[-1], ''), 'plot_output', opt.expnum)
     dirname = jn(dir1, opt.localexp)
     if opt.save_output and rank == 0 and not opt.localexp:
         with open(jn(dir1,'counter.txt'), 'r') as f:
@@ -248,7 +237,18 @@ if __name__ == '__main__':
         Path(dirname).mkdir(parents=True, exist_ok=True)
     else:
         dirname = jn(dir1, 'misc')
-
+    class Bunch(object):
+        def __init__(self, adict):
+            self.__dict__.update(adict)
+    def dic2csv(path, dct):
+        with open(path, 'w', newline='\n') as csv_file:
+            writer = csv.writer(csv_file, delimiter=',')
+            for key, value in dct.items():
+                writer.writerow([key, value])
+    def csv2dic(path):
+        with open(path, 'r', newline='\n') as csv_file:
+            reader = csv.reader(csv_file, delimiter=',')
+            return Bunch(dict(reader))
     conTrain = opt.conTrain
     if opt.conTrain:
         print(jn(dir1,conTrain,'opt.csv'))
@@ -268,14 +268,12 @@ if __name__ == '__main__':
         t.backends.cudnn.benchmark = False
     seed_everything(seed)
     os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":16:8"
-
     def worker_init_fn(worker_id):
         worker_seed = t.initial_seed() % 2 ** 32
         np.random.seed(worker_seed)
         random.seed(worker_seed)
     g = t.Generator()
     g.manual_seed(seed)
-
     def generator(seed):
         g = t.Generator()
         g.manual_seed(seed)
@@ -303,7 +301,6 @@ if __name__ == '__main__':
     else:
         for name in opt.netname:
             exec('from experiments.'+opt.expnum+'.'+name+' import *')
-
     def my_loss(output, target):
         myloss = t.mean(t.multiply(weightv, (output - target))**2)
         return myloss
@@ -328,12 +325,10 @@ if __name__ == '__main__':
 
     lb = opt.lb
     epoch0 = -1
-
     #@simple_time_tracker(_log)
     class Prepare_train(object):
         def __init__(self, **argd):
             self.__dict__.update(argd)
-
     def trainit(lframe, train_part, bs, nsp, classicnorm, csvname, ampl,
                 rank, homepath, rot_dirs, merging_order, iscuda):
         if rank == 0:
@@ -346,46 +341,38 @@ if __name__ == '__main__':
             for pcnt, phase in enumerate(['train', 'val']):
                 lbs.append(lfl[pcnt]%bs if lfl[pcnt]%bs else bs)
                 ebn.append(int(len(lframe)*trFrac[pcnt]/bs))
-                print('{} consists of {} full batches '
-                      'with {} tensors with {}' \
+                print('{} consists of {} full batches with {} tensors with {}' \
                       ' views'.format(phase, ebn[pcnt], opt.bs, nim))
                 if lfl[pcnt]%opt.bs:
                     print('the last batch has size of {}' \
                           ' tensors with {} views'.format(lbs[pcnt], nim))
                 batchsum.append(ebn[pcnt] + lbs[pcnt])
-        # TODO change name F_Nw on GTw, as to have single variable name for all
+        #TODO change name F_Nw on GTw, as to have single variable name for all
         if opt.loadh5:
-            y_n, bX, F_Nw, prmatw = \
-                [np.array(h5py.File(jn(csvPath,nm), 'r').get('dataset')) for nm in
-                    ['y_n_fibo_' + str(nsp) + classicnorm+'_whole.h5',
-                        'bX_fibo_' + str(nsp) + classicnorm+'_whole.h5',
-                        csvname+'_F_N.h5',
-                        opt.specie+'prmat.h5']]
+            y_n, bX, F_Nw, prmatw = [np.array(h5py.File(jn(csvPath,nm), 'r').get('dataset')) for nm in
+                                     ['y_n_fibo_' + str(nsp) + classicnorm+'_whole.h5',
+                                      'bX_fibo_' + str(nsp) + classicnorm+'_whole.h5',
+                                      csvname+'_F_N.h5',
+                                      opt.specie+'prmat.h5']]
             bigm = np.copy(prmatw)
             bigm[:, :, 3, :] = np.repeat(np.repeat(np.expand_dims([0, 0, 0, 1],
-                axis=(0, 1)), 36, axis=1), prmatw.shape[0], axis=0)
-            matw = np.einsum('ij, njk->nik', np.linalg.inv(bigm[0, 0, :, :]),
-                             bigm[:, 0, :, :])
+                                                                  axis=(0, 1)), 36, axis=1), prmatw.shape[0], axis=0)
+            matw = np.einsum('ij, njk->nik', np.linalg.inv(bigm[0, 0, :, :]), bigm[:, 0, :, :])
             F_Nw = F_Nw[:, :ampl]
             tmean = np.zeros([2, F_Nw.shape[0], ampl])
             for x in ['train', 'val']:
-                df_dict[x].to_csv(jn(dirname, 'pathes_df_' + x + '.csv'),
-                                  index=False)
+                df_dict[x].to_csv(jn(dirname, 'pathes_df_' + x + '.csv'), index=False)
             if opt.minmax_fn == 'min,max':
                 tmean[0] = np.repeat(np.expand_dims(np.nanmin(F_Nw, 0),
-                                                    axis=0), F_Nw.shape[0],
-                                     axis=0)
+                                                    axis=0), F_Nw.shape[0], axis=0)
                 tmean[1] = np.repeat(np.expand_dims(np.nanmax(F_Nw, 0),
-                                                    axis=0), F_Nw.shape[0],
-                                     axis=0)
+                                                    axis=0), F_Nw.shape[0], axis=0)
                 F_Nw = (F_Nw - tmean[0]) / (tmean[1] - tmean[0])
             elif opt.minmax_fn == 'mean,std':
                 tmean[0] = np.repeat(np.expand_dims(np.nanmean(F_Nw, 0),
-                                                    axis=0), F_Nw.shape[0],
-                                     axis=0)
+                                                    axis=0), F_Nw.shape[0], axis=0)
                 tmean[1] = np.repeat(np.expand_dims(np.nanstd(F_Nw, 0),
-                                                    axis=0), F_Nw.shape[0],
-                                     axis=0)
+                                                    axis=0), F_Nw.shape[0], axis=0)
                 F_Nw = (F_Nw - tmean[0]) / tmean[1]
             bX = t.transpose(t.Tensor(bX), 0, 1)
             y_n, F_Nw, prmatw, bigm, matw = [t.Tensor(i) for i in \
@@ -404,14 +391,12 @@ if __name__ == '__main__':
             C[i,:,:] = \
                 np.matmul(np.matmul(E,prmat[4*i:4*(i+1),:]),
                           np.linalg.pinv(np.matmul(E,prmat[0:4,:])))
-        # TODO rewrite this part in order to reuse the same lines of code for
-        #  different options
+        # TODO rewrite this part in order to reuse the same lines of code for different options
         if opt.outputt == 'eul' \
                 and opt.merging == 'color':
             GTw = lframewh.loc[:,['eul' + str(i) for i in range(3)]].values
         elif opt.outputt == 'eul' and opt.merging == 'batch':
-            orients = lframewh.loc[:,['orient' + str(i)\
-                                      for i in range(9)]].values
+            orients = lframewh.loc[:,['orient' + str(i) for i in range(9)]].values
             GTw0 = np.einsum('ijk,nkm->nijm', LA.inv(C),
                              orients.reshape([-1,3,3]))
             GTw = np.zeros([GTw0.shape[0],GTw0.shape[1],3])
@@ -422,12 +407,11 @@ if __name__ == '__main__':
         elif opt.outputt == 'orient' and opt.merging == 'color':
             GTw = lframewh.loc[:,['orient' + str(i) for i in range(9)]].values
         elif opt.outputt == 'orient' and opt.merging == 'batch':
-            orients = lframewh.loc[:, ['orient' +\
-                                       str(i) for i in range(9)]].values
+            orients = lframewh.loc[:, ['orient' + str(i) for i in range(9)]].values
             GTw0 = np.einsum('ijk,nkm->nijm', LA.inv(C),
                              orients.reshape([-1, 3, 3]))
             GTw = GTw0.reshape([-1,36,9])
-        # TODO normalize GTws for merging order separate
+        #TODO normalize GTws for merging order separate
         if opt.outputt == 'eul' and \
                 opt.merging == 'batch' and opt.minmax_fn:
             gstat = np.array([np.min(GTw,axis=(0,1)), np.max(GTw,axis=(0,1)),
@@ -441,17 +425,15 @@ if __name__ == '__main__':
             GTw = (GTw-gstat[2])/gstat[3]
         C, GTw = [t.Tensor(i) for i in [C, GTw]]
         if iscuda:
-            bX, C, y_n, F_Nw, prmatw, bigm, matw, GTw =\
-                [i.cuda() for i in \
-                    [bX, C, y_n, F_Nw, prmatw, bigm, matw, GTw]]
+            bX, C, y_n, F_Nw, prmatw, bigm, matw, GTw = [i.cuda() for i in \
+                                                         [bX, C, y_n, F_Nw, prmatw, bigm, matw, GTw]]
         if lb in ('eul', 'orient'):
             y_n2, y_n, dirs = (None,)*3
         if lb in ('f', 'pc', 'pc+f') and not rot_dirs:
             y_n2_one = t.unsqueeze(y_n[:nsp,:], axis=0)
             y_n2 = y_n2_one.repeat(opt.bs*enim, 1, 1)
             dirs = bX[:, :2].repeat(opt.bs*enim, 1, 1)
-        if all([not lb in ('eul', 'orient'), not rot_dirs,
-                merging_order == 'color']):
+        if all([not lb in ('eul', 'orient'), not rot_dirs, merging_order == 'color']):
             y_n2_one = t.unsqueeze(y_n[:nsp,:], axis=0)
             y_n2 = y_n2_one.expand(bs, nsp, ampl)
             dirs = bX[:, :2].expand(bs, nsp, 2)
@@ -459,8 +441,7 @@ if __name__ == '__main__':
             Path(jn(dirname, dirc)).mkdir(parents=True, exist_ok=True)
         lossoutdir = jn(dirname, 'loss_out')
         return y_n, bX, F_Nw, bX, C, y_n2, dirs, \
-            prmatw, bigm, matw, batchsum, lossoutdir, GTw
-
+               prmatw, bigm, matw, batchsum, lossoutdir, GTw
     def train_model(model, optimizer):
         since = time.time()
         lossar = np.zeros([4, opt.epoch])
@@ -475,8 +456,7 @@ if __name__ == '__main__':
                     nsp, classicnorm, opt.csvname, opt.ampl,
                     rank, homepath, opt.rot_dirs,
                     opt.merging, iscuda)
-        lossmb = [np.zeros([opt.epoch*batchsum[0]]),
-                  np.zeros([opt.epoch*batchsum[1]])]
+        lossmb = [np.zeros([opt.epoch*batchsum[0]]), np.zeros([opt.epoch*batchsum[1]])]
         for epoch in range(opt.epoch):
             if opt.parallel == 'horovod':
                 samplers = {x: t.utils.data.distributed.DistributedSampler(
@@ -492,12 +472,10 @@ if __name__ == '__main__':
                 samplers = None
                 dataloaders = {'train': t.utils.data.DataLoader(
                     image_datasets['train'],
-                    batch_size=opt.bs, shuffle=True,
-                    num_workers=opt.num_workers),
+                    batch_size=batch_size, shuffle=True, num_workers=opt.num_workers),
                     'val': t.utils.data.DataLoader(
                         image_datasets['val'],
-                        batch_size=opt.bs, shuffle=False,
-                        num_workers=opt.num_workers)
+                        batch_size=batch_size, shuffle=False, num_workers=opt.num_workers)
                 }
             if mt:
                 print('start training', time.time())
@@ -521,48 +499,40 @@ if __name__ == '__main__':
                     # print(idx)
                     bst = time.time()
                     if mt:
-                        print('start %d batch loading at %f' %(i_batch,
-                                                               time.time()))
+                        print('start %d batch loading at %f' %(i_batch, time.time()))
                     if opt.measure_time:
                         ts = time.time()
                     inputs = sample_batched[0]['image']
                     fl2int = lambda x : [int(x[i]) for i in range(len(x))]
-                    # absolute index
+                    #absolute index
                     index = fl2int(sample_batched[2].tolist())
                     angles_list = sample_batched[1].tolist()
                     pathes = lframe.loc[index, 'file_name'].tolist()
                     sz = inputs.shape
                     # cnum = sz[1]
-                    if all([lb in ('pc', 'f', 'eul', 'orient'),
-                            opt.gttype == 'single_file',
+                    if all([lb in ('pc', 'f', 'eul', 'orient'), opt.gttype == 'single_file',
                             opt.merging != 'color']):
-                        # TODO consolidate three senteces into one
-                        # TODO save index, angles list to one array, not two
+                        #TODO consolidate three senteces into one
+                        #TODO save index, angles list to one array, not two
                         # separate lists
                         pathes = [j for j in pathes for i in range(enim)]
                         index = [j for j in index for i in range(enim)]
-                        angles_list = [item for sublist in angles_list\
-                                       for item in sublist]
-                        # TODO use unified angles everywhere,
-                        # in degrees or in //10
+                        angles_list = [item for sublist in angles_list for item in sublist]
+                        #TODO use unified angles everywhere, in degrees or in //10
                         angles_list = [j//10 for j in angles_list]
                     if all([lb in ('pc', 'f'), opt.gttype == 'single_file']):
                         f_n = F_Nw[index,:]
                     if all([lb in ('eul', 'orient'), opt.gttype == 'single_file',
                             opt.merging == 'batch']):
                         GT = GTw[index, angles_list,:]
-                    if opt.outputt in ('eul', 'orient') and lb in\
-                            ('eul', 'orient') and \
+                    if opt.outputt in ('eul', 'orient') and lb in ('eul', 'orient') and \
                             opt.merging == 'color':
                         GT = GTw[index]
                     if (opt.inputt in ('img', 'pc', 'eul', 'orient')) and \
                             opt.merging == 'batch':
-                        inputs = t.Tensor(inputs).cuda() if iscuda\
-                            else t.Tensor(inputs)
+                        inputs = t.Tensor(inputs).cuda() if iscuda else t.Tensor(inputs)
                         inputs = t.unsqueeze(t.reshape(inputs,
-                                                       (sz[0]*sz[1],
-                                                        sz[2], sz[3])),
-                                             axis = 1)
+                                                       (sz[0]*sz[1], sz[2], sz[3])),axis = 1)
                     elif opt.inputt in ('img', 'pc') and \
                             opt.merging == 'color':
                         inputs = inputs.cuda() if iscuda else inputs
@@ -583,8 +553,7 @@ if __name__ == '__main__':
                         y_n2 = y_n2.cuda() if iscuda else y_n2
                         for i, angle in enumerate(angles_list):
                             y_n2[i] = \
-                                y_n[int(angle/10)*nsp:(int(angle/10) +
-                                                       1)*nsp,:]
+                                y_n[int(angle/10)*nsp:(int(angle/10) + 1)*nsp,:]
                     if lb != 'f_n' and opt.rot_dirs:
                         dirs = t.zeros(cbs, nsp, 2)
                         dirs = dirs.cuda() if iscuda else dirs
@@ -595,23 +564,48 @@ if __name__ == '__main__':
                                        1)*2]
                     if lb in ('pc', 'pc+f'):
                         # making pc GT
-                        GT = fn2p(y_n2[:cbs], f_n, dirs[:cbs], nsp,
-                                  vox2mm, iscuda)
-                        # TODO check whether it makes sense to shift
-                        #  cms and then subtract it again, if matrix only
-                        #  translate
-                        GT = t.cat((GT, t.ones(nsp).repeat(GT.shape[0],
-                                                           1, 1).cuda()),
-                                   axis=1)
+                        GT = fn2p(y_n2[:cbs], f_n, dirs[:cbs], nsp, vox2mm, iscuda)
+                        # cms = t.Tensor([lframe.loc[index, 'x_cms'].tolist(),
+                        #                 lframe.loc[index, 'y_cms'].tolist(),
+                        #                 lframe.loc[index, 'z_cms'].tolist()])
+                        # cms = cms.cuda() if iscuda else cms
+                        # TODO check whether it makes sense to shift cms and then subtract it again, if matrix only translate
+                        GT = t.cat((GT, t.ones(nsp).repeat(GT.shape[0], 1, 1).cuda()), axis=1)
                         GT = t.einsum('nji,nkj->nik', GT, matw[index, :, :])
                         GT = (GT / t.unsqueeze(GT[:, :, 3], axis=2))[:, :, :3]
                         GT = t.transpose(GT, 1, 2)
+
+                        # GT = t.cat(
+                        #     (GT.reshape([GT.shape[0], 3, -1]),
+                        #      t.ones(nsp).repeat(GT.shape[0], 1, 1).cuda()),
+                        #     axis=1)
+                        # # print(prmat.shape)
+                        # # mat = t.einsum('ij, kjn-> kin',
+                        # #                basisminv, prmat[:, 0, :, :])
+                        # # print(mat)
+                        # # GT = t.einsum('ijk,ikn->ijn', GT, mat)
+                        # np.save('C:/cherepashkin1/598test/plot_output/gt2.npy',
+                        #         GT.detach().cpu().numpy())
+                        # print('index', index)
+                        # GT = t.einsum('ijk,ijn->ikn', GT, matw[index,:,:])
+                        # # print(GT.shape)
+                        # GT = (GT / t.unsqueeze(GT[:, :, 3], axis=2))[:, :, :3]
+                        # GT = t.transpose(GT, 1, 2)
+                        # # print('GT shape after shift', GT.shape)
+                        # print(GT.shape)
+                        # print('GT stats after shift', getstat(GT[1,0,:]))
+                        # sys.exit()
+                        # print('GT shape', GT.shape)
+                        # GT = GT-cms.T.repeat(nsp,1,1).permute(1, 2, 0)
+                        # print('GT stats 3', getstat(GT[0,0]))
+                        # GT*=vox2mm
+                        # print('GT.shape', GT.shape)
+                        # print(t.mean(GT[0,:,:], axis=1))
                     if lb == 'pc' and opt.merging != 'color':
                         for i in range(cbs):
                             p[i, :, :] = t.matmul(
                                 t.transpose(t.squeeze(
-                                    C[int(angles_list[i]/10), :, :]), 0, 1),
-                                p[i, :, :])
+                                    C[int(angles_list[i]/10), :, :]), 0, 1), p[i, :, :])
                     if lb == 'f':
                         GT = t.einsum('bh,bph->bp', f_n, y_n2[:cbs])
                     with t.set_grad_enabled(phase == 'train'):
@@ -619,8 +613,8 @@ if __name__ == '__main__':
                         if opt.measure_time:
                             ts = time.time()
                         loss, outputs, outputs_2, latent = out2loss(opt, model,
-                            inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
-                            vox2mm, GT, loss_fn, moments, phase)
+                                                                    inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
+                                                                    vox2mm, GT, loss_fn, moments, phase)
                         if phase == 'train' and i_batch% \
                                 (int(1/opt.updateFraction))==0:
                             if opt.measure_time:
@@ -664,23 +658,19 @@ if __name__ == '__main__':
                             mkdir(parents=True, exist_ok=True)
                         np.savetxt(jn(dirname,'perbatch_showpoint', \
                                       'gtb_'+phase+ \
-                                      '_' + str(i_batch).zfill(3)),
-                                   gtb.reshape(cbs, -1))
+                                      '_' + str(i_batch).zfill(3)), gtb.reshape(cbs, -1))
                     if cond and opt.lb != 'f':
                         oob = ob[0]
                         oob = oob.reshape((3, nsp))
                     if cond and opt.lb == 'f' and opt.outputt == 'f_n':
                         oob = ob[0]
                         showmanypoints(cbs,nim,ob,gtb,pathes,angles_list,phase,
-                                       i_batch,cnt,jn(dirname,'showPoints',
-                                                      'perbatch_showpoint'),
+                                       i_batch,cnt,jn(dirname,'showPoints','perbatch_showpoint'),
                                        opt.merging, vox2mm)
                         np.savetxt(jn(dirname,'perbatch_showpoint', \
                                       'o_'+phase+'_' + str(cnt).zfill(3) + \
-                                      '_' + str(i_batch).zfill(3)),
-                                   ob.reshape(cbs, -1))
-                        print('curloss for %s phase for %d epoch for %d '
-                              'batch = %f' \
+                                      '_' + str(i_batch).zfill(3)), ob.reshape(cbs, -1))
+                        print('curloss for %s phase for %d epoch for %d batch = %f' \
                               %(phase,epoch,i_batch,np.mean(
                             np.abs(LA.norm(oob,axis=0)-LA.norm(gtb0,axis=0)))))
                         print(time.ctime())
@@ -690,11 +680,10 @@ if __name__ == '__main__':
                         phase == 'train':
                     original_stdout = sys.stdout
                     with open(jn(dirname, "opt.txt"), 'a') as f:
-                        sys.stdout = f  # Change the standard output to
-                        # the file we created.
+                        sys.stdout = f  # Change the standard output to the file we created.
                         print(opt)
                     with open(jn(dirname, "sys_argv.txt"), 'a') as f:
-                        sys.stdout = f
+                        sys.stdout = f  # Change the standard output to the file we created.
                         print(sys.argv)
                     sys.stdout = original_stdout
                 if opt.wandb and opt.measure_time:
@@ -729,28 +718,21 @@ if __name__ == '__main__':
                                     jn(dirname,n+'.py'))
                     shutil.copy(jn(homepath, 'main.py'),
                                 jn(dirname, 'main.py'))
-                    shutil.copy(jn(homepath, "transform"+
-                                   opt.transappendix+".py"),
-                                jn(dirname, "transform"+
-                                   opt.transappendix+".py"))
+                    shutil.copy(jn(homepath, "transform"+opt.transappendix+".py"),
+                                jn(dirname, "transform"+opt.transappendix+".py"))
                 if log1 and phase == 'val':
                     lossout('Average_loss_', 'Epoch', lossar, epoch,
                             lossoutdir , lb)
-                    lossout('!Single_seed_loss_', 'Epoch', curloss, epoch,
-                            lossoutdir, lb)
+                    lossout('!Single_seed_loss_', 'Epoch', curloss, epoch, lossoutdir, lb)
                     # lossmb_eff = [np.array([lossmb[i], np.zeros(lossmb[i].shape)])\
                     #               for i in range(2)]
-                    lossmb_eff = [np.array([lossmb[0],
-                                            np.zeros(lossmb[0].shape)]),
-                                  np.array([np.zeros(lossmb[1].shape),
-                                            lossmb[1]])]
+                    lossmb_eff = [np.array([lossmb[0], np.zeros(lossmb[0].shape)]),
+                                  np.array([np.zeros(lossmb[1].shape), lossmb[1]])]
                     for pcnt_c, phase_c in enumerate(['train', 'val']):
-                        lossout('Average_loss_minibatch_'+phase_c+'_',
-                                'Iteration',
+                        lossout('Average_loss_minibatch_'+phase_c+'_', 'Iteration',
                                 lossmb_eff[pcnt_c],
                                 abs_batch_cnt[pcnt_c], lossoutdir, lb)
-                if all([rank == 0, epoch > 0, opt.save_output,
-                        lb in ('eul', 'orient')]):
+                if all([rank == 0, epoch > 0, opt.save_output, lb in ('eul', 'orient')]):
                     t.save(model.state_dict(), jn(dirname,"model_state"))
                 if all([rank == 0, epoch > epoch0, opt.save_output,
                         lb in ('eul', 'orient')]):
@@ -763,13 +745,14 @@ if __name__ == '__main__':
             cnt += 1
             scheduler.step()
             if rank == 0:
-                print('epoch %d was done for %f seconds' %(epoch,
-                                                           time.time()-ste))
+                print('epoch %d was done for %f seconds' %(epoch, time.time()-ste))
         time_elapsed = time.time() - since
         if rank == 0:
             print('Training complete in {:.0f}m {:.0f}s'.format(
                 time_elapsed // 60, time_elapsed % 60))
         return model, lossar, time_elapsed
+
+
 
     #@simple_time_tracker(_log)
     class Seed3D_Dataset(Dataset):
@@ -780,8 +763,7 @@ if __name__ == '__main__':
             Args:
                 csv_file (string): Path to the csv file with annotations.
                 root_dir (string): Directory with all the images.
-                transform (callable, optional): Optional transform
-                to be applied
+                transform (callable, optional): Optional transform to be applied
                     on a sample.
             """
             self.df = lframe
@@ -791,10 +773,10 @@ if __name__ == '__main__':
         def __len__(self):
             return len(self.df)
 
-        # @simple_time_tracker(_log)
+        #@simple_time_tracker(_log)
         def __getitem__(self, idx):
             fln = self.df.iloc[idx]['file_name']
-            # ts = time.time()
+            #ts = time.time()
             if t.is_tensor(idx):
                 pass
             img = 0
@@ -811,16 +793,40 @@ if __name__ == '__main__':
             if opt.inputt == 'img' and opt.noise_input:
                 img = t.rand(enim, original_h, original_w)
                 angles_list = np.array([0])
+                # angles_list = np.array([0])
+            # print(inn and not(opt.rand_angle or opt.view_sep or opt.zero_angle),
+            # inn and not(opt.rand_angle or opt.view_sep) and opt.zero_angle)
+            # print('rand_angle', opt.rand_angle)
+            # print('view_sep', opt.view_sep)
+            # print('zero_angle', opt.zero_angle)
+            # print('inn', inn)
+
+            # if inn and not(opt.rand_angle or opt.view_sep or opt.zero_angle):
+            #     angles_list = np.zeros(alf.shape)
+            #     for i, angle in enumerate(alf):
+            #         newa = angle - 10*int(self.df.iloc[idx, 1])
+            #         angle = newa if newa >= 0 else newa+360
+            #         angles_list[i] = int(angle)
+
+            # elif inn and not(opt.rand_angle or opt.view_sep) and opt.zero_angle and\
+            #         enim > 1:
+            #     angles_list = np.zeros(alf.shape)
+            #     for i, angle in enumerate(alf):
+            #         newa = angle - 10*int(self.df.iloc[idx, 1])
+            #         angle = newa if newa >= 0 else newa+360
+            #         angles_list[i] = int(angle)
+            # if opt.inputt == 'img' and opt.noise_input:
             if inn and not(opt.rand_angle or opt.view_sep) and opt.zero_angle:
                 angles_list = np.array(alf)
             elif inn and not(opt.rand_angle or opt.zero_angle or opt.view_sep):
                 angles_list = np.array([10*self.df.loc[idx,'zero_angle']])
             angles_list = angles_list.astype(int)
+            #         for i in range(len(angles_list)):
+            #             angles_list[i] = int(angles_list[i])
             if inn:
                 # st = time.time()
                 img_name = []
-                img = np.zeros([enim, original_h,
-                                original_w]).astype(np.single)
+                img = np.zeros([enim, original_h, original_w]).astype(np.single)
                 for i in range(enim):
                     img_name = jn(
                         self.root_dir.replace('phenoseed_csv', 'phenoseed'),
@@ -835,6 +841,7 @@ if __name__ == '__main__':
                         h2, w2 = original_h, original_w
                         th, tw = int((h2-h1) / 2), int((w2-w1) / 2)
                         img[i] = np.pad(curim, ((th, th), (tw, tw)))
+                # print('one image loaded in %f seconds' %(time.time()-st))
             if not opt.noise_output and not opt.gttype == 'single_file':
                 fara = np.genfromtxt(jn(self.root_dir, (
                         fln +
@@ -851,13 +858,87 @@ if __name__ == '__main__':
                     enim == 1 and not opt.gttype == 'single_file':
                 far = fara[int(angles_list[0]/10)]
                 f_n = f_na[int(angles_list[0]/10)]
+            # if not opt.gttype == 'single_f_n':
+            #     sample = {'image': img, 'idx': idx}
             if opt.gttype == 'single_file':
+                # f_n = np.genfromtxt(jn(self.root_dir, (
+                #     self.df.iloc[idx, 0] +
+                #     '_F_N.csv')).replace('\\', '/'), delimiter=',')
+                # path2 = [path]*enim
                 sample = {'image': img}
             if self.transform:
                 st = time.time()
                 sample = self.transform(sample)
+            #tf = time.time()
+            # if opt.wandb:
+            #     wandb.log({'loading single data sample ': tf-ts})
             return sample, angles_list, self.df.iloc[idx]['index'], idx
-    data_transforms = transformdef(opt, homepath)
+    exec(open(jn(homepath, "transform"+opt.transappendix+".py")).read())
+    if mt:
+        print('define transforms options')
+    batch_size = opt.bs
+    if not opt.noise_output and opt.minmax:
+        tmean = np.genfromtxt(
+            jn(homepath,'csv','tmean.csv'),
+            delimiter=',')
+    else:
+        tmean = np.zeros([5270, opt.ampl])
+    minmax, minmax3dimage, normalize, center, cmscrop, cencrop, downsample = ['']*7
+    if opt.minmax:
+        minmax = 'Minmax(tmean[:,:opt.ampl]), '
+    else:
+        minmax = ''
+    if opt.inputt == 'pc' and opt.minmax3dimage:
+        minmax3dimage = \
+            'Minmax3Dimage(\
+                np.array([29,  1,  4]), np.array([240, 138, 243])), '
+    else:
+        minmax3dimage = ''
+    if opt.inputt == 'pc' and opt.normalize:
+        normalize = 'Normalize(), '
+    else:
+        normalize = ''
+    if opt.inputt == 'pc' and opt.center:
+        center = 'Center(), '
+    else:
+        center = ''
+    if not opt.inputt == 'pc' and opt.cmscrop:
+        cmscrop = 'CmsCrop(opt.cmscrop),'
+    else:
+        cmscrop = ''
+    if not opt.inputt == 'pc' and opt.cencrop:
+        cencrop = 'CentralCrop(opt.cencrop),'
+    else:
+        cencrop = ''
+    if opt.inputt == 'pc' and opt.downsample:
+        downsample = 'Downsample(opt.downsample), '
+    else:
+        downsample = ''
+    if opt.inputt == 'f':
+        minmax3dimage, normalize, center, cmscrop, downsample, rescale = ['']*6
+    if opt.inputt == 'f' and opt.minmax_f:
+        minmax_f = 'Minmax_f((2.6897299652941, 102.121738007844)), '
+    else:
+        minmax_f = ''
+    if opt.inputt == 'img' and opt.rescale:
+        rescale = 'Rescale(opt.rescale), '
+    else:
+        rescale = ''
+    if opt.inputt == 'img':
+        standardize = 'Standardize(opt.standardize), '
+    else:
+        standardize = ''
+    if opt.noise_input or opt.single_folder:
+        (minmax, minmax3dimage, normalize, center,
+         cmscrop, cencrop, downsample, minmax_f) = ['']*8
+        rescale = 'Rescale(opt.rescale), '
+
+    es0 = "transforms.Compose([" + \
+          cencrop+cmscrop+rescale+standardize+minmax3dimage+normalize+center+ \
+          downsample+"])"
+    # TODO rewrite without exec
+    exec("data_transforms = {\'train\': "+es0+",'val': "+es0+"}")
+    print(data_transforms)
     # kwargs = {}
     # kwargs = {'num_workers': 1, 'pin_memory': True} if opt.parallel == 'hvd' else {}
     kwargs = {'num_workers': opt.num_workers, 'pin_memory': opt.pin_memory} \
@@ -880,12 +961,61 @@ if __name__ == '__main__':
         transform=data_transforms[x]) for x in ['train', 'val']}
     if mt:
         print('define dataloaders and samplers')
+
+    # if opt.parallel == 'hvd':
+    #     samplers = {x: t.utils.data.distributed.DistributedSampler(
+    #         image_datasets[x], num_replicas=hvd.size(),
+    #         rank=hvd.rank(), shuffle=False) for x in ['train', 'val']}
+    #     # Create training and validation dataloaders
+    #     dataloaders_dict = {x: t.utils.data.DataLoader(
+    #         image_datasets[x],
+    #         batch_size=opt.bs, shuffle=False, sampler=samplers[x],
+    #         worker_init_fn=seed_worker,
+    #         generator=g, **kwargs) for x in ['train', 'val']}
+    # elif opt.parallel == 'torch':
+    #     samplers = None
+    #     dataloaders_dict = {x: t.utils.data.DataLoader(
+    #         image_datasets[x],
+    #         batch_size=batch_size, shuffle=False, num_workers=opt.num_workers)
+    #         for x in ['train', 'val']}
+
+
+    # # Gather the parameters to be optimized/updated in this run. If we are
+    # #  finetuning we will be updating all parameters. However, if we are
+    # #  doing feature extract method, we will only update the parameters
+    # #  that we have just initialized, i.e. the parameters with requires_grad
+    # #  is True.
+    # params_to_update = model_ft.parameters()
+    # print("Params to learn:")
+    # if feature_extract:
+    #     params_to_update = []
+    #     for name,param in model_ft.named_parameters():
+    #         if param.requires_grad == True:
+    #             params_to_update.append(param)
+    #             print("\t",name)
+    # else:
+    #     for name,param in model_ft.named_parameters():
+    #         if param.requires_grad == True:
+    #             print("\t",name)
+
+    # criterion = nn.MSELoss(reduction='mean')
+    # bn = opt.bn
+    opt.epoch = opt.epoch
     lossar = np.zeros([2, opt.epoch])
+    # Train and evaluate
+    # hidden_dim = np.array([int(i) for i in opt.hidden_dim])
     hidden_dim = np.array(opt.hidden_dim)
+    # print(hidden_dim)
     chidden_dim = np.array(opt.chidden_dim)
     kernel_sizes = np.array(opt.kernel_sizes)
+    # exec(opt.hidden_dim)
+    # print(int(opt.chidden_dim.split(';')))
+    # exec(opt.chidden_dim)
+    # exec(opt.kernel_sizes)
+
     cropf = opt.cencrop if opt.cencrop else original_h
     rescalef = opt.rescale if cropf > opt.rescale else cropf
+
     if opt.num_input_images > 1 and opt.merging == 'batch':
         cnum = 1
     else:
@@ -900,6 +1030,8 @@ if __name__ == '__main__':
             use_pretrained=opt.use_pretrained)
     elif not bool(opt.model_name) and opt.inputt == 'img' and \
             opt.merging != 'latent':
+        # print('rescale', rescalef,
+        #     int(rescalef*original_w/original_h))
         smodel = CNet(
             hidden_dim, chidden_dim, kernel_sizes,
             cnum, rescalef,
@@ -924,6 +1056,7 @@ if __name__ == '__main__':
         smodel1 = dpwrap(smodel1)
     if opt.conTrain:
         smodel.load_state_dict(t.load(jn(dir1,opt.conTrain,'model')))
+
     if opt.merging != 'latent':
         smodel = dpwrap(smodel)
     lr = opt.lr*hvd.local_size() if opt.parallel == 'horovod' else opt.lr
@@ -935,6 +1068,7 @@ if __name__ == '__main__':
     optimizer = t.optim.Adam(
         smodel.parameters(), lr, betas=(0.9, 0.999), eps=1e-08,
         weight_decay=opt.weight_decay, amsgrad=False)
+    # print(opt.steplr[0],type(opt.steplr[0]),opt.steplr[1],type(opt.steplr[1]))
     scheduler = StepLR(optimizer, step_size=opt.steplr[0], gamma=opt.steplr[1])
     if opt.criterion == 'L2':
         loss_fn = nn.MSELoss(reduction='none')
@@ -944,18 +1078,32 @@ if __name__ == '__main__':
         # Horovod: broadcast parameters & optimizer state.
         hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
         hvd.broadcast_optimizer_state(optimizer, root_rank=0)
+
         # Horovod: (optional) compression algorithm.
         compression = hvd.Compression.none
+        # compression = hvd.Compression.fp16 if
         # args.fp16_allreduce else hvd.Compression.none
+
         # Horovod: wrap optimizer with DistributedOptimizer.
         optimizer = hvd.DistributedOptimizer(
             optimizer, named_parameters=smodel.named_parameters(),
             compression=compression,
             op=hvd.Adasum if opt.use_adasum else hvd.Average,
             gradient_predivide_factor=opt.gradient_predivide_factor)
+    # for pcnt, phase in enumerate(['train','val']):
+    #     for i_batch, sample_batched in enumerate(dataloaders[phase]):
+    #         img = sample_batched['img']
+    #         bsa[pcnt, i_batch] = img.shape[0]
+    # print(bsa)
     if mt:
         print('model .. = train_model(..)')
+    # print('tttrain consists of %d images' %len(dataloaders_dict['train']))
+    # model, lossar, time_elapsed = train_model(
+    #     smodel, criterion, optimizer, tmean,
+    #     opt.epoch=opt.epoch,
+    #     is_inception=(opt.model_name == "inception"))
     model, lossar, time_elapsed = train_model(smodel, optimizer)
+
     if mt:
         print('saving output after training')
     if rank == 0 and opt.save_output:
@@ -967,4 +1115,40 @@ if __name__ == '__main__':
             sys.stdout = original_stdout
             f.write('time_elapsed=' + \
                     str(datetime.timedelta(seconds=time_elapsed)) + '\n')
+        #     phase = 'val'
+        #     bn = 1
+        #     dataloaders = dataloaders_dict
+        #     for i_batch, sample_batched in enumerate(dataloaders[phase]):
+        #         if i_batch == bn:
+        #             break
+        #         inputs = sample_batched['image']
+        #         if opt.inputt:
+        #             x = inputs
+        #             y = t.zeros([x.shape[0], x.shape[1]])
+        #             y = y.cuda()
+        #             for i in range(x.shape[0]):
+        #                 y[i, :] = t.sqrt(
+        #                     x[i, :, 0]**2 + x[i, :, 1]**2 + x[i, :, 2]**2)
+        #             y = t.unsqueeze(y, 2)
+        #             o = model(y)
+        #         else:
+        #             o = model(inputs)
+        #         gt = sample_batched['landmarks']
+
+        #     if opt.minmax:
+        #         ampl = opt.ampl
+        #         output = np.multiply(model(inputs).detach().cpu().numpy(),
+        #                              tmean[3, :ampl] -
+        #                              tmean[2, :ampl]) + tmean[2, :ampl]
+        #         real_output = np.multiply(gt.detach().cpu().numpy(),
+        #                                   tmean[3, :ampl] -
+        #                                   tmean[2, :ampl]) + tmean[2, :ampl]
+        #     else:
+        #         output = o.detach().cpu().numpy()
+        #         real_output = gt.detach().cpu().numpy()
+
+        # t.save(model.state_dict(), dirname+"model")
+        # for x in ['train', 'val']:
+        #     df_dict[x].to_csv(dirname+'pathes_df_'+x+'.csv')
         print('ellapsed time = ', time.time()-tstart)
+        # ## Return SH coefficient vector from the trained model
