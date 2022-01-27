@@ -32,7 +32,7 @@ def preprodf(homepath, opt, mt1):
         good = f.readlines()
     for g in good:
         exception_list = [x for x in exception_list if g not in x]
-    pts = jn(homepath, 'csv', opt.specie + 'frame.csv')
+    pts = jn(homepath, 'csv', opt.dfname+'.csv')
     print('file to frame csv', pts)
     if mt1:
         frameinfo = getframeinfo(currentframe())

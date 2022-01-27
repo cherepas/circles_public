@@ -20,4 +20,4 @@ source /p/home/jusers/cherepashkin1/jureca/cherepashkin1/virt_enves/venv1/activa
 # # make sure all GPUs on a node are visible
 export CUDA_VISIBLE_DEVICES="0,1,2,3"
 
-python -u "main.py" -datapath "/p/project/delia-mp/cherepashkin1/phenoseed/" -epoch 1 -bs 5 -num_input_images 1 -framelim 40 -criterion 'L2' -localexp "" -lr 1e-4 -expnum "e000" -hidden_dim 9 -inputt "img" -outputt "orient" -lb "orient" -no_loadh5 -minmax_fn "" -parallel "torch" -machine "lenovo" -merging "color" -aug_gt "orient" -updateFraction 0.25 -steplr 1000 1 -print_minibatch 1
+python -u "main.py" -datapath "/p/project/delia-mp/cherepashkin1/phenoseed/" -epoch 1 -bs 5 -num_input_images 1 -framelim 40 -criterion 'L2' -localexp "" -lr 1e-4 -expnum "e000" -hidden_dim 9 -inputt "img" -outputt "orient" -lb "orient" -no_loadh5 -minmax_fn "" -parallel "torch" -machine "lenovo" -merging "color" -aug_gt "orient" -updateFraction 0.25 -steplr 1000 1 -print_minibatch 1 -dfname "598frame_dummy"
