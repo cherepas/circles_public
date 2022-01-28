@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b42c7944-045a-4c08-9929-7c8a606be81f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lenovo_run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e067/013l/opt.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e067/014l/opt.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e067/014l/opt.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e067/014l/sys_argv.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lenovo_run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/lenovo_run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot_output/e067/counter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plot_output/e067/counter.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
