@@ -627,7 +627,7 @@ if __name__ == '__main__':
                             ts = time.time()
                         loss, outputs, outputs_2, latent = out2loss(opt, model,
                             inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
-                            vox2mm, GT, loss_fn, moments, phase)
+                            vox2mm, GT, loss_fn, moments, phase, dirname)
                         if phase == 'train' and i_batch% \
                                 (int(1/opt.updateFraction))==0:
                             if opt.measure_time:
@@ -760,8 +760,9 @@ if __name__ == '__main__':
                 if all([rank == 0, epoch > 0, opt.save_output,
                         lb in ('eul', 'orient')]):
                     t.save(model.state_dict(), jn(dirname,"model_state"))
-                if all([rank == 0, epoch > epoch0, opt.save_output,
+                if all([isinstance(latent, t.Tensor), rank == 0, epoch > epoch0, opt.save_output,
                         lb in ('eul', 'orient')]):
+                    print(765, latent)
                     np.savetxt(jn(dirname,'latent','latent_'+phase+'_' + \
                                   str(cnt).zfill(3)),
                                latent.detach().cpu().numpy(), delimiter=',')
