@@ -1,0 +1,39 @@
+
+  Preparing the environment for use of requested stage ( 2020 ).
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+cpu_bind=NONE - jrc0229, task  3  3 [19115]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  1  1 [19114]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  2  2 [19116]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  0  0 [19117]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "main.py", line 969, in <module>
+Traceback (most recent call last):
+  File "main.py", line 969, in <module>
+Traceback (most recent call last):
+  File "main.py", line 969, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "main.py", line 487, in train_model
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "main.py", line 487, in train_model
+    lossmb = [np.zeros([opt.epoch*batchsum[0]]),
+IndexError: list index out of range
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "main.py", line 487, in train_model
+    lossmb = [np.zeros([opt.epoch*batchsum[0]]),
+IndexError: list index out of range
+    lossmb = [np.zeros([opt.epoch*batchsum[0]]),
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "main.py", line 969, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "main.py", line 495, in train_model
+    dataloaders = {x: t.utils.data.DataLoader(
+  File "main.py", line 498, in <dictcomp>
+    worker_init_fn=seed_worker,
+NameError: name 'seed_worker' is not defined
+srun: error: jrc0229: tasks 0-3: Exited with exit code 1

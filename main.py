@@ -251,7 +251,7 @@ if __name__ == '__main__':
     elif all([opt.localexp, opt.save_output, rank == 0,
               not os.path.isdir(dirname)]):
         Path(dirname).mkdir(parents=True, exist_ok=True)
-    else:
+    elif rank == 0:
         dirname = jn(dir1, 'misc')
 
     conTrain = opt.conTrain
@@ -360,6 +360,8 @@ if __name__ == '__main__':
                     print('the last batch has size of {}' \
                           ' tensors with {} views'.format(lbs[pcnt], nim))
                 batchsum.append(ebn[pcnt] + lbs[pcnt])
+        else:
+            batchsum = []
         # TODO change name F_Nw on GTw, as to have single variable name for all
         if opt.loadh5:
             y_n, bX, F_Nw, prmatw = \
