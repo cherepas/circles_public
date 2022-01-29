@@ -251,7 +251,7 @@ if __name__ == '__main__':
     elif all([opt.localexp, opt.save_output, rank == 0,
               not os.path.isdir(dirname)]):
         Path(dirname).mkdir(parents=True, exist_ok=True)
-    else:
+    elif rank == 0:
         dirname = jn(dir1, 'misc')
 
     conTrain = opt.conTrain
