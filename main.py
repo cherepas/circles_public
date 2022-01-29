@@ -343,25 +343,24 @@ if __name__ == '__main__':
 
     def trainit(lframe, train_part, bs, nsp, classicnorm, csvname, ampl,
                 rank, homepath, rot_dirs, merging_order, iscuda):
-        if rank == 0:
-            print(time.ctime()) # 'Mon Oct 18 13:35:29 2010'
-            lbs = []
-            ebn = []
-            batchsum = []
-            trFrac = [0.8, 1-0.8]
-            lfl = [train_part, len(lframe)-train_part]
-            for pcnt, phase in enumerate(['train', 'val']):
-                lbs.append(lfl[pcnt]%bs if lfl[pcnt]%bs else bs)
-                ebn.append(int(len(lframe)*trFrac[pcnt]/bs))
+
+        # print(time.ctime()) # 'Mon Oct 18 13:35:29 2010'
+        lbs = []
+        ebn = []
+        batchsum = []
+        trFrac = [0.8, 1-0.8]
+        lfl = [train_part, len(lframe)-train_part]
+        for pcnt, phase in enumerate(['train', 'val']):
+            lbs.append(lfl[pcnt]%bs if lfl[pcnt]%bs else bs)
+            ebn.append(int(len(lframe)*trFrac[pcnt]/bs))
+            if rank == 0:
                 print('{} consists of {} full batches '
                       'with {} tensors with {}' \
                       ' views'.format(phase, ebn[pcnt], opt.bs, nim))
-                if lfl[pcnt]%opt.bs:
-                    print('the last batch has size of {}' \
-                          ' tensors with {} views'.format(lbs[pcnt], nim))
-                batchsum.append(ebn[pcnt] + lbs[pcnt])
-        else:
-            batchsum = []
+            if lfl[pcnt]%opt.bs and rank==0:
+                print('the last batch has size of {}' \
+                      ' tensors with {} views'.format(lbs[pcnt], nim))
+            batchsum.append(ebn[pcnt] + lbs[pcnt])
         # TODO change name F_Nw on GTw, as to have single variable name for all
         if opt.loadh5:
             y_n, bX, F_Nw, prmatw = \
@@ -495,7 +494,7 @@ if __name__ == '__main__':
                 dataloaders = {x: t.utils.data.DataLoader(
                     image_datasets[x],
                     batch_size=opt.bs, shuffle=False, sampler=samplers[x],
-                    worker_init_fn=seed_worker,
+                    worker_init_fn=None,
                     generator=g, **kwargs) for x in ['train', 'val']}
             elif opt.parallel == 'torch':
                 samplers = None
