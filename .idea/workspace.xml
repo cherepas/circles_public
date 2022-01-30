@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42c7944-045a-4c08-9929-7c8a606be81f" name="Changes" comment="" />
+    <list default="true" id="b42c7944-045a-4c08-9929-7c8a606be81f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/plot_output/e067/counter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plot_output/e067/counter.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/switcher.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
