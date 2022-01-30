@@ -1,0 +1,35 @@
+Lmod has detected the following error: These module(s) or extension(s) exist but cannot be loaded as
+requested: "Horovod/0.20.3-Python-3.8.5"
+   Try: "module spider Horovod/0.20.3-Python-3.8.5" to see how to load the module(s).
+
+
+
+
+  Preparing the environment for use of requested stage ( 2020 ).
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+[jrc0225:27930] OPAL ERROR: Unreachable in file ext3x_client.c at line 112
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    no-pmi
+But I couldn't open the help file:
+    /p/software/jurecadc/stages/2020/software/OpenMPI/4.1.1-GCC-10.3.0/share/openmpi/help-ompi-rte-pmix.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init_thread
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[jrc0225:27930] [0] func:/p/software/jurecadc/stages/2020/software/OpenMPI/4.1.1-GCC-10.3.0/lib/libopen-pal.so.40(opal_backtrace_buffer+0x23) [0x153e7af850a3]
+[jrc0225:27930] [1] func:/p/software/jurecadc/stages/2020/software/OpenMPI/4.1.1-GCC-10.3.0/lib/libmpi.so.40(ompi_mpi_abort+0x11f) [0x153e7b01b93f]
+[jrc0225:27930] [2] func:/p/software/jurecadc/stages/2020/software/OpenMPI/4.1.1-GCC-10.3.0/lib/libmpi.so.40(ompi_mpi_errors_are_fatal_comm_handler+0xb3) [0x153e7b00d863]
+[jrc0225:27930] [3] func:/p/software/jurecadc/stages/2020/software/OpenMPI/4.1.1-GCC-10.3.0/lib/libmpi.so.40(ompi_errhandler_invoke+0x18e) [0x153e7b00cd8e]
+[jrc0225:27930] [4] func:/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_lib_v2.cpython-38-x86_64-linux-gnu.so(_ZN7horovod6common10MPIContext10InitializeERNS0_17MPIContextManagerE+0x9e) [0x153e7b1e249e]
+[jrc0225:27930] [5] func:/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_lib_v2.cpython-38-x86_64-linux-gnu.so(+0x9e52c) [0x153e7b19452c]
+[jrc0225:27930] [6] func:/p/software/jurecadc/stages/2020/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xe2790) [0x153f3f0df790]
+[jrc0225:27930] [7] func:/usr/lib64/libpthread.so.0(+0x817a) [0x153f5584c17a]
+[jrc0225:27930] [8] func:/usr/lib64/libc.so.6(clone+0x43) [0x153f55377dc3]
+[jrc0225:27930] Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error messages, and not able to guarantee that all other processes were killed!
