@@ -1,0 +1,35 @@
+
+  Preparing the environment for use of requested stage ( 2020 ).
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+cpu_bind=NONE - jrc0213, task  2  2 [3592]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0213, task  1  1 [3590]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0213, task  0  0 [3593]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0213, task  3  3 [3591]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "../../main.py", line 261, in <module>
+    dic2csv(jn(dirname,'opt.csv'), opt.__dict__)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/helpers.py", line 505, in dic2csv
+    with open(path, 'w', newline='\n') as csv_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../plot_output/e068/opt.csv'
+Traceback (most recent call last):
+  File "../../main.py", line 261, in <module>
+    dic2csv(jn(dirname,'opt.csv'), opt.__dict__)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/helpers.py", line 505, in dic2csv
+Traceback (most recent call last):
+  File "../../main.py", line 261, in <module>
+Traceback (most recent call last):
+  File "../../main.py", line 227, in <module>
+    with open(path, 'w', newline='\n') as csv_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../plot_output/e068/opt.csv'
+    with open(jn(dir1,'counter.txt'), 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../../plot_output/e068/counter.txt'
+    dic2csv(jn(dirname,'opt.csv'), opt.__dict__)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/helpers.py", line 505, in dic2csv
+    with open(path, 'w', newline='\n') as csv_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../plot_output/e068/opt.csv'
+srun: error: jrc0213: tasks 0-3: Exited with exit code 1
