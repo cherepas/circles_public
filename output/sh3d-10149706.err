@@ -1,8 +1,0 @@
-
-  Preparing the environment for use of requested stage ( 2020 ).
-
-The following modules were not unloaded:
-  (Use "module --force purge" to unload all):
-
-  1) Stages/2020
-Setting HOROVOD_MPI_THREADS_DISABLE=1. 
