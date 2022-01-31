@@ -987,10 +987,10 @@ if __name__ == '__main__':
     if mt:
         print('saving output after training')
     if rank == 0 and opt.save_output:
-        # print(987, dirname,
-        #                 jn(opt.datapath.replace(
-        #                     opt.datapath.split('/')[-2], ''), 'local_output',
-        #                     opt.expnum, opt.jobname.replace('.sh', '')))
+        print(987, dirname,
+                        jn(opt.datapath.replace(
+                            opt.datapath.split('/')[-2], ''), 'local_output',
+                            opt.expnum, opt.jobname.replace('.sh', '')))
         shutil.copytree(dirname,
                         jn(opt.datapath.replace(
                             opt.datapath.split('/')[-2], ''), 'local_output',

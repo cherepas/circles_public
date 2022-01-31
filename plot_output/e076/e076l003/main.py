@@ -226,7 +226,7 @@ if __name__ == '__main__':
     homepath = __file__.replace(__file__.split('/')[-1], '')
     dir1 = jn(__file__.replace(__file__.split('/')[-1], ''), 'plot_output',
               opt.expnum)
-    dirname = jn(dir1, opt.jobname.replace('.sh', ''))
+    dirname = jn(dir1, opt.jobname.replace('sh', ''))
     if opt.save_output and rank == 0 and not os.path.isdir(dirname):
         Path(dirname).mkdir(parents=True, exist_ok=True)
         shutil.copy(jn(opt.jobdir, opt.jobname), jn(dirname, opt.jobname))
@@ -763,10 +763,6 @@ if __name__ == '__main__':
                             lossoutdir, lb)
                     # lossmb_eff = [np.array([lossmb[i], np.zeros(lossmb[i].shape)])\
                     #               for i in range(2)]
-                    np.savetxt(jn(lossoutdir,'lossar'), lossar, delimiter=',')
-                    np.savetxt(jn(lossoutdir, 'curloss'), curloss, delimiter=',')
-                    np.savetxt(jn(lossoutdir, 'lossmb_train'), lossmb[0], delimiter=',')
-                    np.savetxt(jn(lossoutdir, 'lossmb_val'), lossmb[1], delimiter=',')
                     lossmb_eff = [np.array([lossmb[0],
                                             np.zeros(lossmb[0].shape)]),
                                   np.array([np.zeros(lossmb[1].shape),
@@ -987,10 +983,10 @@ if __name__ == '__main__':
     if mt:
         print('saving output after training')
     if rank == 0 and opt.save_output:
-        # print(987, dirname,
-        #                 jn(opt.datapath.replace(
-        #                     opt.datapath.split('/')[-2], ''), 'local_output',
-        #                     opt.expnum, opt.jobname.replace('.sh', '')))
+        print(987, dirname,
+                        jn(opt.datapath.replace(
+                            opt.datapath.split('/')[-2], ''), 'local_output',
+                            opt.expnum, opt.jobname.replace('.sh', '')))
         shutil.copytree(dirname,
                         jn(opt.datapath.replace(
                             opt.datapath.split('/')[-2], ''), 'local_output',

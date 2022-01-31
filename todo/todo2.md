@@ -325,7 +325,7 @@ It is not the same, if calculate orientation matrix from rotated point cloud.
 - Treat independent datapoints (in batch channel). Concatenate output of the network in last convolutional output of the network. Or in the first FC layer. Add additional FC layer of size 32 or 128, for example. 
 - For ellipsoid fitting, read Direct least square fitting of ellipses https://ieeexplore.ieee.org/document/765658
 
-#Update report for 31.01.2022
+# Update report for 31.01.2022
 ![](../notebooks/figs/089.png)
 
 It takes 0.1 seconds for minibatch with size 5 and 3 views to calculate validation loss with augmentation. 
@@ -335,15 +335,49 @@ It takes 0.1 seconds for minibatch with size 5 and 3 views to calculate validati
 - Num_input_images [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 36]
 - Batch size [15, 20, 25, 30, 35, 40, 45, 50, 100, 200]
 - [L1, L2] * [batch_merging, color_merging] * [update_fraction = 0.1, update_fraction = 0.25]
+
+# e067/016w
+parameter | value
+--- | :---:
+bs | 15
+'-num_input_images' | '3'
+'-framelim' | '6000'
+'-criterion' | 'L2'
+'-lr' | '1e-4'
+'-hidden_dim' | '9'
+'-inputt' | 'img'
+'-outputt' | 'orient'
+'-machine' | 'workstation'
+'-merging' | 'color'
+'-updateFraction' | '0.25'
+'-aug_gt' | 'orient'
+['-epoch', '40', '-bs', '15', '-num_input_images', '3', '-framelim', '6000', '-criterion', 'L2', '-localexp', '', '-lr', '1e-4', '-expnum', 'e067', '-hidden_dim', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'workstation', '-merging', 'color', '-aug_gt', 'orient', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
+
+Validation loss is around 0.02. 
+![](../plot_output/e067/016w/loss_out/Average_loss_Loss.png)
+![](../plot_output/e067/016w/loss_out/Average_loss_log10(Loss).png)
+
+![img_19.png](img_19.png)
+`  peridx = np.array([[0, 1, 2], [0, 2, 1], [1, 0, 2],
+            [1, 2, 0], [2, 0, 1], [2, 1, 0]])`
+
+    outputs2 = t.matmul(t.svd(outputs[j, :,:])[0], t.svd(outputs[j, :, :])[2].T)
+    for i in range(12):
+        outputs3 = (-1) ** (i % 2) * outputs2[:, peridx[i // 2, :]]
 # TODO
 - Copy name of the sh file to the output folder to stop saturated training
 - How to save output loss figure when using multiple GPUs?
 - Write callback to automatically stop saturated training
 - automatically delete folders with failed experiments
-- Save and synchronize loss using savetxt. 
-- 
+- Save and synchronize loss using numpy savetxt.
 # Questions to Hanno:
 - Can I just use min((loss(outputs, GT), loss(outputs, -GT))) in validation?
+- Should I use fixed augmentation for validation loss calculation or it is free? 
 - Writing a report for JSC
+- How to technically share weights?
+- 
+# Plan from 01.02 till 07.02
+- Regress centers of masses
+- Modify FC layer size for pose regression
 
 

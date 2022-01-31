@@ -120,19 +120,12 @@ def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
                   [1, 2, 0], [2, 0, 1], [2, 1, 0]])
         # TODO write in vectorize form instead of for loop
         lo = t.zeros(outputs.shape[0], 12, 9)
-        # st = time.time()
         outputs = outputs.reshape(-1,3,3)
         for j in range(outputs.shape[0]):
             outputs2 = t.matmul(t.svd(outputs[j, :,:])[0], t.svd(outputs[j, :, :])[2].T)
             for i in range(12):
                 outputs3 = (-1) ** (i % 2) * outputs2[:, peridx[i // 2, :]]
-                # print(129, outputs3.shape, GT.shape)
-                # gt4 = (-1) ** (i % 2) * GT.reshape(-1, 3, 3)[j, :, peridx[i // 2, :]]
-                # print(loss_fn(gt4.reshape(-1, 9), outputs[j, :]).shape)
-                # print(114, gt4.reshape(-1, 9).shape, outputs[j,:].shape)
                 lo[j, i, :] = loss_fn(GT[j,:], outputs3.reshape(9))
-        # np.savetxt(os.path.join(dirname, 'val_out'), outputs.detach().cpu().numpy(), delimiter=',')
-        # sys.exit()
         loss = t.mean(t.amin(lo, dim=1))
         # loss = t.mean(t.min(loss_fn(outputs, GT), loss_fn(outputs, -GT)))
         outputs_2 = 0
