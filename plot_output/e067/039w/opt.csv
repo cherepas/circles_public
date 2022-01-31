@@ -1,4 +1,4 @@
-bs,15
+bs,5
 epoch,40
 lr,1e-05
 minmax,False
@@ -22,7 +22,7 @@ model_name,
 netname,['cnet']
 use_pretrained,False
 weight_decay,0
-merging,color
+merging,batch
 rand_angle,False
 specie,598
 num_sam_points,500
