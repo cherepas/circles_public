@@ -399,11 +399,16 @@ For experiment with multiple views, one should decrease batch size, otherwise th
 - Write callback to automatically stop saturated training
 - automatically delete folders with failed experiments
 - Save and synchronize loss using numpy savetxt.
+- Run experiment, 
+  - if with more images I have better regression of the pose
+  - If increasing size of one before last FC layer is better
+  - Try to regress center of masses.
 # Questions to Hanno:
 - Can I just use min((loss(outputs, GT), loss(outputs, -GT))) in validation?
 - Should I use fixed augmentation for validation loss calculation or it is free? 
 - Writing a report for JSC
 - How to technically share weights?
+- When regress center of mass, should I also include loss for the pose? 
 - 
 # Plan from 01.02 till 07.02
 - Regress centers of masses
