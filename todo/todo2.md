@@ -328,14 +328,22 @@ It is not the same, if calculate orientation matrix from rotated point cloud.
 # Update report for 31.01.2022
 ![](../notebooks/figs/089.png)
 
+Applied augmentation:
+- Multiply 3x3 orientation matrix on -1. 
+- Permute columns
+- Calculate the closest set of vectors, making an orthonormal matrix. 
+
+
+
+![img_19.png](img_19.png)
+`  peridx = np.array([[0, 1, 2], [0, 2, 1], [1, 0, 2],
+            [1, 2, 0], [2, 0, 1], [2, 1, 0]])`
+
+    outputs2 = t.matmul(t.svd(outputs[j, :,:])[0], t.svd(outputs[j, :, :])[2].T)
+    for i in range(12):
+        outputs3 = (-1) ** (i % 2) * outputs2[:, peridx[i // 2, :]]
+
 It takes 0.1 seconds for minibatch with size 5 and 3 views to calculate validation loss with augmentation. 
-
-## Experiments
-- Learning rate [1e-7, 5e-7, 1e-6, 5e-6, 1e-5, 5e-5, 1e-4, 5e-4, 1e-3, 5e-3]
-- Num_input_images [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 36]
-- Batch size [15, 20, 25, 30, 35, 40, 45, 50, 100, 200]
-- [L1, L2] * [batch_merging, color_merging] * [update_fraction = 0.1, update_fraction = 0.25]
-
 # e067/016w
 parameter | value
 --- | :---:
@@ -357,13 +365,34 @@ Validation loss is around 0.02.
 ![](../plot_output/e067/016w/loss_out/Average_loss_Loss.png)
 ![](../plot_output/e067/016w/loss_out/Average_loss_log10(Loss).png)
 
-![img_19.png](img_19.png)
-`  peridx = np.array([[0, 1, 2], [0, 2, 1], [1, 0, 2],
-            [1, 2, 0], [2, 0, 1], [2, 1, 0]])`
 
-    outputs2 = t.matmul(t.svd(outputs[j, :,:])[0], t.svd(outputs[j, :, :])[2].T)
-    for i in range(12):
-        outputs3 = (-1) ** (i % 2) * outputs2[:, peridx[i // 2, :]]
+## Experiments on jureca
+- Learning rate [1e-7, 5e-7, 1e-6, 5e-6, 1e-5, 5e-5, 1e-4, 5e-4, 1e-3, 5e-3]
+- Num_input_images [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 36]
+- Batch size [15, 20, 25, 30, 35, 40, 45, 50, 100, 200]
+- [L1, L2] * [batch_merging, color_merging] * [update_fraction = 0.1, update_fraction = 0.25]
+
+Typical learning curve
+
+![](../plot_output/e068/001j/loss_out/Average_loss_Loss.png)
+Minimum train is around 0.3, validation is around 0.02. 
+
+## Failed experiments
+### lr = 5e-3
+![](../plot_output/e068/005j/loss_out/Average_loss_log10(Loss).png)
+### lr = 1e-3
+![](../plot_output/e068/007j/loss_out/Average_loss_log10(Loss).png)
+
+### lr = 5e-4
+![](../plot_output/e068/008j/loss_out/Average_loss_log10(Loss).png)
+
+### lr = 5e-5, update_fraction decreased from 0.25 to 0.1
+![](../plot_output/e068/011j/loss_out/Average_loss_log10(Loss).png)
+
+### lr = 5e-5, update_fraction is decreased from 0.25 to 0.1, loss_fn changed from L2 to L1
+![](../plot_output/e068/012j/loss_out/Average_loss_log10(Loss).png)
+
+For experiment with multiple views, one should decrease batch size, otherwise there are not enough memory
 # TODO
 - Copy name of the sh file to the output folder to stop saturated training
 - How to save output loss figure when using multiple GPUs?
