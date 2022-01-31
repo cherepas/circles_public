@@ -330,8 +330,11 @@ if __name__ == '__main__':
     #     print(frameinfo.filename, frameinfo.lineno)
     if opt.save_output and rank == 0 and not os.path.exists(dir1):
         os.mkdir(dir1)
+    print(333, dir1, homepath, opt.jobdir)
     sys.path.insert(1, homepath)
     sys.path.insert(2, dir1)
+    sys.path.insert(3, opt.jobdir)
+    from cnet import *
     if opt.model_name:
         from standard_models import *
     print('opt.wandb = ',opt.wandb)
