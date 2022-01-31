@@ -330,6 +330,15 @@ It is not the same, if calculate orientation matrix from rotated point cloud.
 
 It takes 0.1 seconds for minibatch with size 5 and 3 views to calculate validation loss with augmentation. 
 
+## Experiments
+- Learning rate [1e-7, 5e-7, 1e-6, 5e-6, 1e-5, 5e-5, 1e-4, 5e-4, 1e-3, 5e-3]
+- Num_input_images [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 36]
+- Batch size [15, 20, 25, 30, 35, 40, 45, 50, 100, 200]
+- [L1, L2] * [batch_merging, color_merging] * [update_fraction = 0.1, update_fraction = 0.25]
+# TODO
+- Copy name of the sh file to the output folder to stop saturated training
+- How to save output loss figure when using multiple GPUs?
+- 
 # Questions to Hanno:
 - Can I just use min((loss(outputs, GT), loss(outputs, -GT))) in validation?
 - 

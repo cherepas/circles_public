@@ -210,7 +210,6 @@ if __name__ == '__main__':
     parser.add_argument('-datapath', type=str,
                         default='C:/cherepashkin1/phenoseed')
     parser.add_argument('-jobname', type=str, default='')
-    parser.add_argument('-jobdir', type=str, default='')
     setarg(parser, 'loadh5', False)
     opt = parser.parse_args()
     # print(215, opt.jobname)
@@ -229,8 +228,7 @@ if __name__ == '__main__':
     dirname = jn(dir1, opt.jobname.replace('sh', ''))
     if opt.save_output and rank == 0 and not os.path.isdir(dirname):
         Path(dirname).mkdir(parents=True, exist_ok=True)
-        shutil.copy(jn(opt.jobdir, opt.jobname), jn(dirname, opt.jobname))
-    elif opt.save_output and rank==0 and os.path.isdir(dirname):
+    else:
         print('folder is not empty')
         sys.exit()
     # dirname = jn(dir1, opt.localexp)
