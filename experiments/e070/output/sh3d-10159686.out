@@ -2231,3 +2231,391 @@ batch 10, train loss = 0.34, mean loss = 0.31
 Mon Jan 31 13:03:36 2022
 batch 20, train loss = 0.11, mean loss = 0.31
 Mon Jan 31 13:05:09 2022
+batch 30, train loss = 0.35, mean loss = 0.32
+Mon Jan 31 13:06:41 2022
+batch 40, train loss = 0.07, mean loss = 0.31
+Mon Jan 31 13:08:13 2022
+batch 50, train loss = 0.38, mean loss = 0.32
+Mon Jan 31 13:09:46 2022
+train Loss: 0.32
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 13:10:05 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 13:11:36 2022
+val Loss: 0.02
+
+epoch 91 was done for 602.603162 seconds
+Epoch 92/299
+----------
+Mon Jan 31 13:11:57 2022
+batch 0, train loss = 0.08, mean loss = 0.08
+Mon Jan 31 13:12:06 2022
+batch 10, train loss = 0.34, mean loss = 0.31
+Mon Jan 31 13:13:37 2022
+batch 20, train loss = 0.10, mean loss = 0.31
+Mon Jan 31 13:15:09 2022
+batch 30, train loss = 0.35, mean loss = 0.32
+Mon Jan 31 13:16:49 2022
+batch 40, train loss = 0.06, mean loss = 0.31
+Mon Jan 31 13:18:22 2022
+batch 50, train loss = 0.39, mean loss = 0.32
+Mon Jan 31 13:19:53 2022
+train Loss: 0.32
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 13:20:12 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 13:21:42 2022
+val Loss: 0.02
+
+epoch 92 was done for 606.377543 seconds
+Epoch 93/299
+----------
+Mon Jan 31 13:22:03 2022
+batch 0, train loss = 0.08, mean loss = 0.08
+Mon Jan 31 13:22:12 2022
+batch 10, train loss = 0.34, mean loss = 0.31
+Mon Jan 31 13:23:47 2022
+batch 20, train loss = 0.10, mean loss = 0.31
+Mon Jan 31 13:25:21 2022
+batch 30, train loss = 0.35, mean loss = 0.32
+Mon Jan 31 13:26:53 2022
+batch 40, train loss = 0.06, mean loss = 0.31
+Mon Jan 31 13:28:31 2022
+batch 50, train loss = 0.39, mean loss = 0.32
+Mon Jan 31 13:30:03 2022
+train Loss: 0.32
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 13:30:22 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 13:31:57 2022
+val Loss: 0.02
+
+epoch 93 was done for 615.516622 seconds
+Epoch 94/299
+----------
+Mon Jan 31 13:32:19 2022
+batch 0, train loss = 0.07, mean loss = 0.07
+Mon Jan 31 13:32:28 2022
+batch 10, train loss = 0.35, mean loss = 0.31
+Mon Jan 31 13:34:01 2022
+batch 20, train loss = 0.09, mean loss = 0.30
+Mon Jan 31 13:35:33 2022
+batch 30, train loss = 0.35, mean loss = 0.32
+Mon Jan 31 13:37:04 2022
+batch 40, train loss = 0.05, mean loss = 0.31
+Mon Jan 31 13:38:38 2022
+batch 50, train loss = 0.39, mean loss = 0.32
+Mon Jan 31 13:40:10 2022
+train Loss: 0.32
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 13:40:28 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 13:42:00 2022
+val Loss: 0.02
+
+epoch 94 was done for 604.833688 seconds
+Epoch 95/299
+----------
+Mon Jan 31 13:42:24 2022
+batch 0, train loss = 0.07, mean loss = 0.07
+Mon Jan 31 13:42:32 2022
+batch 10, train loss = 0.35, mean loss = 0.31
+Mon Jan 31 13:44:03 2022
+batch 20, train loss = 0.08, mean loss = 0.30
+Mon Jan 31 13:45:34 2022
+batch 30, train loss = 0.36, mean loss = 0.31
+Mon Jan 31 13:47:05 2022
+batch 40, train loss = 0.05, mean loss = 0.31
+Mon Jan 31 13:48:37 2022
+batch 50, train loss = 0.39, mean loss = 0.32
+Mon Jan 31 13:50:08 2022
+train Loss: 0.32
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 13:50:26 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 13:51:58 2022
+val Loss: 0.02
+
+epoch 95 was done for 595.027300 seconds
+Epoch 96/299
+----------
+Mon Jan 31 13:52:19 2022
+batch 0, train loss = 0.06, mean loss = 0.06
+Mon Jan 31 13:52:28 2022
+batch 10, train loss = 0.35, mean loss = 0.31
+Mon Jan 31 13:54:01 2022
+batch 20, train loss = 0.07, mean loss = 0.30
+Mon Jan 31 13:55:32 2022
+batch 30, train loss = 0.36, mean loss = 0.31
+Mon Jan 31 13:57:04 2022
+batch 40, train loss = 0.04, mean loss = 0.31
+Mon Jan 31 13:58:36 2022
+batch 50, train loss = 0.39, mean loss = 0.32
+Mon Jan 31 14:00:07 2022
+train Loss: 0.32
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 14:00:26 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 14:01:58 2022
+val Loss: 0.02
+
+epoch 96 was done for 600.301260 seconds
+Epoch 97/299
+----------
+Mon Jan 31 14:02:19 2022
+batch 0, train loss = 0.06, mean loss = 0.06
+Mon Jan 31 14:02:28 2022
+batch 10, train loss = 0.35, mean loss = 0.31
+Mon Jan 31 14:03:59 2022
+batch 20, train loss = 0.07, mean loss = 0.30
+Mon Jan 31 14:05:33 2022
+batch 30, train loss = 0.36, mean loss = 0.31
+Mon Jan 31 14:07:09 2022
+batch 40, train loss = 0.04, mean loss = 0.31
+Mon Jan 31 14:08:44 2022
+batch 50, train loss = 0.40, mean loss = 0.32
+Mon Jan 31 14:10:17 2022
+train Loss: 0.32
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 14:10:35 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 14:12:08 2022
+val Loss: 0.02
+
+epoch 97 was done for 613.731551 seconds
+Epoch 98/299
+----------
+Mon Jan 31 14:12:33 2022
+batch 0, train loss = 0.05, mean loss = 0.05
+Mon Jan 31 14:12:41 2022
+batch 10, train loss = 0.35, mean loss = 0.31
+Mon Jan 31 14:14:12 2022
+batch 20, train loss = 0.06, mean loss = 0.30
+Mon Jan 31 14:15:45 2022
+batch 30, train loss = 0.36, mean loss = 0.31
+Mon Jan 31 14:17:18 2022
+batch 40, train loss = 0.04, mean loss = 0.31
+Mon Jan 31 14:18:50 2022
+batch 50, train loss = 0.40, mean loss = 0.32
+Mon Jan 31 14:20:23 2022
+train Loss: 0.32
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 14:20:41 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 14:22:14 2022
+val Loss: 0.02
+
+epoch 98 was done for 602.414361 seconds
+Epoch 99/299
+----------
+Mon Jan 31 14:22:35 2022
+batch 0, train loss = 0.05, mean loss = 0.05
+Mon Jan 31 14:22:44 2022
+batch 10, train loss = 0.35, mean loss = 0.31
+Mon Jan 31 14:24:16 2022
+batch 20, train loss = 0.05, mean loss = 0.30
+Mon Jan 31 14:25:48 2022
+batch 30, train loss = 0.36, mean loss = 0.31
+Mon Jan 31 14:27:26 2022
+batch 40, train loss = 0.03, mean loss = 0.31
+Mon Jan 31 14:28:58 2022
+batch 50, train loss = 0.40, mean loss = 0.32
+Mon Jan 31 14:30:33 2022
+train Loss: 0.32
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 14:30:52 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 14:32:25 2022
+val Loss: 0.03
+
+epoch 99 was done for 611.174725 seconds
+Epoch 100/299
+----------
+Mon Jan 31 14:32:46 2022
+batch 0, train loss = 0.05, mean loss = 0.05
+Mon Jan 31 14:32:55 2022
+batch 10, train loss = 0.36, mean loss = 0.31
+Mon Jan 31 14:34:30 2022
+batch 20, train loss = 0.05, mean loss = 0.30
+Mon Jan 31 14:36:01 2022
+batch 30, train loss = 0.36, mean loss = 0.31
+Mon Jan 31 14:37:33 2022
+batch 40, train loss = 0.03, mean loss = 0.31
+Mon Jan 31 14:39:07 2022
+batch 50, train loss = 0.40, mean loss = 0.32
+Mon Jan 31 14:40:39 2022
+train Loss: 0.32
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 14:40:57 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 14:42:30 2022
+val Loss: 0.03
+
+epoch 100 was done for 604.734397 seconds
+Epoch 101/299
+----------
+Mon Jan 31 14:42:51 2022
+batch 0, train loss = 0.04, mean loss = 0.04
+Mon Jan 31 14:43:00 2022
+batch 10, train loss = 0.36, mean loss = 0.31
+Mon Jan 31 14:44:32 2022
+batch 20, train loss = 0.04, mean loss = 0.30
+Mon Jan 31 14:46:04 2022
+batch 30, train loss = 0.36, mean loss = 0.32
+Mon Jan 31 14:47:36 2022
+batch 40, train loss = 0.03, mean loss = 0.31
+Mon Jan 31 14:49:10 2022
+batch 50, train loss = 0.41, mean loss = 0.32
+Mon Jan 31 14:50:43 2022
+train Loss: 0.32
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 14:51:02 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 14:52:35 2022
+val Loss: 0.03
+
+epoch 101 was done for 605.793009 seconds
+Epoch 102/299
+----------
+Mon Jan 31 14:52:57 2022
+batch 0, train loss = 0.04, mean loss = 0.04
+Mon Jan 31 14:53:06 2022
+batch 10, train loss = 0.37, mean loss = 0.31
+Mon Jan 31 14:54:38 2022
+batch 20, train loss = 0.04, mean loss = 0.30
+Mon Jan 31 14:56:10 2022
+batch 30, train loss = 0.36, mean loss = 0.32
+Mon Jan 31 14:57:42 2022
+batch 40, train loss = 0.03, mean loss = 0.31
+Mon Jan 31 14:59:17 2022
+batch 50, train loss = 0.41, mean loss = 0.32
+Mon Jan 31 15:00:49 2022
+train Loss: 0.33
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 15:01:08 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 15:02:39 2022
+val Loss: 0.03
+
+epoch 102 was done for 603.986670 seconds
+Epoch 103/299
+----------
+Mon Jan 31 15:03:01 2022
+batch 0, train loss = 0.04, mean loss = 0.04
+Mon Jan 31 15:03:10 2022
+batch 10, train loss = 0.37, mean loss = 0.31
+Mon Jan 31 15:04:41 2022
+batch 20, train loss = 0.04, mean loss = 0.30
+Mon Jan 31 15:06:12 2022
+batch 30, train loss = 0.37, mean loss = 0.32
+Mon Jan 31 15:07:43 2022
+batch 40, train loss = 0.03, mean loss = 0.32
+Mon Jan 31 15:09:14 2022
+batch 50, train loss = 0.42, mean loss = 0.33
+Mon Jan 31 15:10:45 2022
+train Loss: 0.33
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 15:11:04 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 15:12:35 2022
+val Loss: 0.03
+
+epoch 103 was done for 594.653169 seconds
+Epoch 104/299
+----------
+Mon Jan 31 15:12:56 2022
+batch 0, train loss = 0.04, mean loss = 0.04
+Mon Jan 31 15:13:05 2022
+batch 10, train loss = 0.38, mean loss = 0.31
+Mon Jan 31 15:14:37 2022
+batch 20, train loss = 0.04, mean loss = 0.31
+Mon Jan 31 15:16:09 2022
+batch 30, train loss = 0.37, mean loss = 0.32
+Mon Jan 31 15:17:40 2022
+batch 40, train loss = 0.03, mean loss = 0.32
+Mon Jan 31 15:19:13 2022
+batch 50, train loss = 0.43, mean loss = 0.33
+Mon Jan 31 15:20:44 2022
+train Loss: 0.33
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 15:21:03 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 15:22:34 2022
+val Loss: 0.03
+
+epoch 104 was done for 599.660097 seconds
+Epoch 105/299
+----------
+Mon Jan 31 15:22:55 2022
+batch 0, train loss = 0.05, mean loss = 0.05
+Mon Jan 31 15:23:04 2022
+batch 10, train loss = 0.39, mean loss = 0.32
+Mon Jan 31 15:24:36 2022
+batch 20, train loss = 0.04, mean loss = 0.31
+Mon Jan 31 15:26:09 2022
+batch 30, train loss = 0.38, mean loss = 0.33
+Mon Jan 31 15:27:40 2022
+batch 40, train loss = 0.04, mean loss = 0.33
+Mon Jan 31 15:29:13 2022
+batch 50, train loss = 0.44, mean loss = 0.34
+Mon Jan 31 15:30:45 2022
+train Loss: 0.34
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 15:31:03 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 15:32:35 2022
+val Loss: 0.03
+
+epoch 105 was done for 601.254619 seconds
+Epoch 106/299
+----------
+Mon Jan 31 15:32:57 2022
+batch 0, train loss = 0.05, mean loss = 0.05
+Mon Jan 31 15:33:05 2022
+batch 10, train loss = 0.40, mean loss = 0.33
+Mon Jan 31 15:34:36 2022
+batch 20, train loss = 0.04, mean loss = 0.32
+Mon Jan 31 15:36:08 2022
+batch 30, train loss = 0.39, mean loss = 0.34
+Mon Jan 31 15:37:39 2022
+batch 40, train loss = 0.05, mean loss = 0.34
+Mon Jan 31 15:39:11 2022
+batch 50, train loss = 0.46, mean loss = 0.35
+Mon Jan 31 15:40:42 2022
+train Loss: 0.35
+
+batch 0, val loss = 0.02, mean loss = 0.02
+Mon Jan 31 15:41:01 2022
+batch 10, val loss = 0.03, mean loss = 0.03
+Mon Jan 31 15:42:32 2022
+val Loss: 0.03
+
+epoch 106 was done for 596.542796 seconds
+Epoch 107/299
+----------
+Mon Jan 31 15:42:53 2022
+batch 0, train loss = 0.06, mean loss = 0.06
+Mon Jan 31 15:43:02 2022
+batch 10, train loss = 0.42, mean loss = 0.34
+Mon Jan 31 15:44:33 2022
+batch 20, train loss = 0.04, mean loss = 0.33
+Mon Jan 31 15:46:05 2022
+batch 30, train loss = 0.41, mean loss = 0.36
+Mon Jan 31 15:47:36 2022
+batch 40, train loss = 0.07, mean loss = 0.36
+Mon Jan 31 15:49:08 2022
