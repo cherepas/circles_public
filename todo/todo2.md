@@ -344,6 +344,6 @@ It takes 0.1 seconds for minibatch with size 5 and 3 views to calculate validati
 - 
 # Questions to Hanno:
 - Can I just use min((loss(outputs, GT), loss(outputs, -GT))) in validation?
-- 
+- Writing a report for JSC
 
 
