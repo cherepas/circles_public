@@ -56,7 +56,7 @@ class CNet(torch.nn.Module):
 # #         print(hidden_dim)
         for hdim in hidden_dim:
 #             print(hdim)
-            # print(59, current_dim, hdim)
+            print(59, current_dim, hdim)
             self.layers.append(nn.Linear(current_dim, hdim))
             current_dim = hdim
 #        self.layers.append(nn.Linear(current_dim, 441))
