@@ -1,6 +1,6 @@
 bs,15
-epoch,40
-lr,0.001
+epoch,300
+lr,0.0001
 minmax,False
 minmax3dimage,False
 normalize,False
@@ -22,7 +22,7 @@ model_name,
 netname,['cnet']
 use_pretrained,False
 weight_decay,0
-merging,batch
+merging,color
 rand_angle,False
 specie,598
 num_sam_points,500
@@ -36,7 +36,7 @@ inputt,img
 minmax_f,True
 criterion,L2
 ngpu,4
-parallel,torch
+parallel,horovod
 feature_extract,False
 zero_angle,True
 single_folder,False
@@ -52,7 +52,7 @@ num_workers,0
 pin_memory,False
 man_dist,False
 use_cuda,True
-machine,workstation
+machine,jureca
 maintain,False
 maintain_line,False
 wandb,
@@ -71,5 +71,5 @@ framelim,6000
 conTrain,
 print_minibatch,10
 aug_gt,orient
-datapath,D:/cherepashkin1/phenoseed/
+datapath,/p/project/delia-mp/cherepashkin1/phenoseed/
 loadh5,False

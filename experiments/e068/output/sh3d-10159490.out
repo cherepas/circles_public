@@ -1,0 +1,20 @@
+The activation script must be sourced, otherwise the virtual environment will not work.
+Setting vars
+iscuda= True
+opt.wandb =  
+93
+file to frame csv ../../csv/598frame.csv
+iscuda= True
+opt.wandb =  
+93
+file to frame csv ../../csv/598frame.csv
+iscuda= True
+opt.wandb =  
+93
+file to frame csv ../../csv/598frame.csv
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200

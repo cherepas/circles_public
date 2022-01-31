@@ -209,8 +209,12 @@ if __name__ == '__main__':
     parser.add_argument('-aug_gt', type=str, choices=['orient'], default='')
     parser.add_argument('-datapath', type=str,
                         default='C:/cherepashkin1/phenoseed')
+    parser.add_argument('-jobname', type=str, default='')
+    parser.add_argument('-jobdir', type=str, default='')
     setarg(parser, 'loadh5', False)
     opt = parser.parse_args()
+    # print(215, opt.jobname)
+    # sys.exit()
     if opt.parallel == 'horovod':
         import horovod.torch as hvd
         hvd.init()
@@ -222,37 +226,44 @@ if __name__ == '__main__':
     homepath = __file__.replace(__file__.split('/')[-1], '')
     dir1 = jn(__file__.replace(__file__.split('/')[-1], ''), 'plot_output',
               opt.expnum)
-    dirname = jn(dir1, opt.localexp)
-    if opt.save_output and rank == 0 and not opt.localexp:
-        with open(jn(dir1,'counter.txt'), 'r') as f:
-            secnt = int(f.readlines()[0])
-        secnt += 1
-        dirname = None
-        while dirname is None:
-            try:
-                dirname = jn(dir1,str(secnt).zfill(3))+opt.machine[0]
-                Path(dirname).mkdir(parents=True, exist_ok=True)
-            except:
-                time.sleep(0.1)
-                pass
-        with open(jn(dir1, 'counter.txt'), 'w') as f:
-            f.write(str(secnt))
-    elif all([opt.localexp, opt.save_output, rank == 0,
-              os.path.isdir(dirname)]):
-        for filename in os.listdir(dirname):
-            file_path = jn(dirname, filename)
-            try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
-            except Exception as e:
-                print('Failed to delete %s. Reason: %s' % (file_path, e))
-    elif all([opt.localexp, opt.save_output, rank == 0,
-              not os.path.isdir(dirname)]):
+    dirname = jn(dir1, opt.jobname.replace('sh', ''))
+    if opt.save_output and rank == 0 and not os.path.isdir(dirname):
         Path(dirname).mkdir(parents=True, exist_ok=True)
-    elif rank == 0:
-        dirname = jn(dir1, 'misc')
+        shutil.copy(jn(opt.jobdir, opt.jobname), jn(dirname, opt.jobname))
+    elif opt.save_output and rank==0 and os.path.isdir(dirname):
+        print('folder is not empty')
+        sys.exit()
+    # dirname = jn(dir1, opt.localexp)
+    # if opt.save_output and rank == 0 and not opt.localexp:
+    #     with open(jn(dir1,'counter.txt'), 'r') as f:
+    #         secnt = int(f.readlines()[0])
+    #     secnt += 1
+    #     dirname = None
+    #     while dirname is None:
+    #         try:
+    #             dirname = jn(dir1,str(secnt).zfill(3))+opt.machine[0]
+    #             Path(dirname).mkdir(parents=True, exist_ok=True)
+    #         except:
+    #             time.sleep(0.1)
+    #             pass
+    #     with open(jn(dir1, 'counter.txt'), 'w') as f:
+    #         f.write(str(secnt))
+    # elif all([opt.localexp, opt.save_output, rank == 0,
+    #           os.path.isdir(dirname)]):
+    #     for filename in os.listdir(dirname):
+    #         file_path = jn(dirname, filename)
+    #         try:
+    #             if os.path.isfile(file_path) or os.path.islink(file_path):
+    #                 os.unlink(file_path)
+    #             elif os.path.isdir(file_path):
+    #                 shutil.rmtree(file_path)
+    #         except Exception as e:
+    #             print('Failed to delete %s. Reason: %s' % (file_path, e))
+    # elif all([opt.localexp, opt.save_output, rank == 0,
+    #           not os.path.isdir(dirname)]):
+    #     Path(dirname).mkdir(parents=True, exist_ok=True)
+    # elif rank == 0:
+    #     dirname = jn(dir1, 'misc')
 
     conTrain = opt.conTrain
     if opt.conTrain:
@@ -319,8 +330,11 @@ if __name__ == '__main__':
     #     print(frameinfo.filename, frameinfo.lineno)
     if opt.save_output and rank == 0 and not os.path.exists(dir1):
         os.mkdir(dir1)
+    print(333, dir1, homepath, opt.jobdir)
     sys.path.insert(1, homepath)
     sys.path.insert(2, dir1)
+    sys.path.insert(3, opt.jobdir)
+    from cnet import *
     if opt.model_name:
         from standard_models import *
     print('opt.wandb = ',opt.wandb)
@@ -343,25 +357,24 @@ if __name__ == '__main__':
 
     def trainit(lframe, train_part, bs, nsp, classicnorm, csvname, ampl,
                 rank, homepath, rot_dirs, merging_order, iscuda):
-        if rank == 0:
-            print(time.ctime()) # 'Mon Oct 18 13:35:29 2010'
-            lbs = []
-            ebn = []
-            batchsum = []
-            trFrac = [0.8, 1-0.8]
-            lfl = [train_part, len(lframe)-train_part]
-            for pcnt, phase in enumerate(['train', 'val']):
-                lbs.append(lfl[pcnt]%bs if lfl[pcnt]%bs else bs)
-                ebn.append(int(len(lframe)*trFrac[pcnt]/bs))
+
+        # print(time.ctime()) # 'Mon Oct 18 13:35:29 2010'
+        lbs = []
+        ebn = []
+        batchsum = []
+        trFrac = [0.8, 1-0.8]
+        lfl = [train_part, len(lframe)-train_part]
+        for pcnt, phase in enumerate(['train', 'val']):
+            lbs.append(lfl[pcnt]%bs if lfl[pcnt]%bs else bs)
+            ebn.append(int(len(lframe)*trFrac[pcnt]/bs))
+            if rank == 0:
                 print('{} consists of {} full batches '
                       'with {} tensors with {}' \
                       ' views'.format(phase, ebn[pcnt], opt.bs, nim))
-                if lfl[pcnt]%opt.bs:
-                    print('the last batch has size of {}' \
-                          ' tensors with {} views'.format(lbs[pcnt], nim))
-                batchsum.append(ebn[pcnt] + lbs[pcnt])
-        else:
-            batchsum = []
+            if lfl[pcnt]%opt.bs and rank==0:
+                print('the last batch has size of {}' \
+                      ' tensors with {} views'.format(lbs[pcnt], nim))
+            batchsum.append(ebn[pcnt] + lbs[pcnt])
         # TODO change name F_Nw on GTw, as to have single variable name for all
         if opt.loadh5:
             y_n, bX, F_Nw, prmatw = \
@@ -495,7 +508,7 @@ if __name__ == '__main__':
                 dataloaders = {x: t.utils.data.DataLoader(
                     image_datasets[x],
                     batch_size=opt.bs, shuffle=False, sampler=samplers[x],
-                    worker_init_fn=seed_worker,
+                    worker_init_fn=None,
                     generator=g, **kwargs) for x in ['train', 'val']}
             elif opt.parallel == 'torch':
                 samplers = None

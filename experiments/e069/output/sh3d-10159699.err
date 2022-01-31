@@ -1,0 +1,64 @@
+
+  Preparing the environment for use of requested stage ( 2020 ).
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+cpu_bind=NONE - jrc0252, task  1  1 [22956]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0252, task  3  3 [22959]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0252, task  0  0 [22957]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0252, task  2  2 [22958]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 636, in train_model
+    loss.backward()
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/tensor.py", line 245, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/autograd/__init__.py", line 145, in backward
+    Variable._execution_engine.run_backward(
+RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 944, in synchronize
+    mpi_lib.horovod_torch_wait_and_clear(handle)
+RuntimeError: ncclCommInitRank failed: unhandled system error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 637, in train_model
+    optimizer.step()
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/optim/optimizer.py", line 89, in wrapper
+    return func(*args, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 333, in step
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 944, in synchronize
+    mpi_lib.horovod_torch_wait_and_clear(handle)
+RuntimeError: ncclCommInitRank failed: unhandled system error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    self.synchronize()
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 284, in synchronize
+    output = synchronize(handle) if not callable(handle) else handle()
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 949, in synchronize
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 637, in train_model
+    optimizer.step()
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/optim/optimizer.py", line 89, in wrapper
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: ncclCommInitRank failed: unhandled system error
+    return func(*args, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 333, in step
+    self.synchronize()
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/optimizer.py", line 284, in synchronize
+    output = synchronize(handle) if not callable(handle) else handle()
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 949, in synchronize
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: ncclCommInitRank failed: unhandled system error

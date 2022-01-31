@@ -1,0 +1,47 @@
+
+  Preparing the environment for use of requested stage ( 2020 ).
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+cpu_bind=NONE - jrc0326, task  1  1 [29725]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0326, task  2  2 [29726]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0326, task  0  0 [29727]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0326, task  3  3 [29728]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "../../../main.py", line 968, in <module>
+Traceback (most recent call last):
+  File "../../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../../main.py", line 629, in train_model
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../../main.py", line 629, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 141, in out2loss
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 141, in out2loss
+Traceback (most recent call last):
+  File "../../../main.py", line 968, in <module>
+    print(140, fi-st)
+NameError: name 'fi' is not defined
+    print(140, fi-st)
+NameError: name 'fi' is not defined
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../../main.py", line 629, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 141, in out2loss
+    print(140, fi-st)
+NameError: name 'fi' is not defined
+Traceback (most recent call last):
+  File "../../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../../main.py", line 629, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 141, in out2loss
+    print(140, fi-st)
+NameError: name 'fi' is not defined
+srun: error: jrc0326: task 1: Terminated
+srun: error: jrc0326: tasks 0,2-3: Exited with exit code 1
+srun: Force Terminated job step 10156383.0

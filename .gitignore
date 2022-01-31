@@ -1,5 +1,6 @@
 wandb/
 __pycache__/
+__pycache__
 .ipynb_checkpoints/
 pathes_df_train.csv
 pathes_df_val.csv
@@ -12,3 +13,11 @@ latent_val_???
 notebooks
 todo
 
+.idea/workspace.xml
+__pycache__/cnet.cpython-38.pyc
+__pycache__/helpers.cpython-38.pyc
+__pycache__/preprocess.cpython-38.pyc
+__pycache__/seed_everything.cpython-38.pyc
+__pycache__/switcher.cpython-38.pyc
+__pycache__/transform_image.cpython-38.pyc
+__pycache__/transformdef.cpython-38.pyc

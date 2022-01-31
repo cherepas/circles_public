@@ -1,0 +1,45 @@
+The activation script must be sourced, otherwise the virtual environment will not work.
+Setting vars
+iscuda= True
+opt.wandb =  
+iscuda= True
+opt.wandb =  
+93
+93
+file to frame csv ../../csv/598frame.csv
+file to frame csv ../../csv/598frame.csv
+iscuda= True
+opt.wandb =  
+93
+file to frame csv ../../csv/598frame.csv
+iscuda= True
+PyTorch Version:  1.8.1
+Torchvision Version:  0.9.0a0
+opt:
+ Namespace(ampl=441, aug_gt='orient', batch_output=2, bs=15, cencrop=700, center=False, chidden_dim=[96, 128, 256, 256, 256], classicnorm=False, cmscrop=0, conTrain='', criterion='L2', csvname='598csv9', datapath='/p/project/delia-mp/cherepashkin1/phenoseed/', dfname='598frame', downsample=1, epoch=300, expdescr='', expnum='e068', feature_extract=False, framelim=6000, gradient_predivide_factor=1.0, gttype='single_file', haf=True, hidden_dim=[9], inputt='img', kernel_sizes=[7, 3, 3, 3, 3, 3], lb='orient', loadh5=False, localexp='', lr=1e-07, machine='jureca', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging='batch', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=24, num_sam_points=500, num_workers=0, outputt='orient', parallel='horovod', pin_memory=False, print_minibatch=10, pscale=100, rand_angle=False, rescale=500, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=255, steplr=[1000.0, 1.0], transappendix='_image', ufmodel=100000, updateFraction=0.25, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['../../main.py', '-datapath', '/p/project/delia-mp/cherepashkin1/phenoseed/', '-epoch', '300', '-bs', '15', '-num_input_images', '24', '-framelim', '6000', '-criterion', 'L2', '-localexp', '', '-lr', '1e-7', '-expnum', 'e068', '-hidden_dim', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'horovod', '-machine', 'jureca', '-merging', 'batch', '-aug_gt', 'orient', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
+seed =  0
+path were main.py is located= ../../
+opt.wandb =  
+93
+file to frame csv ../../csv/598frame.csv
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+len train =  4160
+len train =  4160
+len train =  4160
+len train =  4160
+train consists of 277 full batches with 15 tensors with 24 views
+the last batch has size of 5 tensors with 24 views
+val consists of 69 full batches with 15 tensors with 24 views
+the last batch has size of 5 tensors with 24 views
+Epoch 0/299
+----------
+Mon Jan 31 00:15:17 2022

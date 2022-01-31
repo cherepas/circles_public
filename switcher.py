@@ -138,7 +138,7 @@ def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
         outputs_2 = 0
         latent = 0
         # fi = time.time()
-        print(140, fi-st)
+        # print(140, fi-st)
     return loss, outputs, outputs_2, latent
 
 #def plotitout(lossar):
