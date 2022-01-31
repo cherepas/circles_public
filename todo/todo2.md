@@ -415,4 +415,58 @@ For experiment with multiple views, one should decrease batch size, otherwise th
 - Regress centers of masses
 - Modify FC layer size for pose regression
 
+scaling and 
+Scaling matrix by factor of 2, keep other fixed, S = diag(2, 1, 1)
+Point x is being 3d point, coordinate system of the camera, 
+seed is not oriented in camera direction, but rotated. 
+If we have this scaling, to calculate x', that x'= R.T * S * R * x, 
+vector x is projected to the three unified vectors of coordinate system of the seed. X is diagonal matrix, we require main axis of the seed to be the first eigenvalue of that matrix, the first horizontal vector in R. Is coordinate vector along the main axis of the seed. 
+
+R is horizontal vectors, three horizontal vectors, Unit vectors, the vector, they are unit length. 
+R*x is the projection to the new eigensystem. Then it is scaling, (multiply by S), then transform back.
+R for rotation
+R 
+
+Requirements for 
+- right handed / left
+- positive half-space
+Vectors of rotation.
+- .X is vertical 
+- If it is on the unit sphere, it should be les than 1. If vector is in the positive half-space, the sign. 
+- X component is positive. Flip the whole vector if it is negative. 
+- The same test. If the first is not positive, flip. 
+- For the third right handed eigensystem. 
+- cross product of the first two, then scalar product of the x3, if it is not negative projection 
+v = (x3, [x1, x2]). if v is positive, keep x3 as is, and if v is negative, flip. 
+
+# Hanno's tips 31.01.2022
+- Flip vectors separately from each other, not the multiplication of the whole matrix by -1. 
+- Take care when it is close to the flipping point. Check sign of projection (x3, [x1, x2]) in order to decide flip sign or not. 
+- Check, whether validation loss is smaller if use only sign flip. One can flip signs every time depending on the output of the NN. 
+- In order to get rid of values more than one, use tanh on the last layer, that actual output will be always at [-1, 1] range.
+- Fix vector order. 
+- Seeds are flat. Make sure that training data only contain flat systems. Test on only that quite distinguishable. 
+- Find a better way to show density of points. Because if point size is big enough, one cannot see difference. 
+
+# Organizational stuff 31.01.2022
+- About Informatics course
+  - Dokumentation zum promotionsvorhaben, Auflagenzum promotionszulassung
+  - Say how much compute time for me was used?
+  - Does it include exams? Is there minimum requirement on pass or fail, or just pass better than something
+  - Courses are labeld to be kernbereich to Informatik
+- Send kindly reminder to Leif, Klin, Möbius, or sekretariat i8, whether I could attend meetings
+- Report for JSC:
+  - For section 2: 
+    - Not list of configuration, high level description, what it is configuration about. 
+    - Compute time is less than we applied for, because we have more things to investigate in the future.
+    - Data preparation ; we are done with that
+  - For section 4 
+    - Convolutional nn is low depth, loss function, how to deal latent space.
+    - How many run is it, do I need to make a grid search. Before it comes a grid search with early stopping. (or 20)
+10 epochs or 100 epochs before real experiment. Typical settings
+    - number of cores used: parallelization is not a big deal, I used horovod for parallelization, but typical experiment running on a single node is sufficient.  I should explain, that I did not overly spend computing time, but used it in reasonable manner.
+    - For the final run we need more than for testing, because there we will use whole data and more epochs. 
+    - Code modification for us will be suitable neural network architecture. But now we know, what works better. 
+    - Granted computing time is not fully used, because we didn’t really start with cassava roots, but worked with seeds
+    - If needed, jobs are ready to be launched. 
 
