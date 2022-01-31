@@ -2489,3 +2489,9 @@ Epoch 94/299
 Mon Jan 31 13:01:55 2022
 batch 0, train loss = 0.06, mean loss = 0.06
 Mon Jan 31 13:02:01 2022
+batch 10, train loss = 0.52, mean loss = 0.37
+Mon Jan 31 13:03:11 2022
+batch 20, train loss = 0.05, mean loss = 0.36
+Mon Jan 31 13:04:20 2022
+batch 30, train loss = 0.58, mean loss = 0.38
+Mon Jan 31 13:05:30 2022
