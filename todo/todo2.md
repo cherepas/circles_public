@@ -340,6 +340,7 @@ It takes 0.1 seconds for minibatch with size 5 and 3 views to calculate validati
 - How to save output loss figure when using multiple GPUs?
 - Write callback to automatically stop saturated training
 - automatically delete folders with failed experiments
+- Save and synchronize loss using savetxt. 
 - 
 # Questions to Hanno:
 - Can I just use min((loss(outputs, GT), loss(outputs, -GT))) in validation?
