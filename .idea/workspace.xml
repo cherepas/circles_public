@@ -5,50 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b42c7944-045a-4c08-9929-7c8a606be81f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/experiments/e072/e072j000.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/e072/e072l000 - Copy.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/e072/old/01l.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/e072/old/02l.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/e072/old/e072l000 - Copy.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/e072/old/e072l000.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/e072/old/e072l004" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/e072/old/e072w000.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/e072/old/e076l003.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/e072/old/e076l004.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/e072/old/j.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/e072/old/lenovo_run.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/e072/01l.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/e072/02l.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/e072/e072l004" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/e072/e072w000.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/e072/e076l004.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/e072/j.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/e072/lenovo_run.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/cnet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/e072l000.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/!Single_seed_loss_Loss.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/!Single_seed_loss_Loss.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/!Single_seed_loss_log10(Loss).pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/!Single_seed_loss_log10(Loss).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/Average_loss_Loss.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/Average_loss_Loss.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/Average_loss_log10(Loss).pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/Average_loss_log10(Loss).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/Average_loss_minibatch_train_Loss.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/Average_loss_minibatch_train_log10(Loss).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/Average_loss_minibatch_val_Loss.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/Average_loss_minibatch_val_Loss.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/Average_loss_minibatch_val_log10(Loss).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/curloss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/lossar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/lossmb_train" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/loss_out/lossmb_val" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/opt.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/opt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/sys_argv.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e072/e072l000/transform_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo/todo2.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo/todo2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

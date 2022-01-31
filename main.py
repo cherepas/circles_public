@@ -314,11 +314,11 @@ if __name__ == '__main__':
     csvPath = jn(homepath, 'csv')
     if rank == 0:
         print('path were main.py is located=',homepath)
-    # if opt.single_folder:
-    #     exec('from'+opt.netname+'import *')
-    # else:
-    #     for name in opt.netname:
-    #         exec('from experiments.'+opt.expnum+'.'+name+' import *')
+    if opt.single_folder:
+        exec('from'+opt.netname+'import *')
+    else:
+        for name in opt.netname:
+            exec('from experiments.'+opt.expnum+'.'+name+' import *')
 
 
 
@@ -334,7 +334,7 @@ if __name__ == '__main__':
     sys.path.insert(1, homepath)
     sys.path.insert(2, dir1)
     sys.path.insert(3, opt.jobdir)
-    from cnet import *
+    # from cnet import *
     if opt.model_name:
         from standard_models import *
     print('opt.wandb = ',opt.wandb)

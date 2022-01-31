@@ -408,7 +408,8 @@ For experiment with multiple views, one should decrease batch size, otherwise th
 - Should I use fixed augmentation for validation loss calculation or it is free? 
 - Writing a report for JSC
 - How to technically share weights?
-- When regress center of mass, should I also include loss for the pose? 
+- When regress center of mass, should I also include loss for the pose?
+- Whom to ask to optimize script to work on multiple GPUs?
 - 
 # Plan from 01.02 till 07.02
 - Regress centers of masses
