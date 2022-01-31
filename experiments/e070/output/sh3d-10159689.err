@@ -1,0 +1,75 @@
+
+  Preparing the environment for use of requested stage ( 2020 ).
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+cpu_bind=NONE - jrc0219, task  3  3 [25681]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0219, task  0  0 [25682]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0219, task  2  2 [25683]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0219, task  1  1 [25684]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 629, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 109, in out2loss
+    outputs = model(inputs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/cnet.py", line 66, in forward
+    x = F.relu(self.bn1(self.conv1(x)))
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/functional.py", line 1206, in relu
+    result = torch.relu(input)
+RuntimeError: CUDA out of memory. Tried to allocate 2.77 GiB (GPU 1; 39.59 GiB total capacity; 29.94 GiB already allocated; 1.80 GiB free; 35.14 GiB reserved in total by PyTorch)
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 629, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 109, in out2loss
+    outputs = model(inputs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/cnet.py", line 66, in forward
+    x = F.relu(self.bn1(self.conv1(x)))
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/functional.py", line 1206, in relu
+    result = torch.relu(input)
+RuntimeError: CUDA out of memory. Tried to allocate 2.77 GiB (GPU 2; 39.59 GiB total capacity; 29.94 GiB already allocated; 1.68 GiB free; 35.27 GiB reserved in total by PyTorch)
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 629, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 109, in out2loss
+    outputs = model(inputs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/cnet.py", line 67, in forward
+    x = self.pool(x)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/pooling.py", line 162, in forward
+    return F.max_pool2d(input, self.kernel_size, self.stride,
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/_jit_internal.py", line 365, in fn
+    return if_false(*args, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/functional.py", line 659, in _max_pool2d
+    return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+RuntimeError: CUDA out of memory. Tried to allocate 1.38 GiB (GPU 0; 39.59 GiB total capacity; 33.39 GiB already allocated; 618.69 MiB free; 33.60 GiB reserved in total by PyTorch)
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 629, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 109, in out2loss
+    outputs = model(inputs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/cnet.py", line 66, in forward
+    x = F.relu(self.bn1(self.conv1(x)))
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/functional.py", line 1206, in relu
+    result = torch.relu(input)
+RuntimeError: CUDA out of memory. Tried to allocate 2.77 GiB (GPU 3; 39.59 GiB total capacity; 29.94 GiB already allocated; 2.24 GiB free; 35.27 GiB reserved in total by PyTorch)
+srun: error: jrc0219: tasks 0-3: Exited with exit code 1

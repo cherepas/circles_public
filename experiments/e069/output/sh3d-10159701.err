@@ -1,0 +1,93 @@
+
+  Preparing the environment for use of requested stage ( 2020 ).
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+cpu_bind=NONE - jrc0348, task  1  1 [1931]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0348, task  2  2 [1930]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0348, task  3  3 [1932]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0348, task  0  0 [1933]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 629, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 109, in out2loss
+    outputs = model(inputs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/cnet.py", line 67, in forward
+    x = self.pool(x)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/pooling.py", line 162, in forward
+    return F.max_pool2d(input, self.kernel_size, self.stride,
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/_jit_internal.py", line 365, in fn
+    return if_false(*args, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/functional.py", line 659, in _max_pool2d
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 629, in train_model
+    return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+RuntimeError: CUDA out of memory. Tried to allocate 3.53 GiB (GPU 2; 39.59 GiB total capacity; 34.37 GiB already allocated; 1.89 GiB free; 36.22 GiB reserved in total by PyTorch)
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 109, in out2loss
+    outputs = model(inputs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/cnet.py", line 67, in forward
+    x = self.pool(x)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/pooling.py", line 162, in forward
+    return F.max_pool2d(input, self.kernel_size, self.stride,
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/_jit_internal.py", line 365, in fn
+    return if_false(*args, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/functional.py", line 659, in _max_pool2d
+    return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+RuntimeError: CUDA out of memory. Tried to allocate 3.53 GiB (GPU 3; 39.59 GiB total capacity; 34.37 GiB already allocated; 1.89 GiB free; 36.22 GiB reserved in total by PyTorch)
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 629, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 109, in out2loss
+    outputs = model(inputs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/cnet.py", line 67, in forward
+    x = self.pool(x)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/pooling.py", line 162, in forward
+    return F.max_pool2d(input, self.kernel_size, self.stride,
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/_jit_internal.py", line 365, in fn
+    return if_false(*args, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/functional.py", line 659, in _max_pool2d
+    return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+RuntimeError: CUDA out of memory. Tried to allocate 3.53 GiB (GPU 1; 39.59 GiB total capacity; 34.37 GiB already allocated; 1.89 GiB free; 36.22 GiB reserved in total by PyTorch)
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 629, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 109, in out2loss
+    outputs = model(inputs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/cnet.py", line 67, in forward
+    x = self.pool(x)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/pooling.py", line 162, in forward
+    return F.max_pool2d(input, self.kernel_size, self.stride,
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/_jit_internal.py", line 365, in fn
+    return if_false(*args, **kwargs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/functional.py", line 659, in _max_pool2d
+    return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+RuntimeError: CUDA out of memory. Tried to allocate 3.53 GiB (GPU 0; 39.59 GiB total capacity; 34.37 GiB already allocated; 984.69 MiB free; 34.39 GiB reserved in total by PyTorch)
+srun: error: jrc0348: tasks 0-3: Exited with exit code 1

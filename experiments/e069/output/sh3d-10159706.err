@@ -1,0 +1,29 @@
+
+  Preparing the environment for use of requested stage ( 2020 ).
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+cpu_bind=NONE - jrc0317, task  3  3 [26592]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0317, task  0  0 [26593]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0317, task  1  1 [26591]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0317, task  2  2 [26590]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "../../main.py", line 968, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 629, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 109, in out2loss
+    outputs = model(inputs)
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/p/project/delia-mp/cherepashkin1/circles_public/cnet.py", line 68, in forward
+    x = F.relu(self.bn2(self.conv2(x)))
+  File "/p/software/jurecadc/stages/2020/software/PyTorch/1.8.1-gcccoremkl-10.3.0-2021.2.0-Python-3.8.5/lib/python3.8/site-packages/torch/nn/functional.py", line 1206, in relu
+    result = torch.relu(input)
+RuntimeError: CUDA out of memory. Tried to allocate 882.00 MiB (GPU 0; 39.59 GiB total capacity; 31.55 GiB already allocated; 492.69 MiB free; 33.73 GiB reserved in total by PyTorch)
+srun: error: jrc0317: tasks 1-3: Terminated
+srun: error: jrc0317: task 0: Exited with exit code 1
+srun: Force Terminated job step 10159706.0
