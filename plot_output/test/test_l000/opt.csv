@@ -63,14 +63,14 @@ batch_output,2
 minmax_fn,
 updateFraction,0.25
 standardize,255
-localexp,
+rmdirname,True
 steplr,"[1000.0, 1.0]"
 outputt,orient
 ufmodel,100000
 framelim,60
 conTrain,
 print_minibatch,10
-aug_gt,orient
+aug_gt,"['matrix_sign_flip', 'vector_sign_flip']"
 datapath,C:/cherepashkin1/phenoseed/
 jobname,test_l000.sh
 jobdir,C:/cherepashkin1/circles_public/experiments/test

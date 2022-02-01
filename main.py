@@ -194,7 +194,9 @@ if __name__ == '__main__':
     parser.add_argument('-updateFraction', type=float, default=3)
     parser.add_argument('-standardize',  nargs='+', default=255)
     # parser.add_argument('-standardize', default=(18.31589541, 39.63290785))
-    parser.add_argument('-localexp', type=str, default='')
+    # if rmdirname is True, delete dirname content and use this directory again
+    # for saving output
+    setarg(parser, 'rmdirname', False)
     parser.add_argument('-steplr',  nargs='+', type=float, default=(30,1))
     parser.add_argument('-outputt', type=str,
                         choices=['points','pose6', 'eul', 'orient'],
@@ -206,7 +208,7 @@ if __name__ == '__main__':
     parser.add_argument('-print_minibatch', type=int, default=10)
     # for orientation there are two right GT, because it is a ray. That is why
     # augementation of ground truth is needed for evaluation
-    parser.add_argument('-aug_gt', type=str, choices=['orient'], default='')
+    parser.add_argument('-aug_gt', nargs='+', type=str, default=(''))
     parser.add_argument('-datapath', type=str,
                         default='C:/cherepashkin1/phenoseed')
     parser.add_argument('-jobname', type=str, default='')
@@ -230,7 +232,18 @@ if __name__ == '__main__':
     if opt.save_output and rank == 0 and not os.path.isdir(dirname):
         Path(dirname).mkdir(parents=True, exist_ok=True)
         shutil.copy(jn(opt.jobdir, opt.jobname), jn(dirname, opt.jobname))
-    elif opt.save_output and rank==0 and os.path.isdir(dirname):
+    elif opt.save_output and rank==0 and os.path.isdir(dirname) and opt.rmdirname:
+        # recursively delte dirname content
+        for filename in os.listdir(dirname):
+                file_path = jn(dirname, filename)
+                try:
+                    if os.path.isfile(file_path) or os.path.islink(file_path):
+                        os.unlink(file_path)
+                    elif os.path.isdir(file_path):
+                        shutil.rmtree(file_path)
+                except Exception as e:
+                    print('Failed to delete %s. Reason: %s' % (file_path, e))
+    elif opt.save_output and rank==0 and os.path.isdir(dirname) and not opt.rmdirname:
         print('folder is not empty')
         sys.exit()
     # dirname = jn(dir1, opt.localexp)
@@ -991,10 +1004,7 @@ if __name__ == '__main__':
         #                 jn(opt.datapath.replace(
         #                     opt.datapath.split('/')[-2], ''), 'local_output',
         #                     opt.expnum, opt.jobname.replace('.sh', '')))
-        shutil.copytree(dirname,
-                        jn(opt.datapath.replace(
-                            opt.datapath.split('/')[-2], ''), 'local_output',
-                            opt.expnum, opt.jobname.replace('.sh', '')))
+
         with open(jn(dirname,"job-parameters.txt"), 'a') as f:
             original_stdout = sys.stdout
             sys.stdout = f  # Change the standard output to the file we created.
@@ -1004,3 +1014,8 @@ if __name__ == '__main__':
             f.write('time_elapsed=' + \
                     str(datetime.timedelta(seconds=time_elapsed)) + '\n')
         print('ellapsed time = ', time.time()-tstart)
+        # TODO performance: clear directory content if is not empty
+        shutil.copytree(dirname,
+                        jn(opt.datapath.replace(
+                            opt.datapath.split('/')[-2], ''), 'local_output',
+                            opt.expnum, opt.jobname.replace('.sh', '')))

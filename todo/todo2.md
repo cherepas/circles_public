@@ -468,5 +468,15 @@ v = (x3, [x1, x2]). if v is positive, keep x3 as is, and if v is negative, flip.
     - For the final run we need more than for testing, because there we will use whole data and more epochs. 
     - Code modification for us will be suitable neural network architecture. But now we know, what works better. 
     - Granted computing time is not fully used, because we didn’t really start with cassava roots, but worked with seeds
-    - If needed, jobs are ready to be launched. 
+    - If needed, jobs are ready to be launched.
+
+#Plan for week from 1.02.2022 till 7.02.2022
+- Write report for JSC
+- Test validation augmentation on jureca
+- Deliver documents to Dekanat 1
+  - Ask whether it is enough to send just translation without official letter from notar
+- Register for RWTH
+- Regress centers of masses
+- Modify FC layer size for pose regression
+- 
 
