@@ -70,9 +70,9 @@ ufmodel,100000
 framelim,6000
 conTrain,
 print_minibatch,10
-aug_gt,"['matrix_sign_flip', 'vector_permute', 'svd']"
+aug_gt,"['matrix_sign_flip', 'vector_permute']"
 datapath,/p/project/delia-mp/cherepashkin1/phenoseed/
-jobname,e073j000
+jobname,e073j002
 realjobname,10176273
 jobdir,/var/spool/parastation/jobs
 loadh5,False

@@ -1,0 +1,115 @@
+The activation script must be sourced, otherwise the virtual environment will not work.
+Setting vars
+iscuda= True
+iscuda= True
+iscuda= True
+folder is not empty
+opt.wandb =  
+opt.wandb =  
+opt.wandb =  
+93
+93
+93
+file to frame csv ../../csv/598frame.csv
+file to frame csv ../../csv/598frame.csv
+file to frame csv ../../csv/598frame.csv
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+len train =  4160
+len train =  4160
+len train =  4160
+iscuda= True
+iscuda= True
+iscuda= True
+folder is not empty
+opt.wandb =  
+opt.wandb =  
+opt.wandb =  
+93
+93
+93
+file to frame csv ../../csv/598frame.csv
+file to frame csv ../../csv/598frame.csv
+file to frame csv ../../csv/598frame.csv
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+len train =  4160
+len train =  4160
+len train =  4160
+iscuda= True
+iscuda= True
+iscuda= True
+folder is not empty
+opt.wandb =  
+opt.wandb =  
+opt.wandb =  
+93
+93
+file to frame csv ../../csv/598frame.csv
+93
+file to frame csv ../../csv/598frame.csv
+file to frame csv ../../csv/598frame.csv
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+len train =  4160
+len train =  4160
+len train =  4160
+iscuda= True
+iscuda= True
+iscuda= True
+iscuda= True
+opt.wandb =  
+opt.wandb =  
+opt.wandb =  
+PyTorch Version:  1.8.1
+93
+93
+93
+Torchvision Version:  0.9.0a0
+file to frame csv ../../csv/598frame.csv
+file to frame csv ../../csv/598frame.csv
+file to frame csv ../../csv/598frame.csv
+opt:
+ Namespace(ampl=441, aug_gt=['vector_sign_flip', 'vector_permute'], batch_output=2, bs=15, cencrop=700, center=False, chidden_dim=[96, 128, 256, 256, 256], classicnorm=False, cmscrop=0, conTrain='', criterion='L2', csvname='598csv9', datapath='/p/project/delia-mp/cherepashkin1/phenoseed/', dfname='598frame', downsample=1, epoch=100, expdescr='', expnum='e073', feature_extract=False, framelim=6000, gradient_predivide_factor=1.0, gttype='single_file', haf=True, hidden_dim=[32, 9], inputt='img', jobdir='/var/spool/parastation/jobs', jobname='e073j003', kernel_sizes=[7, 3, 3, 3, 3, 3], lb='orient', loadh5=False, lr=5e-05, machine='jureca', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging='batch', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=3, num_sam_points=500, num_workers=0, outputt='orient', parallel='horovod', pin_memory=False, print_minibatch=10, pscale=100, rand_angle=False, realjobname='10176020', rescale=500, rmdirname=False, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=255, steplr=[1000.0, 1.0], transappendix='_image', ufmodel=100000, updateFraction=0.25, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['../../main.py', '-datapath', '/p/project/delia-mp/cherepashkin1/phenoseed/', '-realjobname', '10176020', '-jobname', 'e073j003', '-jobdir', '/var/spool/parastation/jobs', '-expnum', 'e073', '-epoch', '100', '-bs', '15', '-num_input_images', '3', '-framelim', '6000', '-criterion', 'L2', '-no_rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'horovod', '-machine', 'jureca', '-merging', 'batch', '-aug_gt', 'vector_sign_flip', 'vector_permute', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
+seed =  0
+path were main.py is located= ../../
+opt.wandb =  
+93
+file to frame csv ../../csv/598frame.csv
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+lframe len after excluding all exceptions= 5200
+len train =  4160
+len train =  4160
+len train =  4160
+len train =  4160
+train consists of 277 full batches with 15 tensors with 3 views
+the last batch has size of 5 tensors with 3 views
+val consists of 69 full batches with 15 tensors with 3 views
+the last batch has size of 5 tensors with 3 views
+Epoch 0/99
+----------
+Thu Feb  3 13:48:39 2022
+batch 0, train loss = 0.41, mean loss = 0.41
+Thu Feb  3 13:48:55 2022
+batch 10, train loss = 15.96, mean loss = 36.56
+Thu Feb  3 13:50:07 2022

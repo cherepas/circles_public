@@ -1,0 +1,141 @@
+
+  Preparing the environment for use of 2020 stage.
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+cpu_bind=NONE - jrc0310, task  2  2 [22298]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  0  0 [22297]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  1  1 [22299]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  3  3 [22300]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+    outputs5 = outputs4[:, peridx[l, :]]
+IndexError: tensors used as indices must be long, byte or bool tensors
+    outputs5 = outputs4[:, peridx[l, :]]
+IndexError: tensors used as indices must be long, byte or bool tensors
+    outputs5 = outputs4[:, peridx[l, :]]
+IndexError: tensors used as indices must be long, byte or bool tensors
+    outputs5 = outputs4[:, peridx[l, :]]
+IndexError: tensors used as indices must be long, byte or bool tensors
+srun: error: jrc0310: task 2: Terminated
+srun: error: jrc0310: tasks 0-1,3: Exited with exit code 1
+srun: Force Terminated job step 10176273.0
+cpu_bind=NONE - jrc0310, task  0  0 [24685]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  3  3 [24684]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  2  2 [24683]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  1  1 [24686]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+    outputs5 = outputs4[:, peridx[l, :]]
+    outputs5 = outputs4[:, peridx[l, :]]
+IndexError: tensors used as indices must be long, byte or bool tensors
+IndexError: tensors used as indices must be long, byte or bool tensors
+    outputs5 = outputs4[:, peridx[l, :]]
+IndexError: tensors used as indices must be long, byte or bool tensors
+    outputs5 = outputs4[:, peridx[l, :]]
+IndexError: tensors used as indices must be long, byte or bool tensors
+srun: error: jrc0310: tasks 0-1,3: Exited with exit code 1
+srun: error: jrc0310: task 2: Terminated
+srun: Force Terminated job step 10176273.1
+cpu_bind=NONE - jrc0310, task  2  2 [27166]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  3  3 [27167]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  0  0 [27168]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  1  1 [27169]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+Traceback (most recent call last):
+  File "../../main.py", line 1006, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "../../main.py", line 663, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+  File "/p/project/delia-mp/cherepashkin1/circles_public/switcher.py", line 160, in out2loss
+    outputs5 = outputs4[:, peridx[l, :]]
+IndexError: tensors used as indices must be long, byte or bool tensors
+    outputs5 = outputs4[:, peridx[l, :]]
+    outputs5 = outputs4[:, peridx[l, :]]
+    outputs5 = outputs4[:, peridx[l, :]]
+IndexError: tensors used as indices must be long, byte or bool tensors
+IndexError: tensors used as indices must be long, byte or bool tensors
+IndexError: tensors used as indices must be long, byte or bool tensors
+srun: error: jrc0310: tasks 0-3: Exited with exit code 1
+cpu_bind=NONE - jrc0310, task  0  0 [29525]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  2  2 [29524]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  3  3 [29523]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0310, task  1  1 [29522]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+srun: Job step aborted: Waiting up to 6 seconds for job step to finish.
+srun: error: jrc0310: tasks 0-3: Terminated
+srun: error: Slurm job 10176273 has expired
+srun: Check SLURM_JOB_ID environment variable. Expired or invalid job 10176273
+srun: error: Slurm job 10176273 has expired
+srun: Check SLURM_JOB_ID environment variable. Expired or invalid job 10176273
+srun: error: Slurm job 10176273 has expired
+srun: Check SLURM_JOB_ID environment variable. Expired or invalid job 10176273
+srun: error: Slurm job 10176273 has expired
+srun: Check SLURM_JOB_ID environment variable. Expired or invalid job 10176273
+srun: error: Slurm job 10176273 has expired
+srun: Check SLURM_JOB_ID environment variable. Expired or invalid job 10176273
+srun: error: Slurm job 10176273 has expired
+srun: Check SLURM_JOB_ID environment variable. Expired or invalid job 10176273
