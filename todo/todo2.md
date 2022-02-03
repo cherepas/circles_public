@@ -478,5 +478,6 @@ v = (x3, [x1, x2]). if v is positive, keep x3 as is, and if v is negative, flip.
 - Register for RWTH
 - Regress centers of masses
 - Modify FC layer size for pose regression
-- 
+
+Wergerg
 
