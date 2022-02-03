@@ -211,7 +211,11 @@ if __name__ == '__main__':
     parser.add_argument('-aug_gt', nargs='+', type=str, default=(''))
     parser.add_argument('-datapath', type=str,
                         default='C:/cherepashkin1/phenoseed')
+    # job name is used to create corresponding subdirectory
     parser.add_argument('-jobname', type=str, default='')
+    # real job of the executed sh file. it is needed to copy sh file to the new
+    # directory
+    parser.add_argument('-realjobname', type=str, default='')
     parser.add_argument('-jobdir', type=str, default='')
     setarg(parser, 'loadh5', False)
     opt = parser.parse_args()
@@ -231,7 +235,7 @@ if __name__ == '__main__':
     dirname = jn(dir1, opt.jobname.replace('.sh', ''))
     if opt.save_output and rank == 0 and not os.path.isdir(dirname):
         Path(dirname).mkdir(parents=True, exist_ok=True)
-        shutil.copy(jn(opt.jobdir, opt.jobname), jn(dirname, opt.jobname))
+        # print(234, jn(opt.jobdir, opt.jobname), jn(dirname, opt.jobname))
     elif opt.save_output and rank==0 and os.path.isdir(dirname) and opt.rmdirname:
         # recursively delte dirname content
         for filename in os.listdir(dirname):
@@ -246,6 +250,8 @@ if __name__ == '__main__':
     elif opt.save_output and rank==0 and os.path.isdir(dirname) and not opt.rmdirname:
         print('folder is not empty')
         sys.exit()
+    if opt.save_output and rank == 0:
+        shutil.copy(jn(opt.jobdir, opt.realjobname), jn(dirname, opt.realjobname))
     # dirname = jn(dir1, opt.localexp)
     # if opt.save_output and rank == 0 and not opt.localexp:
     #     with open(jn(dir1,'counter.txt'), 'r') as f:
