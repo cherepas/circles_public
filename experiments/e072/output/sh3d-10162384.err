@@ -1,0 +1,31 @@
+
+  Preparing the environment for use of requested stage ( 2020 ).
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+cpu_bind=NONE - jrc0279, task  1  1 [13020]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0279, task  0  0 [13023]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0279, task  3  3 [13021]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0279, task  2  2 [13022]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "../../main.py", line 337, in <module>
+    from cnet import *
+ModuleNotFoundError: No module named 'cnet'
+Traceback (most recent call last):
+  File "../../main.py", line 337, in <module>
+Traceback (most recent call last):
+  File "../../main.py", line 337, in <module>
+Traceback (most recent call last):
+  File "../../main.py", line 337, in <module>
+    from cnet import *
+    from cnet import *
+ModuleNotFoundError: No module named 'cnet'
+ModuleNotFoundError: No module named 'cnet'
+    from cnet import *
+ModuleNotFoundError: No module named 'cnet'
+srun: error: jrc0279: task 1: Terminated
+srun: error: jrc0279: tasks 0,2-3: Exited with exit code 1
+srun: Force Terminated job step 10162384.0

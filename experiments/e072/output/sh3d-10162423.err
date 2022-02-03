@@ -1,0 +1,16 @@
+
+  Preparing the environment for use of requested stage ( 2020 ).
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+cpu_bind=NONE - jrc0280, task  0  0 [1601]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0280, task  1  1 [1600]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0280, task  2  2 [1603]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0280, task  3  3 [1599]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+error: *** job 10162423 CANCELLED DUE TO TIME LIMIT ***
+error: *** step 10162423:0 CANCELLED DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 6 seconds for job step to finish.
+srun: error: jrc0280: tasks 0-3: Terminated
