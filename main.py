@@ -295,7 +295,8 @@ if __name__ == '__main__':
     nsp = opt.num_sam_points
     tstart = time.time()
     iscuda = opt.use_cuda and t.cuda.is_available()
-    print('iscuda=',iscuda)
+    if rank == 0:
+        print('iscuda=',iscuda)
     device = t.device("cuda:0" if t.cuda.is_available() else "cpu")
     seed = 0
     if iscuda:
