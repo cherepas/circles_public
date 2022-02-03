@@ -117,7 +117,7 @@ def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
         outputs = model(inputs)
         # print(115)
         # gt4 = t.zeros(gt3.shape[0], 12, 3, 3)
-        peridx = t.Tensor([[0, 1, 2], [0, 2, 1], [1, 0, 2],
+        peridx = np.array([[0, 1, 2], [0, 2, 1], [1, 0, 2],
                   [1, 2, 0], [2, 0, 1], [2, 1, 0]])
         signf = t.Tensor([[[+1, 0, 0], [0, +1, 0], [0, 0, +1]],
                           [[+1, 0, 0], [0, +1, 0], [0, 0, -1]],

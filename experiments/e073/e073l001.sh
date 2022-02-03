@@ -16,4 +16,4 @@
 #export CUDA_VISIBLE_DEVICES="0,1,2,3"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-python -u "../../main.py" -datapath "C:/cherepashkin1/phenoseed/" -jobname "e073j000" -jobdir "$SCRIPT_DIR" -realjobname `basename "$0"` -expnum "e073" -epoch 100 -bs 5 -num_input_images 3 -framelim 6000 -criterion "L2" -rmdirname -lr 5e-5 -hidden_dim 32 9 -inputt "img" -outputt "orient" -lb "orient" -no_loadh5 -minmax_fn "" -parallel "torch" -machine "lenovo" -merging "batch" -aug_gt "matrix_sign_flip" "vector_permute" "svd" -updateFraction 0.25 -steplr 1000 1 -print_minibatch 10 -dfname "598frame"
+python -u "../../main.py" -datapath "C:/cherepashkin1/phenoseed/" -jobname "e073j000" -jobdir "$SCRIPT_DIR" -realjobname `basename "$0"` -expnum "e073" -epoch 2 -bs 5 -num_input_images 3 -framelim 60 -criterion "L2" -rmdirname -lr 5e-5 -hidden_dim 32 9 -inputt "img" -outputt "orient" -lb "orient" -no_loadh5 -minmax_fn "" -parallel "torch" -machine "lenovo" -merging "batch" -aug_gt "matrix_sign_flip" "vector_permute" "svd" -updateFraction 0.25 -steplr 1000 1 -print_minibatch 10 -dfname "598frame"
