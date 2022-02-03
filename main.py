@@ -279,10 +279,11 @@ if __name__ == '__main__':
     #     dirname = jn(dir1, 'misc')
 
     conTrain = opt.conTrain
-    if opt.conTrain:
+    if opt.conTrain and rank==0:
         print(jn(dir1,conTrain,'opt.csv'))
         opt = csv2dic(jn(dir1,conTrain,'opt.csv'))
-    dic2csv(jn(dirname,'opt.csv'), opt.__dict__)
+    if rank == 0:
+        dic2csv(jn(dirname,'opt.csv'), opt.__dict__)
     nim = opt.num_input_images
     enim = nim if not opt.view_sep else 1
     nsp = opt.num_sam_points
