@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42c7944-045a-4c08-9929-7c8a606be81f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/e073l001.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/e073/e073l001.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/e073/e073l001.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e073/e073j000/10176273" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e073/e073j000/opt.csv" beforeDir="false" afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/opt.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e073/e073j000/opt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/opt.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_output/e073/e073j000/sys_argv.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/sys_argv.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/switcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/switcher.py" afterDir="false" />
-    </list>
+    <list default="true" id="b42c7944-045a-4c08-9929-7c8a606be81f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
