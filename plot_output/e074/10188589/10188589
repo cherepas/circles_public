@@ -15,5 +15,4 @@ source /p/home/jusers/cherepashkin1/jureca/cherepashkin1/virt_enves/venv1/activa
 # export HOROVOD_MPI_THREADS_DISABLE=0
 export CUDA_VISIBLE_DEVICES="0,1,2,3"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
-srun --cpu-bind=none,v --accel-bind=gn python -u "../../main.py" -datapath "/p/project/delia-mp/cherepashkin1/phenoseed/" -realjobname `basename "$0"` -jobname "e073j000" -jobdir "$SCRIPT_DIR" -expnum "e073" -epoch 1000 -bs 15 -num_input_images 3 -framelim 6000 -criterion "L2" -no_rmdirname -lr 5e-5 -hidden_dim 32 9 -inputt "img" -outputt "orient" -lb "orient" -no_loadh5 -minmax_fn "" -parallel "horovod" -machine "jureca" -merging "batch" -aug_gt "vector_sign_flip" "vector_permute" "svd" -updateFraction 0.25 -steplr 1000 1 -print_minibatch 10 -dfname "598frame"
+srun --cpu-bind=none,v --accel-bind=gn python -u "../../main.py" -datapath "/p/project/delia-mp/cherepashkin1/phenoseed/" -realjobname `basename "$0"` -jobname `basename "$0"` -jobdir "$SCRIPT_DIR" -epoch 2 -bs 15 -num_input_images 3 -framelim 60 -criterion "L2" -rmdirname -lr 1e-7 -expnum "e074" -hidden_dim 9 -inputt "img" -outputt "orient" -lb "orient" -no_loadh5 -minmax_fn "" -parallel "horovod" -machine "jureca" -merging "batch" -aug_gt "orient" -updateFraction 0.25 -steplr 1000 1 -print_minibatch 10 -dfname "598frame"
