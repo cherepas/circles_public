@@ -4,7 +4,7 @@ import numpy as np
 import os
 import sys
 def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
-             vox2mm, GT, loss_fn, moments, phase, dirname):
+             vox2mm, GT, loss_fn, moments, phase, dirname, i_batch, epoch):
     if opt.inputt in ('img', 'f') and \
             not lb in ('pc+f', 'pose6', 'eul', 'orient') \
             and not opt.outputt == 'f_n':
@@ -115,6 +115,10 @@ def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
     if all([opt.inputt == 'img', opt.outputt in ('orient'),
             lb in ('orient'), opt.aug_gt, phase=='val']):
         outputs = model(inputs)
+        np.savetxt(os.path.join(dirname, 'netOutputs', 'val_output'+\
+                                str(i_batch).zfill(3)+\
+                                'e'+str(epoch).zfill(3)),
+                   outputs.cpu().detach().numpy(),delimiter=',')
         # print(115)
         # gt4 = t.zeros(gt3.shape[0], 12, 3, 3)
         peridx = np.array([[0, 1, 2], [0, 2, 1], [1, 0, 2],
@@ -139,6 +143,7 @@ def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
         outputs = outputs.reshape(-1,3,3)
         # TODO appearance: use property that vector_sign_flip includes
         #  matrix sign flip, and that they are mutually exclusive.
+
         for i in range(outputs.shape[0]):
             if 'svd' in opt.aug_gt:
                 outputs2 = t.matmul(t.svd(outputs[i, :, :])[0],

@@ -7,6 +7,7 @@ import imageio
 from pathlib import Path
 from numpy import linalg as LA
 import csv
+import shutil
 
 def newfold(dir1, machine):
     i = 0
@@ -511,3 +512,15 @@ def csv2dic(path):
     with open(path, 'r', newline='\n') as csv_file:
         reader = csv.reader(csv_file, delimiter=',')
         return Bunch(dict(reader))
+
+def saferm(dirname):
+    # recursively delte dirname content
+    for filename in os.listdir(dirname):
+            file_path = jn(dirname, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print('Failed to delete %s. Reason: %s' % (file_path, e))

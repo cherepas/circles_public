@@ -5,9 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b42c7944-045a-4c08-9929-7c8a606be81f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/todo/img_21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/e074/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/e074/cnet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/e074/e074j000.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experiments/e074/e074l001.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/!Single_seed_loss_Loss.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/!Single_seed_loss_Loss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/!Single_seed_loss_log10(Loss).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/!Single_seed_loss_log10(Loss).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/Average_loss_Loss.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/Average_loss_Loss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/Average_loss_log10(Loss).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/Average_loss_log10(Loss).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/Average_loss_minibatch_train_Loss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/Average_loss_minibatch_train_log10(Loss).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/Average_loss_minibatch_val_Loss.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/Average_loss_minibatch_val_Loss.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/Average_loss_minibatch_val_log10(Loss).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/curloss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/lossar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/lossmb_train" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/loss_out/lossmb_val" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/netOutputs/val_output000e000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/netOutputs/val_output000e001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/netOutputs/val_output001e000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/netOutputs/val_output001e001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/netOutputs/val_output002e000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e074/e074l001/netOutputs/val_output002e001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/todo2.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo/todo2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/switcher.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
