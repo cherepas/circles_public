@@ -1,0 +1,570 @@
+
+  Preparing the environment for use of 2020 stage.
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2020
+Setting HOROVOD_MPI_THREADS_DISABLE=1. 
+cpu_bind=NONE - jrc0229, task  3  3 [18178]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  2  2 [18177]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  1  1 [18180]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  0  0 [18181]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+srun: error: jrc0229: tasks 1-3: Exited with exit code 1
+cpu_bind=NONE - jrc0229, task  0  0 [20390]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  1  1 [20393]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  3  3 [20392]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  2  2 [20391]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+srun: error: jrc0229: tasks 1-3: Exited with exit code 1
+cpu_bind=NONE - jrc0229, task  2  2 [22752]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  1  1 [22755]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  0  0 [22754]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  3  3 [22753]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+srun: error: jrc0229: tasks 1-3: Exited with exit code 1
+srun: Job 10176826 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 10176826
+cpu_bind=NONE - jrc0229, task  2  2 [24987]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  1  1 [24986]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  3  3 [24985]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  0  0 [24988]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+srun: error: jrc0229: tasks 1-3: Exited with exit code 1
+cpu_bind=NONE - jrc0229, task  0  0 [27222]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  3  3 [27225]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  2  2 [27223]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  1  1 [27224]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+srun: error: jrc0229: tasks 1-3: Exited with exit code 1
+cpu_bind=NONE - jrc0229, task  1  1 [29547]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  3  3 [29550]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  0  0 [29549]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  2  2 [29548]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+srun: error: jrc0229: tasks 1-3: Exited with exit code 1
+cpu_bind=NONE - jrc0229, task  1  1 [31805]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  0  0 [31803]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  3  3 [31802]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  2  2 [31804]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+srun: error: jrc0229: tasks 1-3: Exited with exit code 1
+cpu_bind=NONE - jrc0229, task  3  3 [2845]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  1  1 [2842]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  0  0 [2846]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  2  2 [2848]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+srun: error: jrc0229: tasks 1-3: Exited with exit code 1
+cpu_bind=NONE - jrc0229, task  0  0 [5318]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  3  3 [5319]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  1  1 [5316]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  2  2 [5317]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+srun: error: jrc0229: tasks 1-3: Exited with exit code 1
+cpu_bind=NONE - jrc0229, task  1  1 [7669]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  0  0 [7670]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  3  3 [7667]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+cpu_bind=NONE - jrc0229, task  2  2 [7668]: mask 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff set
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+Traceback (most recent call last):
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 674, in _broadcast_async
+    handle = getattr(mpi_lib, function)(
+RuntimeError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../main.py", line 994, in <module>
+    hvd.broadcast_parameters(smodel.state_dict(), root_rank=0)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/functions.py", line 54, in broadcast_parameters
+    handle = broadcast_async_(p, root_rank, name)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 775, in broadcast_async_
+    return _broadcast_async(tensor, tensor, root_rank, name, process_set)
+  File "/p/software/jurecadc/stages/2020/software/Horovod/0.23.0-gomkl-2021-Python-3.8.5/lib/python3.8/site-packages/horovod/torch/mpi_ops.py", line 678, in _broadcast_async
+    raise HorovodInternalError(e)
+horovod.common.exceptions.HorovodInternalError: Horovod has been shut down. This was caused by an exception on one of the ranks or an attempt to allreduce, allgather or broadcast a tensor after one of the ranks finished execution. If the shutdown was caused by an exception, you should see the exception in the log before the first shutdown message.
+srun: error: jrc0229: tasks 1-3: Exited with exit code 1
