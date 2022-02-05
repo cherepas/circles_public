@@ -485,12 +485,22 @@ v = (x3, [x1, x2]). if v is positive, keep x3 as is, and if v is negative, flip.
 - What does it mean? **Due to the implicit nonlinear restrictions enforced by model knowledge in the renderer, we expect slower and less reliable convergence in the training phase.**
 - What does mean **Investigate suitable handling of 3d information in DNN-based model regression.**?
 - Plans about 3d root with generalized cylinders. I won’t use an OpenSimRoot because it does not produce comparable photorealistic results. Instead, produce a depthmap in the output of the neural network, and compare it with the ground truth depth map.  
-- Remove Arabidopsis from plan?
-- Should we delete NeRF from proposal 2022?
-- Should I repeat experiment with scalability and calculate dataset size and wall clock time?
+- Will I work on Arabidopsis or just roots after seeds?
+- Will I work on NeRF?
+- Should I repeat experiment with scalability and calculate dataset size and wall clock time on my dataset with 5k seeds?
 - Should this proposal be aligned with phd proposal **doktoranden vorschlag**? 
+- However, when multiple images need to
+be processed in parallel as usual for SfM model-parallel multi-GPU implementations may be needed.
+- For coordinate-based neural representations we will investigate the regularizing effect of learning initializations together with supplemental supervised outputs, e.g.\ object masks, promoting cleaner surfaces. We expect that this will allow for accurate reconstruction, also in scenes where not all object parts are visible
+- Dataloader: all information about one seed in h5 file? or one h5 file for the whole dataset, for example 6k seeds?
+- Should I use hyperopt for hyperparameters searching or just grid search for beginning?
+- From phenoseeder I have 32k seeds with 36 views and point cloud available, not 10k. 
+- Why is one image of a seed is 5 MPix? ROI should be 700*700*1.8 = 0.88 MPix.   
+- How to calculate, how much pixels is in point cloud? 
+- Why 100 seeds are sufficient? I have overfitting even with 5000 seeds. 
 
 TODO
 - synchronize run of the script with github commit in order to be able to reproduce the same result. Or do it manually after succesfully launched code, with noting experiment number. 
+- Print dummy output before first epoch in order to check that output will work as intended
 - 
 
