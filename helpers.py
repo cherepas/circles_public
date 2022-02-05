@@ -154,7 +154,7 @@ def f2p(far, dirs, nsp, vox2mm):
     # @simple_time_tracker(_log)
 def lossfig(dirname, lossar, ylabel, title, xlim, ylim, lb, xlabel):
     plt.rcParams["figure.figsize"] = (9, 5)
-    # fig = plt.figure()
+    fig = plt.figure()
     # axes = plt.gca()
     if lb == 'pc+f':
         labels_text = [['train 0', 'val 0'], ['train 1', 'val 1']]
@@ -204,7 +204,7 @@ def lossfig(dirname, lossar, ylabel, title, xlim, ylim, lb, xlabel):
     #     plt.show(fig)
     # except:
     #     pass
-    # plt.close(fig)
+    plt.close(fig)
 
 def lossout(fnm, xlabel, lossar, epp, dirname, lb):
     lossfig(jn(dirname, fnm), lossar,

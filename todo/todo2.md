@@ -475,7 +475,7 @@ v = (x3, [x1, x2]). if v is positive, keep x3 as is, and if v is negative, flip.
 - Test validation augmentation on jureca
 - Deliver documents to Dekanat 1
   - Ask whether it is enough to send just translation without official letter from notar
-- Register for RWTH
+- **done** Register for RWTH
 - Regress centers of masses
 - Modify FC layer size for pose regression
 
@@ -490,5 +490,7 @@ v = (x3, [x1, x2]). if v is positive, keep x3 as is, and if v is negative, flip.
 - Should I repeat experiment with scalability and calculate dataset size and wall clock time?
 - Should this proposal be aligned with phd proposal **doktoranden vorschlag**? 
 
-Wergerg
+TODO
+- synchronize run of the script with github commit in order to be able to reproduce the same result. Or do it manually after succesfully launched code, with noting experiment number. 
+- 
 
