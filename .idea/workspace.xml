@@ -5,34 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b42c7944-045a-4c08-9929-7c8a606be81f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/cnet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/e073l001.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/job-parameters.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/!Single_seed_loss_Loss.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/!Single_seed_loss_Loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/!Single_seed_loss_log10(Loss).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/!Single_seed_loss_log10(Loss).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/Average_loss_Loss.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/Average_loss_Loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/Average_loss_log10(Loss).pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/Average_loss_log10(Loss).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/Average_loss_minibatch_train_Loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/Average_loss_minibatch_train_log10(Loss).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/Average_loss_minibatch_val_Loss.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/Average_loss_minibatch_val_Loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/Average_loss_minibatch_val_log10(Loss).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/curloss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/lossar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/lossmb_train" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/loss_out/lossmb_val" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/opt.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/opt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/sys_argv.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_output/e073/e073j000/transform_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo/img_21.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo/todo2.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo/todo2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

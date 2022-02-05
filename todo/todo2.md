@@ -479,5 +479,16 @@ v = (x3, [x1, x2]). if v is positive, keep x3 as is, and if v is negative, flip.
 - Regress centers of masses
 - Modify FC layer size for pose regression
 
+
+-Questions to Hanno:
+- can I measure accuracy with R, when performing a regression?
+- What does it mean? **Due to the implicit nonlinear restrictions enforced by model knowledge in the renderer, we expect slower and less reliable convergence in the training phase.**
+- What does mean **Investigate suitable handling of 3d information in DNN-based model regression.**?
+- Plans about 3d root with generalized cylinders. I won’t use an OpenSimRoot because it does not produce comparable photorealistic results. Instead, produce a depthmap in the output of the neural network, and compare it with the ground truth depth map.  
+- Remove Arabidopsis from plan?
+- Should we delete NeRF from proposal 2022?
+- Should I repeat experiment with scalability and calculate dataset size and wall clock time?
+- Should this proposal be aligned with phd proposal **doktoranden vorschlag**? 
+
 Wergerg
 
