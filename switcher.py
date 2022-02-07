@@ -115,10 +115,10 @@ def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
     if all([opt.inputt == 'img', opt.outputt in ('orient'),
             lb in ('orient'), opt.aug_gt, phase=='val']):
         outputs = model(inputs)
-        np.savetxt(os.path.join(dirname, 'netOutputs', 'val_output'+\
-                                str(i_batch).zfill(3)+\
-                                'e'+str(epoch).zfill(3)),
-                   outputs.cpu().detach().numpy(),delimiter=',')
+        if i_batch == 0:
+            np.savetxt(os.path.join(dirname, 'netOutputs', 'val_output'+\
+                                    '_e'+str(epoch).zfill(3)),
+                       outputs.cpu().detach().numpy(),delimiter=',')
         # print(115)
         # gt4 = t.zeros(gt3.shape[0], 12, 3, 3)
         peridx = np.array([[0, 1, 2], [0, 2, 1], [1, 0, 2],
