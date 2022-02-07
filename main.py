@@ -463,6 +463,8 @@ if __name__ == '__main__':
             GTw0 = np.einsum('ijk,nkm->nijm', LA.inv(C),
                              orients.reshape([-1, 3, 3]))
             GTw = GTw0.reshape([-1,36,9])
+        elif opt.outputt == 'cms':
+            GTw = lframewh.loc[:,['eul' + str(i) for i in range(3)]].values
         # TODO normalize GTws for merging order separate
         if opt.outputt == 'eul' and \
                 opt.merging == 'batch' and opt.minmax_fn:
