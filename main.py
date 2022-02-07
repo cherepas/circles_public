@@ -199,7 +199,7 @@ if __name__ == '__main__':
     setarg(parser, 'rmdirname', False)
     parser.add_argument('-steplr',  nargs='+', type=float, default=(30,1))
     parser.add_argument('-outputt', type=str,
-                        choices=['points','pose6', 'eul', 'orient'],
+                        choices=['points','pose6', 'eul', 'orient', 'cms'],
                         default='points')
     parser.add_argument('-ufmodel', type=int, default=100000)
     parser.add_argument('-framelim', type=int, default=int(1e20))
@@ -463,6 +463,8 @@ if __name__ == '__main__':
             GTw0 = np.einsum('ijk,nkm->nijm', LA.inv(C),
                              orients.reshape([-1, 3, 3]))
             GTw = GTw0.reshape([-1,36,9])
+        elif opt.outputt == 'cms':
+            GTw = lframewh.loc[:,['eul' + str(i) for i in range(3)]].values
         # TODO normalize GTws for merging order separate
         if opt.outputt == 'eul' and \
                 opt.merging == 'batch' and opt.minmax_fn:
