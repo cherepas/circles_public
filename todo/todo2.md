@@ -532,3 +532,12 @@ There are 30699 seeds overall in phenoseeder folder, that contains 36 rotation i
 - Modify FC layer size for pose regression
 - Write email to Leif's postdocs, that I would like to participate in their seminar as well.
 
+## TODO 
+- there is delay between epochs
+
+## Results
+Ablation, if not use all of augmentations, validation is increasing
+
+![img_29.png](img_29.png)
+
+
