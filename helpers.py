@@ -2,7 +2,7 @@ import os
 import torch as t
 import numpy as np
 import matplotlib
-matplotlib.use('Agg')
+matplotlib.use('PS')
 import matplotlib.pyplot as plt
 from os.path import join as jn
 import imageio
