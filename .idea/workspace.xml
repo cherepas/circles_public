@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42c7944-045a-4c08-9929-7c8a606be81f" name="Changes" comment="" />
+    <list default="true" id="b42c7944-045a-4c08-9929-7c8a606be81f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/experiments/e074/e074w008.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

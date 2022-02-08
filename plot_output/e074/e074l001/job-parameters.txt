@@ -16,4 +16,4 @@ DataParallel(
     )
   )
 )
-time_elapsed=0:01:14.783745
+time_elapsed=0:01:11.156472

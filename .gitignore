@@ -1,6 +1,7 @@
 wandb/
 __pycache__/
 __pycache__
+*.py[cod]
 .ipynb_checkpoints/
 pathes_df_train.csv
 pathes_df_val.csv

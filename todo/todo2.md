@@ -478,19 +478,21 @@ v = (x3, [x1, x2]). if v is positive, keep x3 as is, and if v is negative, flip.
 - **done** Register for RWTH
 - Regress centers of masses
 - Modify FC layer size for pose regression
+- Write email to Leif's postdocs, that I would like to participate in their seminar as well.
 
-
--Questions to Hanno:
-- can I measure accuracy with R, when performing a regression?
-- What does it mean? **Due to the implicit nonlinear restrictions enforced by model knowledge in the renderer, we expect slower and less reliable convergence in the training phase.**
-- What does mean **Investigate suitable handling of 3d information in DNN-based model regression.**?
-- Plans about 3d root with generalized cylinders. I won’t use an OpenSimRoot because it does not produce comparable photorealistic results. Instead, produce a depthmap in the output of the neural network, and compare it with the ground truth depth map.  
-- Will I work on Arabidopsis or just roots after seeds?
+There are different results for minibatches. Some of them have loss around 0.02, and other can be 0.4 - 0.5. And even more, they alternate each other.
+![img_22.png](img_22.png)
+# Questions to Hanno:
+- can I measure accuracy in IoU or Chamfer distance, when performing a regression of point cloud?
+- What does it mean? **Due to the implicit nonlinear restrictions enforced by model knowledge in the renderer, we expect slower and less reliable convergence in the training phase.** ![img_23.png](img_23.png)
+- What does mean **Investigate suitable handling of 3d information in DNN-based model regression.**? ![img_24.png](img_24.png)
+- Plans about 3d root with generalized cylinders. I won’t use an OpenSimRoot because it does not produce comparable photorealistic results. Instead, produce a depthmap in the output of the neural network, and compare it with the ground truth depth map. 
+- Will I work on Arabidopsis or just skip this section? roots after seeds?
 - Will I work on NeRF?
 - Should I repeat experiment with scalability and calculate dataset size and wall clock time on my dataset with 5k seeds?
 - Should this proposal be aligned with phd proposal **doktoranden vorschlag**? 
 - However, when multiple images need to
-be processed in parallel as usual for SfM model-parallel multi-GPU implementations may be needed.
+be processed in parallel as usual for SfM model-parallel multi-GPU implementations may be needed. ![img_25.png](img_25.png)
 - For coordinate-based neural representations we will investigate the regularizing effect of learning initializations together with supplemental supervised outputs, e.g.\ object masks, promoting cleaner surfaces. We expect that this will allow for accurate reconstruction, also in scenes where not all object parts are visible
 - Dataloader: all information about one seed in h5 file? or one h5 file for the whole dataset, for example 6k seeds?
 - Should I use hyperopt for hyperparameters searching or just grid search for beginning?
@@ -499,8 +501,43 @@ be processed in parallel as usual for SfM model-parallel multi-GPU implementatio
 - How to calculate, how much pixels is in point cloud? 
 - Why 100 seeds are sufficient? I have overfitting even with 5000 seeds. 
 
-TODO
+## TODO
 - synchronize run of the script with github commit in order to be able to reproduce the same result. Or do it manually after succesfully launched code, with noting experiment number. 
 - Print dummy output before first epoch in order to check that output will work as intended
+- Use intersection over union or chamfer distance to evaluate 3d reconstruction accuracy. 
+- Understand, what does it mean, error in 0.5 for coefficient calculation. 
+- There is no information on what is accuracy for regression of spherical harmonics. Should it be measured in terms of accuracy of 3d reconstruction? 
+
+## TODO proposal
+- Update preliminary work, include results of report
+- Insert in project report about problem that camera center and reconstructed point cloud are not the same for all seeds
+
+Distribution of volumes enclosed by parallelepiped, gained from limits of point clouds. 
+![](../notebooks/figs/091.png)
+Volumes from 5283 seeds are 522499 plus minus 131024. Approximately it is 523000 plus minus 131000 voxels. 
+Approx it is 5e5 plus minus 1e5. 
+
+There are 30699 seeds overall in phenoseeder folder, that contains 36 rotation images. 
+
+## Hanno's tips on 07.02.2022
+- Use jureca to run code overnight. 
+- If run multiple jobs, it is better to run smaller projects, because I don't need to wait till more nodes will be free
+- Use multiple nodes, because after 24 hours it will be stopped
 - 
+# Period 08.02.2022 to 14.02.2022
+- Test validation augmentation on jureca
+- Deliver documents to Dekanat 1
+  - Ask whether it is enough to send just translation without official letter from notar 
+- Regress centers of masses
+- Modify FC layer size for pose regression
+- Write email to Leif's postdocs, that I would like to participate in their seminar as well.
+
+## TODO 
+- there is delay between epochs
+
+## Results
+Ablation, if not use all of augmentations, validation is increasing
+
+![img_29.png](img_29.png)
+
 
