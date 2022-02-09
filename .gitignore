@@ -21,3 +21,5 @@ __pycache__/switcher.cpython-38.pyc
 __pycache__/transform_image.cpython-38.pyc
 __pycache__/transformdef.cpython-38.pyc
 .idea/workspace.xml
+lossmb_train
+lossmb_val
