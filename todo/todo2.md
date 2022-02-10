@@ -553,5 +553,11 @@ Dataset 598 consists of 216 Gb, there are 5283*36 images, each with resolution 1
 Training loop for 3 views, 5200 seeds, 5*3 size of minibatch takes 1380 seconds. Parallel is default torch, machine is workstation. 
 
 ## Questions to Hanno
-- How technically it is usually creating dataset? Should it be equal to RAM? 
+- How technically it is usually creating dataset? Should it be equal to RAM?![img_33.png](img_33.png)
+- Does it make sense to test training on small dataset, like 100 or 500 seeds instead of 5300? 
+
+## In Jülich
+- Give bike and helmet back
+- Take hdd
+- 
 
