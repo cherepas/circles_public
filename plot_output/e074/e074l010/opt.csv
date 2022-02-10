@@ -70,9 +70,9 @@ ufmodel,100000
 framelim,60
 conTrain,
 print_minibatch,1
-aug_gt,"['vector_sign_flip', 'vector_permute', 'svd']"
+aug_gt,
 datapath,C:/cherepashkin1/phenoseed/
-jobname,e074l007.sh
-realjobname,e074l007.sh
+jobname,e074l010.sh
+realjobname,e074l010.sh
 jobdir,
 loadh5,False

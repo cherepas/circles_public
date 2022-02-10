@@ -3,6 +3,10 @@ import time
 import numpy as np
 import os
 import sys
+from helpers import *
+def _log(message):
+    print('[SimpleTimeTracker] {function_name} {total_time:.3f}'.format(**message))
+#@simple_time_tracker(_log)
 def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
              vox2mm, GT, loss_fn, moments, phase, dirname, i_batch, epoch, index):
     if opt.inputt in ('img', 'f') and \
@@ -134,12 +138,11 @@ def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
                           [[-1, 0, 0], [0, -1, 0], [0, 0, +1]],
                           [[-1, 0, 0], [0, +1, 0], [0, 0, -1]]])
         signf = signf.cuda() if iscuda else signf
-        # TODO write in vectorize form instead of for loop
         lo = t.zeros(outputs.shape[0], 2, 6, 6, 9)
         outputs1 = outputs.reshape(-1,3,3)
+        # TODO write in vectorize form instead of for loop
         # TODO appearance: use property that vector_sign_flip includes
         #  matrix sign flip, and that they are mutually exclusive.
-
         for i in range(outputs.shape[0]):
             if 'svd' in opt.aug_gt:
                 outputs2 = t.matmul(t.svd(outputs1[i, :, :])[0],
@@ -163,6 +166,7 @@ def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
                             outputs5 = outputs4
                         lo[i, j, k, l, :] = loss_fn(GT[i, :], outputs5.reshape(9))
         loss = t.mean(t.amin(t.mean(lo, dim=4), dim=(1, 2, 3)))
+
         # loss = t.mean(t.amin(lo, dim=(1,2,3)))
         # if i_batch == 0:
         #     print(205, 'aug_loss', loss, 'direct loss = ', t.mean(loss_fn(GT, outputs)))
@@ -171,6 +175,11 @@ def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
         latent = 0
         # fi = time.time()
         # print(140, fi-st)
+    elif all([opt.inputt == 'img', opt.outputt in ('orient'),
+            lb in ('orient'), not opt.aug_gt, phase=='val']):
+        outputs = model(inputs)
+        loss = t.mean(loss_fn(GT, outputs))
+        outputs_2, latent = 0, 0
     return loss, outputs, outputs_2, latent
 
 #def plotitout(lossar):

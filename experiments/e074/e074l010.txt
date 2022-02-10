@@ -1,0 +1,1802 @@
+iscuda= True
+PyTorch Version:  1.10.0
+Torchvision Version:  0.11.1
+opt:
+ Namespace(ampl=441, aug_gt=[''], batch_output=2, bs=5, cencrop=700, center=False, chidden_dim=[96, 128, 256, 256, 256], classicnorm=False, cmscrop=0, conTrain='', criterion='L2', csvname='598csv9', datapath='C:/cherepashkin1/phenoseed/', dfname='598frame', downsample=1, epoch=1000, expdescr='', expnum='e074', feature_extract=False, framelim=60, gradient_predivide_factor=1.0, gttype='single_file', haf=True, hidden_dim=[32, 9], inputt='img', jobdir='', jobname='e074l010.sh', kernel_sizes=[7, 3, 3, 3, 3, 3], lb='orient', loadh5=False, lr=5e-05, machine='lenovo', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging='batch', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=3, num_sam_points=500, num_workers=0, outputt='orient', parallel='torch', pin_memory=False, print_minibatch=1, pscale=100, rand_angle=False, realjobname='e074l010.sh', rescale=500, rmdirname=True, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=255, steplr=[1000.0, 1.0], transappendix='_image', ufmodel=100000, updateFraction=0.25, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['../../main.py', '-datapath', 'C:/cherepashkin1/phenoseed/', '-realjobname', 'e074l010.sh', '-jobname', 'e074l010.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '1000', '-bs', '5', '-num_input_images', '3', '-framelim', '60', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'lenovo', '-merging', 'batch', '-aug_gt', '', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '1', '-dfname', '598frame']
+seed =  0
+path were main.py is located= ../../
+opt.wandb =  
+93
+file to frame csv ../../csv\598frame.csv
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+len train =  48
+train consists of 9 full batches with 5 tensors with 3 views
+the last batch has size of 3 tensors with 3 views
+val consists of 2 full batches with 5 tensors with 3 views
+the last batch has size of 2 tensors with 3 views
+[SimpleTimeTracker] trainit 0.016
+Epoch 0/999
+----------
+Wed Feb  9 13:09:54 2022
+[SimpleTimeTracker] out2loss 1.641
+batch 0, train loss = 0.46, mean loss = 0.46
+Wed Feb  9 13:10:00 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 1.14, mean loss = 0.80
+Wed Feb  9 13:10:03 2022
+[SimpleTimeTracker] out2loss 0.011
+batch 2, train loss = 1.07, mean loss = 0.89
+Wed Feb  9 13:10:05 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 1.24, mean loss = 0.98
+Wed Feb  9 13:10:08 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 1.19, mean loss = 1.02
+Wed Feb  9 13:10:10 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 1.17, mean loss = 1.04
+Wed Feb  9 13:10:13 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 6, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:10:16 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 7, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:10:18 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 1.13, mean loss = 1.05
+Wed Feb  9 13:10:21 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.98, mean loss = 1.04
+Wed Feb  9 13:10:22 2022
+train Loss: 1.04
+
+[SimpleTimeTracker] out2loss 0.173
+batch 0, val loss = 0.65, mean loss = 0.65
+Wed Feb  9 13:10:25 2022
+[SimpleTimeTracker] out2loss 0.170
+batch 1, val loss = 0.75, mean loss = 0.70
+Wed Feb  9 13:10:28 2022
+[SimpleTimeTracker] out2loss 0.069
+batch 2, val loss = 0.74, mean loss = 0.72
+Wed Feb  9 13:10:29 2022
+val Loss: 0.72
+
+epoch 0 was done for 37.114531 seconds
+Epoch 1/999
+----------
+Wed Feb  9 13:10:31 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 0, train loss = 0.81, mean loss = 0.81
+Wed Feb  9 13:10:34 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.81, mean loss = 0.81
+Wed Feb  9 13:10:37 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.85, mean loss = 0.83
+Wed Feb  9 13:10:39 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.99, mean loss = 0.87
+Wed Feb  9 13:10:42 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.72, mean loss = 0.84
+Wed Feb  9 13:10:45 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 1.00, mean loss = 0.86
+Wed Feb  9 13:10:48 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 6, train loss = 0.82, mean loss = 0.86
+Wed Feb  9 13:10:51 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.79, mean loss = 0.85
+Wed Feb  9 13:10:53 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 8, train loss = 0.91, mean loss = 0.86
+Wed Feb  9 13:10:56 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.92, mean loss = 0.86
+Wed Feb  9 13:10:57 2022
+train Loss: 0.86
+
+[SimpleTimeTracker] out2loss 0.181
+batch 0, val loss = 0.69, mean loss = 0.69
+Wed Feb  9 13:11:00 2022
+[SimpleTimeTracker] out2loss 0.178
+batch 1, val loss = 0.83, mean loss = 0.76
+Wed Feb  9 13:11:03 2022
+[SimpleTimeTracker] out2loss 0.077
+batch 2, val loss = 0.84, mean loss = 0.79
+Wed Feb  9 13:11:04 2022
+val Loss: 0.79
+
+epoch 1 was done for 35.562372 seconds
+Epoch 2/999
+----------
+Wed Feb  9 13:11:07 2022
+iscuda= True
+PyTorch Version:  1.10.0
+Torchvision Version:  0.11.1
+opt:
+ Namespace(ampl=441, aug_gt=[''], batch_output=2, bs=5, cencrop=700, center=False, chidden_dim=[96, 128, 256, 256, 256], classicnorm=False, cmscrop=0, conTrain='', criterion='L2', csvname='598csv9', datapath='C:/cherepashkin1/phenoseed/', dfname='598frame', downsample=1, epoch=1000, expdescr='', expnum='e074', feature_extract=False, framelim=60, gradient_predivide_factor=1.0, gttype='single_file', haf=True, hidden_dim=[32, 9], inputt='img', jobdir='', jobname='e074l010.sh', kernel_sizes=[7, 3, 3, 3, 3, 3], lb='orient', loadh5=False, lr=5e-05, machine='lenovo', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging='batch', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=3, num_sam_points=500, num_workers=0, outputt='orient', parallel='torch', pin_memory=False, print_minibatch=1, pscale=100, rand_angle=False, realjobname='e074l010.sh', rescale=500, rmdirname=True, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=255, steplr=[1000.0, 1.0], transappendix='_image', ufmodel=100000, updateFraction=0.25, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['../../main.py', '-datapath', 'C:/cherepashkin1/phenoseed/', '-realjobname', 'e074l010.sh', '-jobname', 'e074l010.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '1000', '-bs', '5', '-num_input_images', '3', '-framelim', '60', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'lenovo', '-merging', 'batch', '-aug_gt', '', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '1', '-dfname', '598frame']
+seed =  0
+path were main.py is located= ../../
+opt.wandb =  
+93
+file to frame csv ../../csv\598frame.csv
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+len train =  48
+train consists of 9 full batches with 5 tensors with 3 views
+the last batch has size of 3 tensors with 3 views
+val consists of 2 full batches with 5 tensors with 3 views
+the last batch has size of 2 tensors with 3 views
+[SimpleTimeTracker] trainit 0.017
+Epoch 0/999
+----------
+Wed Feb  9 13:11:14 2022
+iscuda= True
+PyTorch Version:  1.10.0
+Torchvision Version:  0.11.1
+opt:
+ Namespace(ampl=441, aug_gt='', batch_output=2, bs=5, cencrop=700, center=False, chidden_dim=[96, 128, 256, 256, 256], classicnorm=False, cmscrop=0, conTrain='', criterion='L2', csvname='598csv9', datapath='C:/cherepashkin1/phenoseed/', dfname='598frame', downsample=1, epoch=1000, expdescr='', expnum='e074', feature_extract=False, framelim=60, gradient_predivide_factor=1.0, gttype='single_file', haf=True, hidden_dim=[32, 9], inputt='img', jobdir='', jobname='e074l010.sh', kernel_sizes=[7, 3, 3, 3, 3, 3], lb='orient', loadh5=False, lr=5e-05, machine='lenovo', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging='batch', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=3, num_sam_points=500, num_workers=0, outputt='orient', parallel='torch', pin_memory=False, print_minibatch=1, pscale=100, rand_angle=False, realjobname='e074l010.sh', rescale=500, rmdirname=True, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=255, steplr=[1000.0, 1.0], transappendix='_image', ufmodel=100000, updateFraction=0.25, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['../../main.py', '-datapath', 'C:/cherepashkin1/phenoseed/', '-realjobname', 'e074l010.sh', '-jobname', 'e074l010.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '1000', '-bs', '5', '-num_input_images', '3', '-framelim', '60', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'lenovo', '-merging', 'batch', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '1', '-dfname', '598frame']
+seed =  0
+path were main.py is located= ../../
+opt.wandb =  
+93
+file to frame csv ../../csv\598frame.csv
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+len train =  48
+train consists of 9 full batches with 5 tensors with 3 views
+the last batch has size of 3 tensors with 3 views
+val consists of 2 full batches with 5 tensors with 3 views
+the last batch has size of 2 tensors with 3 views
+[SimpleTimeTracker] trainit 0.017
+Epoch 0/999
+----------
+Wed Feb  9 13:13:19 2022
+[SimpleTimeTracker] out2loss 1.610
+batch 0, train loss = 0.46, mean loss = 0.46
+Wed Feb  9 13:13:25 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 1.14, mean loss = 0.80
+Wed Feb  9 13:13:27 2022
+[SimpleTimeTracker] out2loss 0.011
+batch 2, train loss = 1.07, mean loss = 0.89
+Wed Feb  9 13:13:30 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 3, train loss = 1.24, mean loss = 0.98
+Wed Feb  9 13:13:32 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 1.19, mean loss = 1.02
+Wed Feb  9 13:13:35 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 1.17, mean loss = 1.04
+Wed Feb  9 13:13:38 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:13:40 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:13:43 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 8, train loss = 1.13, mean loss = 1.05
+Wed Feb  9 13:13:45 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.98, mean loss = 1.04
+Wed Feb  9 13:13:47 2022
+train Loss: 1.04
+
+[SimpleTimeTracker] out2loss 0.000
+[SimpleTimeTracker] train_model 30.156
+Traceback (most recent call last):
+  File "../../main.py", line 835, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "C:\cherepashkin1\circles_public\helpers.py", line 38, in wrapped_fn
+    result = fn(*args, **kwargs)
+  File "../../main.py", line 488, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "C:\cherepashkin1\circles_public\helpers.py", line 38, in wrapped_fn
+    result = fn(*args, **kwargs)
+  File "C:\cherepashkin1\circles_public\switcher.py", line 181, in out2loss
+    return loss, outputs, outputs_2, latent
+UnboundLocalError: local variable 'loss' referenced before assignment
+iscuda= True
+PyTorch Version:  1.10.0
+Torchvision Version:  0.11.1
+opt:
+ Namespace(ampl=441, aug_gt='', batch_output=2, bs=5, cencrop=700, center=False, chidden_dim=[96, 128, 256, 256, 256], classicnorm=False, cmscrop=0, conTrain='', criterion='L2', csvname='598csv9', datapath='C:/cherepashkin1/phenoseed/', dfname='598frame', downsample=1, epoch=1000, expdescr='', expnum='e074', feature_extract=False, framelim=60, gradient_predivide_factor=1.0, gttype='single_file', haf=True, hidden_dim=[32, 9], inputt='img', jobdir='', jobname='e074l010.sh', kernel_sizes=[7, 3, 3, 3, 3, 3], lb='orient', loadh5=False, lr=5e-05, machine='lenovo', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging='batch', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=3, num_sam_points=500, num_workers=0, outputt='orient', parallel='torch', pin_memory=False, print_minibatch=1, pscale=100, rand_angle=False, realjobname='e074l010.sh', rescale=500, rmdirname=True, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=255, steplr=[1000.0, 1.0], transappendix='_image', ufmodel=100000, updateFraction=0.25, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['../../main.py', '-datapath', 'C:/cherepashkin1/phenoseed/', '-realjobname', 'e074l010.sh', '-jobname', 'e074l010.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '1000', '-bs', '5', '-num_input_images', '3', '-framelim', '60', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'lenovo', '-merging', 'batch', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '1', '-dfname', '598frame']
+seed =  0
+path were main.py is located= ../../
+opt.wandb =  
+93
+file to frame csv ../../csv\598frame.csv
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+len train =  48
+train consists of 9 full batches with 5 tensors with 3 views
+the last batch has size of 3 tensors with 3 views
+val consists of 2 full batches with 5 tensors with 3 views
+the last batch has size of 2 tensors with 3 views
+[SimpleTimeTracker] trainit 0.017
+Epoch 0/999
+----------
+Wed Feb  9 13:16:02 2022
+[SimpleTimeTracker] out2loss 1.573
+batch 0, train loss = 0.46, mean loss = 0.46
+Wed Feb  9 13:16:08 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 1.14, mean loss = 0.80
+Wed Feb  9 13:16:11 2022
+[SimpleTimeTracker] out2loss 0.010
+batch 2, train loss = 1.07, mean loss = 0.89
+Wed Feb  9 13:16:13 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 1.24, mean loss = 0.98
+Wed Feb  9 13:16:16 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 1.19, mean loss = 1.02
+Wed Feb  9 13:16:18 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 1.17, mean loss = 1.04
+Wed Feb  9 13:16:21 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:16:23 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:16:26 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 1.13, mean loss = 1.05
+Wed Feb  9 13:16:28 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.98, mean loss = 1.04
+Wed Feb  9 13:16:30 2022
+train Loss: 1.04
+
+[SimpleTimeTracker] out2loss 0.000
+[SimpleTimeTracker] train_model 29.994
+Traceback (most recent call last):
+  File "../../main.py", line 835, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "C:\cherepashkin1\circles_public\helpers.py", line 38, in wrapped_fn
+    result = fn(*args, **kwargs)
+  File "../../main.py", line 488, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "C:\cherepashkin1\circles_public\helpers.py", line 38, in wrapped_fn
+    result = fn(*args, **kwargs)
+  File "C:\cherepashkin1\circles_public\switcher.py", line 182, in out2loss
+    return loss, outputs, outputs_2, latent
+UnboundLocalError: local variable 'loss' referenced before assignment
+iscuda= True
+PyTorch Version:  1.10.0
+Torchvision Version:  0.11.1
+opt:
+ Namespace(ampl=441, aug_gt='', batch_output=2, bs=5, cencrop=700, center=False, chidden_dim=[96, 128, 256, 256, 256], classicnorm=False, cmscrop=0, conTrain='', criterion='L2', csvname='598csv9', datapath='C:/cherepashkin1/phenoseed/', dfname='598frame', downsample=1, epoch=1000, expdescr='', expnum='e074', feature_extract=False, framelim=60, gradient_predivide_factor=1.0, gttype='single_file', haf=True, hidden_dim=[32, 9], inputt='img', jobdir='', jobname='e074l010.sh', kernel_sizes=[7, 3, 3, 3, 3, 3], lb='orient', loadh5=False, lr=5e-05, machine='lenovo', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging='batch', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=3, num_sam_points=500, num_workers=0, outputt='orient', parallel='torch', pin_memory=False, print_minibatch=1, pscale=100, rand_angle=False, realjobname='e074l010.sh', rescale=500, rmdirname=True, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=255, steplr=[1000.0, 1.0], transappendix='_image', ufmodel=100000, updateFraction=0.25, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['../../main.py', '-datapath', 'C:/cherepashkin1/phenoseed/', '-realjobname', 'e074l010.sh', '-jobname', 'e074l010.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '1000', '-bs', '5', '-num_input_images', '3', '-framelim', '60', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'lenovo', '-merging', 'batch', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '1', '-dfname', '598frame']
+seed =  0
+path were main.py is located= ../../
+opt.wandb =  
+93
+file to frame csv ../../csv\598frame.csv
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+len train =  48
+train consists of 9 full batches with 5 tensors with 3 views
+the last batch has size of 3 tensors with 3 views
+val consists of 2 full batches with 5 tensors with 3 views
+the last batch has size of 2 tensors with 3 views
+[SimpleTimeTracker] trainit 0.017
+Epoch 0/999
+----------
+Wed Feb  9 13:22:54 2022
+[SimpleTimeTracker] out2loss 1.580
+batch 0, train loss = 0.46, mean loss = 0.46
+Wed Feb  9 13:23:00 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 1.14, mean loss = 0.80
+Wed Feb  9 13:23:02 2022
+[SimpleTimeTracker] out2loss 0.010
+batch 2, train loss = 1.07, mean loss = 0.89
+Wed Feb  9 13:23:05 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 3, train loss = 1.24, mean loss = 0.98
+Wed Feb  9 13:23:07 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 1.19, mean loss = 1.02
+Wed Feb  9 13:23:10 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 1.17, mean loss = 1.04
+Wed Feb  9 13:23:12 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:23:15 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:23:17 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 1.13, mean loss = 1.05
+Wed Feb  9 13:23:20 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.98, mean loss = 1.04
+Wed Feb  9 13:23:22 2022
+train Loss: 1.04
+
+[SimpleTimeTracker] out2loss 0.000
+[SimpleTimeTracker] train_model 29.905
+Traceback (most recent call last):
+  File "../../main.py", line 835, in <module>
+    model, lossar, time_elapsed = train_model(smodel, optimizer)
+  File "C:\cherepashkin1\circles_public\helpers.py", line 38, in wrapped_fn
+    result = fn(*args, **kwargs)
+  File "../../main.py", line 488, in train_model
+    loss, outputs, outputs_2, latent = out2loss(opt, model,
+  File "C:\cherepashkin1\circles_public\helpers.py", line 38, in wrapped_fn
+    result = fn(*args, **kwargs)
+  File "C:\cherepashkin1\circles_public\switcher.py", line 180, in out2loss
+    loss = t.mean(loss_fn(GT, outputs))
+UnboundLocalError: local variable 'outputs' referenced before assignment
+iscuda= True
+PyTorch Version:  1.10.0
+Torchvision Version:  0.11.1
+opt:
+ Namespace(ampl=441, aug_gt='', batch_output=2, bs=5, cencrop=700, center=False, chidden_dim=[96, 128, 256, 256, 256], classicnorm=False, cmscrop=0, conTrain='', criterion='L2', csvname='598csv9', datapath='C:/cherepashkin1/phenoseed/', dfname='598frame', downsample=1, epoch=1000, expdescr='', expnum='e074', feature_extract=False, framelim=60, gradient_predivide_factor=1.0, gttype='single_file', haf=True, hidden_dim=[32, 9], inputt='img', jobdir='', jobname='e074l010.sh', kernel_sizes=[7, 3, 3, 3, 3, 3], lb='orient', loadh5=False, lr=5e-05, machine='lenovo', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging='batch', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=3, num_sam_points=500, num_workers=0, outputt='orient', parallel='torch', pin_memory=False, print_minibatch=1, pscale=100, rand_angle=False, realjobname='e074l010.sh', rescale=500, rmdirname=True, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=255, steplr=[1000.0, 1.0], transappendix='_image', ufmodel=100000, updateFraction=0.25, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['../../main.py', '-datapath', 'C:/cherepashkin1/phenoseed/', '-realjobname', 'e074l010.sh', '-jobname', 'e074l010.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '1000', '-bs', '5', '-num_input_images', '3', '-framelim', '60', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'lenovo', '-merging', 'batch', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '1', '-dfname', '598frame']
+seed =  0
+path were main.py is located= ../../
+opt.wandb =  
+93
+file to frame csv ../../csv\598frame.csv
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+len train =  48
+train consists of 9 full batches with 5 tensors with 3 views
+the last batch has size of 3 tensors with 3 views
+val consists of 2 full batches with 5 tensors with 3 views
+the last batch has size of 2 tensors with 3 views
+[SimpleTimeTracker] trainit 0.016
+Epoch 0/999
+----------
+Wed Feb  9 13:23:46 2022
+[SimpleTimeTracker] out2loss 1.603
+batch 0, train loss = 0.46, mean loss = 0.46
+Wed Feb  9 13:23:52 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 1.14, mean loss = 0.80
+Wed Feb  9 13:23:55 2022
+[SimpleTimeTracker] out2loss 0.010
+batch 2, train loss = 1.07, mean loss = 0.89
+Wed Feb  9 13:23:57 2022
+[SimpleTimeTracker] out2loss 0.005
+batch 3, train loss = 1.24, mean loss = 0.98
+Wed Feb  9 13:24:00 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 1.19, mean loss = 1.02
+Wed Feb  9 13:24:02 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 1.17, mean loss = 1.04
+Wed Feb  9 13:24:05 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:24:07 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:24:10 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 1.13, mean loss = 1.05
+Wed Feb  9 13:24:12 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 9, train loss = 0.98, mean loss = 1.04
+Wed Feb  9 13:24:14 2022
+train Loss: 1.04
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.65, mean loss = 0.65
+Wed Feb  9 13:24:17 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.75, mean loss = 0.70
+Wed Feb  9 13:24:19 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 0.74, mean loss = 0.72
+Wed Feb  9 13:24:20 2022
+val Loss: 0.72
+
+epoch 0 was done for 36.380625 seconds
+Epoch 1/999
+----------
+Wed Feb  9 13:24:23 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.81, mean loss = 0.81
+Wed Feb  9 13:24:25 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.81, mean loss = 0.81
+Wed Feb  9 13:24:28 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.85, mean loss = 0.83
+Wed Feb  9 13:24:31 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 3, train loss = 0.99, mean loss = 0.87
+Wed Feb  9 13:24:33 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.72, mean loss = 0.84
+Wed Feb  9 13:24:36 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 1.00, mean loss = 0.86
+Wed Feb  9 13:24:38 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 6, train loss = 0.82, mean loss = 0.86
+Wed Feb  9 13:24:41 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 7, train loss = 0.79, mean loss = 0.85
+Wed Feb  9 13:24:43 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.91, mean loss = 0.86
+Wed Feb  9 13:24:46 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 9, train loss = 0.92, mean loss = 0.86
+Wed Feb  9 13:24:48 2022
+train Loss: 0.86
+
+[SimpleTimeTracker] out2loss 0.003
+batch 0, val loss = 0.69, mean loss = 0.69
+Wed Feb  9 13:24:50 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.83, mean loss = 0.76
+Wed Feb  9 13:24:53 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 0.84, mean loss = 0.79
+Wed Feb  9 13:24:54 2022
+val Loss: 0.79
+
+epoch 1 was done for 33.582186 seconds
+Epoch 2/999
+----------
+Wed Feb  9 13:24:56 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 0, train loss = 1.00, mean loss = 1.00
+Wed Feb  9 13:24:59 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.73, mean loss = 0.87
+Wed Feb  9 13:25:02 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.94, mean loss = 0.89
+Wed Feb  9 13:25:04 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 1.06, mean loss = 0.93
+Wed Feb  9 13:25:07 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.66, mean loss = 0.88
+Wed Feb  9 13:25:09 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 1.02, mean loss = 0.90
+Wed Feb  9 13:25:12 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.75, mean loss = 0.88
+Wed Feb  9 13:25:15 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.76, mean loss = 0.86
+Wed Feb  9 13:25:17 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.74, mean loss = 0.85
+Wed Feb  9 13:25:20 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.91, mean loss = 0.86
+Wed Feb  9 13:25:21 2022
+train Loss: 0.86
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.65, mean loss = 0.65
+Wed Feb  9 13:25:24 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.80, mean loss = 0.72
+Wed Feb  9 13:25:26 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 0.83, mean loss = 0.76
+Wed Feb  9 13:25:27 2022
+val Loss: 0.76
+
+epoch 2 was done for 33.732869 seconds
+Epoch 3/999
+----------
+Wed Feb  9 13:25:30 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.82, mean loss = 0.82
+Wed Feb  9 13:25:33 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.67, mean loss = 0.74
+Wed Feb  9 13:25:35 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, train loss = 0.85, mean loss = 0.78
+Wed Feb  9 13:25:38 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.95, mean loss = 0.82
+Wed Feb  9 13:25:41 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.46, mean loss = 0.75
+Wed Feb  9 13:25:43 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 0.98, mean loss = 0.79
+Wed Feb  9 13:25:46 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 6, train loss = 0.71, mean loss = 0.78
+Wed Feb  9 13:25:48 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.73, mean loss = 0.77
+Wed Feb  9 13:25:51 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.60, mean loss = 0.75
+Wed Feb  9 13:25:54 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.79, mean loss = 0.76
+Wed Feb  9 13:25:55 2022
+train Loss: 0.76
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.70, mean loss = 0.70
+Wed Feb  9 13:25:58 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.85, mean loss = 0.77
+Wed Feb  9 13:26:00 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 0.91, mean loss = 0.82
+Wed Feb  9 13:26:01 2022
+val Loss: 0.82
+
+epoch 3 was done for 34.045048 seconds
+Epoch 4/999
+----------
+Wed Feb  9 13:26:04 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.74, mean loss = 0.74
+Wed Feb  9 13:26:07 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.77, mean loss = 0.75
+Wed Feb  9 13:26:10 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.78, mean loss = 0.76
+Wed Feb  9 13:26:13 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.91, mean loss = 0.80
+Wed Feb  9 13:26:15 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.45, mean loss = 0.73
+Wed Feb  9 13:26:18 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.88, mean loss = 0.75
+Wed Feb  9 13:26:21 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.66, mean loss = 0.74
+Wed Feb  9 13:26:24 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.73, mean loss = 0.74
+Wed Feb  9 13:26:26 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.57, mean loss = 0.72
+Wed Feb  9 13:26:29 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.74, mean loss = 0.72
+Wed Feb  9 13:26:31 2022
+train Loss: 0.72
+
+[SimpleTimeTracker] out2loss 0.003
+batch 0, val loss = 0.65, mean loss = 0.65
+Wed Feb  9 13:26:33 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.76, mean loss = 0.70
+Wed Feb  9 13:26:36 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 0.93, mean loss = 0.78
+Wed Feb  9 13:26:37 2022
+val Loss: 0.78
+
+epoch 4 was done for 35.702935 seconds
+Epoch 5/999
+----------
+Wed Feb  9 13:26:40 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.54, mean loss = 0.54
+Wed Feb  9 13:26:43 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.98, mean loss = 0.76
+Wed Feb  9 13:26:45 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, train loss = 0.79, mean loss = 0.77
+Wed Feb  9 13:26:48 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 1.00, mean loss = 0.83
+Wed Feb  9 13:26:51 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.41, mean loss = 0.74
+Wed Feb  9 13:26:53 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.89, mean loss = 0.77
+Wed Feb  9 13:26:56 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 6, train loss = 0.71, mean loss = 0.76
+Wed Feb  9 13:26:59 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 7, train loss = 0.70, mean loss = 0.75
+Wed Feb  9 13:27:01 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 8, train loss = 0.62, mean loss = 0.74
+Wed Feb  9 13:27:04 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.78, mean loss = 0.74
+Wed Feb  9 13:27:06 2022
+train Loss: 0.74
+
+[SimpleTimeTracker] out2loss 0.003
+batch 0, val loss = 0.78, mean loss = 0.78
+Wed Feb  9 13:27:09 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.91, mean loss = 0.84
+Wed Feb  9 13:27:11 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, val loss = 1.03, mean loss = 0.91
+Wed Feb  9 13:27:12 2022
+val Loss: 0.91
+
+epoch 5 was done for 35.018251 seconds
+Epoch 6/999
+----------
+Wed Feb  9 13:27:15 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.56, mean loss = 0.56
+Wed Feb  9 13:27:18 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 1.02, mean loss = 0.79
+Wed Feb  9 13:27:20 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, train loss = 0.84, mean loss = 0.81
+Wed Feb  9 13:27:23 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 3, train loss = 1.10, mean loss = 0.88
+Wed Feb  9 13:27:26 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.43, mean loss = 0.79
+Wed Feb  9 13:27:29 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 0.87, mean loss = 0.80
+Wed Feb  9 13:27:31 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.69, mean loss = 0.79
+Wed Feb  9 13:27:34 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.69, mean loss = 0.78
+Wed Feb  9 13:27:36 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.55, mean loss = 0.75
+Wed Feb  9 13:27:39 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 9, train loss = 0.74, mean loss = 0.75
+Wed Feb  9 13:27:41 2022
+train Loss: 0.75
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.71, mean loss = 0.71
+Wed Feb  9 13:27:43 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.86, mean loss = 0.79
+Wed Feb  9 13:27:46 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, val loss = 1.05, mean loss = 0.87
+Wed Feb  9 13:27:47 2022
+val Loss: 0.87
+
+epoch 6 was done for 34.487509 seconds
+Epoch 7/999
+----------
+Wed Feb  9 13:27:49 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 0, train loss = 0.49, mean loss = 0.49
+Wed Feb  9 13:27:52 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.94, mean loss = 0.72
+Wed Feb  9 13:27:55 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, train loss = 0.79, mean loss = 0.74
+Wed Feb  9 13:27:57 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 3, train loss = 1.01, mean loss = 0.81
+Wed Feb  9 13:28:00 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.40, mean loss = 0.73
+Wed Feb  9 13:28:03 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 0.82, mean loss = 0.74
+Wed Feb  9 13:28:05 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.66, mean loss = 0.73
+Wed Feb  9 13:28:08 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.72, mean loss = 0.73
+Wed Feb  9 13:28:11 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 8, train loss = 0.53, mean loss = 0.71
+Wed Feb  9 13:28:13 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.69, mean loss = 0.71
+Wed Feb  9 13:28:15 2022
+train Loss: 0.71
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.78, mean loss = 0.78
+Wed Feb  9 13:28:17 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.93, mean loss = 0.86
+Wed Feb  9 13:28:20 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.15, mean loss = 0.95
+Wed Feb  9 13:28:21 2022
+val Loss: 0.95
+
+epoch 7 was done for 34.061671 seconds
+Epoch 8/999
+----------
+Wed Feb  9 13:28:23 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 0, train loss = 0.47, mean loss = 0.47
+Wed Feb  9 13:28:26 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.87, mean loss = 0.67
+Wed Feb  9 13:28:29 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.76, mean loss = 0.70
+Wed Feb  9 13:28:31 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 1.02, mean loss = 0.78
+Wed Feb  9 13:28:34 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.41, mean loss = 0.71
+Wed Feb  9 13:28:36 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.87, mean loss = 0.73
+Wed Feb  9 13:28:39 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.68, mean loss = 0.73
+Wed Feb  9 13:28:41 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 7, train loss = 0.71, mean loss = 0.72
+Wed Feb  9 13:28:44 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.51, mean loss = 0.70
+Wed Feb  9 13:28:47 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 9, train loss = 0.68, mean loss = 0.70
+Wed Feb  9 13:28:48 2022
+train Loss: 0.70
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.78, mean loss = 0.78
+Wed Feb  9 13:28:51 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.90, mean loss = 0.84
+Wed Feb  9 13:28:53 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.21, mean loss = 0.96
+Wed Feb  9 13:28:54 2022
+val Loss: 0.96
+
+epoch 8 was done for 33.565205 seconds
+Epoch 9/999
+----------
+Wed Feb  9 13:28:57 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.46, mean loss = 0.46
+Wed Feb  9 13:29:00 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.83, mean loss = 0.65
+Wed Feb  9 13:29:02 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.83, mean loss = 0.71
+Wed Feb  9 13:29:05 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 1.00, mean loss = 0.78
+Wed Feb  9 13:29:07 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.39, mean loss = 0.70
+Wed Feb  9 13:29:10 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.87, mean loss = 0.73
+Wed Feb  9 13:29:12 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 6, train loss = 0.67, mean loss = 0.72
+Wed Feb  9 13:29:15 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.69, mean loss = 0.72
+Wed Feb  9 13:29:18 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.48, mean loss = 0.69
+Wed Feb  9 13:29:20 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.66, mean loss = 0.69
+Wed Feb  9 13:29:22 2022
+train Loss: 0.69
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.81, mean loss = 0.81
+Wed Feb  9 13:29:25 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.88, mean loss = 0.84
+Wed Feb  9 13:29:27 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, val loss = 1.24, mean loss = 0.98
+Wed Feb  9 13:29:28 2022
+val Loss: 0.98
+
+epoch 9 was done for 33.986997 seconds
+Epoch 10/999
+----------
+Wed Feb  9 13:29:31 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 0, train loss = 0.47, mean loss = 0.47
+Wed Feb  9 13:29:34 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.78, mean loss = 0.62
+Wed Feb  9 13:29:36 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.79, mean loss = 0.68
+Wed Feb  9 13:29:39 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.97, mean loss = 0.75
+Wed Feb  9 13:29:42 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.35, mean loss = 0.67
+Wed Feb  9 13:29:45 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 0.88, mean loss = 0.71
+Wed Feb  9 13:29:47 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.65, mean loss = 0.70
+Wed Feb  9 13:29:50 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.69, mean loss = 0.70
+Wed Feb  9 13:29:53 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.44, mean loss = 0.67
+Wed Feb  9 13:29:55 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 9, train loss = 0.68, mean loss = 0.67
+Wed Feb  9 13:29:57 2022
+train Loss: 0.67
+
+[SimpleTimeTracker] out2loss 0.003
+batch 0, val loss = 0.84, mean loss = 0.84
+Wed Feb  9 13:29:59 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 1, val loss = 0.91, mean loss = 0.87
+Wed Feb  9 13:30:02 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, val loss = 1.24, mean loss = 1.00
+Wed Feb  9 13:30:03 2022
+val Loss: 1.00
+
+epoch 10 was done for 34.665202 seconds
+Epoch 11/999
+----------
+Wed Feb  9 13:30:06 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.46, mean loss = 0.46
+Wed Feb  9 13:30:08 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.80, mean loss = 0.63
+Wed Feb  9 13:30:11 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.77, mean loss = 0.68
+Wed Feb  9 13:30:14 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.98, mean loss = 0.75
+Wed Feb  9 13:30:16 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.32, mean loss = 0.67
+Wed Feb  9 13:30:19 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.86, mean loss = 0.70
+Wed Feb  9 13:30:22 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.61, mean loss = 0.69
+Wed Feb  9 13:30:24 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.68, mean loss = 0.69
+Wed Feb  9 13:30:27 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.42, mean loss = 0.66
+Wed Feb  9 13:30:30 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 9, train loss = 0.65, mean loss = 0.66
+Wed Feb  9 13:30:31 2022
+train Loss: 0.66
+
+[SimpleTimeTracker] out2loss 0.003
+batch 0, val loss = 0.83, mean loss = 0.83
+Wed Feb  9 13:30:34 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.91, mean loss = 0.87
+Wed Feb  9 13:30:36 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.22, mean loss = 0.98
+Wed Feb  9 13:30:38 2022
+val Loss: 0.98
+
+epoch 11 was done for 34.683481 seconds
+Epoch 12/999
+----------
+Wed Feb  9 13:30:40 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.44, mean loss = 0.44
+Wed Feb  9 13:30:43 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.80, mean loss = 0.62
+Wed Feb  9 13:30:46 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.78, mean loss = 0.67
+Wed Feb  9 13:30:48 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 3, train loss = 0.94, mean loss = 0.74
+Wed Feb  9 13:30:51 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.31, mean loss = 0.65
+Wed Feb  9 13:30:54 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.84, mean loss = 0.68
+Wed Feb  9 13:30:56 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.62, mean loss = 0.67
+Wed Feb  9 13:30:59 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.66, mean loss = 0.67
+Wed Feb  9 13:31:01 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.39, mean loss = 0.64
+Wed Feb  9 13:31:04 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.63, mean loss = 0.64
+Wed Feb  9 13:31:05 2022
+train Loss: 0.64
+
+[SimpleTimeTracker] out2loss 0.003
+batch 0, val loss = 0.83, mean loss = 0.83
+Wed Feb  9 13:31:08 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.91, mean loss = 0.87
+Wed Feb  9 13:31:11 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.19, mean loss = 0.98
+Wed Feb  9 13:31:12 2022
+val Loss: 0.98
+
+epoch 12 was done for 33.951778 seconds
+Epoch 13/999
+----------
+Wed Feb  9 13:31:14 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.43, mean loss = 0.43
+Wed Feb  9 13:31:17 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 1, train loss = 0.80, mean loss = 0.62
+Wed Feb  9 13:31:20 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 2, train loss = 0.73, mean loss = 0.65
+Wed Feb  9 13:31:22 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.91, mean loss = 0.72
+Wed Feb  9 13:31:26 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.31, mean loss = 0.64
+Wed Feb  9 13:31:28 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.82, mean loss = 0.67
+Wed Feb  9 13:31:31 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.60, mean loss = 0.66
+Wed Feb  9 13:31:34 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.65, mean loss = 0.66
+Wed Feb  9 13:31:36 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.40, mean loss = 0.63
+Wed Feb  9 13:31:39 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.64, mean loss = 0.63
+Wed Feb  9 13:31:40 2022
+train Loss: 0.63
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.80, mean loss = 0.80
+Wed Feb  9 13:31:43 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.86, mean loss = 0.83
+Wed Feb  9 13:31:46 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.21, mean loss = 0.95
+Wed Feb  9 13:31:47 2022
+val Loss: 0.95
+
+epoch 13 was done for 35.363353 seconds
+Epoch 14/999
+----------
+Wed Feb  9 13:31:50 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.42, mean loss = 0.42
+Wed Feb  9 13:31:53 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.79, mean loss = 0.60
+Wed Feb  9 13:31:55 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, train loss = 0.71, mean loss = 0.64
+Wed Feb  9 13:31:58 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.90, mean loss = 0.70
+Wed Feb  9 13:32:00 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.29, mean loss = 0.62
+Wed Feb  9 13:32:03 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.81, mean loss = 0.65
+Wed Feb  9 13:32:06 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.58, mean loss = 0.64
+Wed Feb  9 13:32:08 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 7, train loss = 0.64, mean loss = 0.64
+Wed Feb  9 13:32:11 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 8, train loss = 0.38, mean loss = 0.61
+Wed Feb  9 13:32:14 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 9, train loss = 0.66, mean loss = 0.62
+Wed Feb  9 13:32:15 2022
+train Loss: 0.62
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.78, mean loss = 0.78
+Wed Feb  9 13:32:18 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.81, mean loss = 0.80
+Wed Feb  9 13:32:20 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.22, mean loss = 0.94
+Wed Feb  9 13:32:21 2022
+val Loss: 0.94
+
+epoch 14 was done for 34.372875 seconds
+Epoch 15/999
+----------
+Wed Feb  9 13:32:24 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.42, mean loss = 0.42
+Wed Feb  9 13:32:27 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.71, mean loss = 0.57
+Wed Feb  9 13:32:29 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, train loss = 0.73, mean loss = 0.62
+Wed Feb  9 13:32:32 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 3, train loss = 0.86, mean loss = 0.68
+Wed Feb  9 13:32:35 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.30, mean loss = 0.61
+Wed Feb  9 13:32:38 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.86, mean loss = 0.65
+Wed Feb  9 13:32:40 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.64, mean loss = 0.65
+Wed Feb  9 13:32:43 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.64, mean loss = 0.65
+Wed Feb  9 13:32:46 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.41, mean loss = 0.62
+Wed Feb  9 13:32:49 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.62, mean loss = 0.62
+Wed Feb  9 13:32:51 2022
+train Loss: 0.62
+
+[SimpleTimeTracker] out2loss 0.004
+batch 0, val loss = 0.80, mean loss = 0.80
+Wed Feb  9 13:32:54 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.83, mean loss = 0.82
+Wed Feb  9 13:32:56 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.18, mean loss = 0.94
+Wed Feb  9 13:32:57 2022
+val Loss: 0.94
+
+epoch 15 was done for 36.132864 seconds
+Epoch 16/999
+----------
+Wed Feb  9 13:33:00 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.41, mean loss = 0.41
+Wed Feb  9 13:33:03 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.73, mean loss = 0.57
+Wed Feb  9 13:33:06 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.73, mean loss = 0.63
+Wed Feb  9 13:33:08 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.88, mean loss = 0.69
+Wed Feb  9 13:33:11 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.31, mean loss = 0.61
+Wed Feb  9 13:33:13 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 0.81, mean loss = 0.65
+Wed Feb  9 13:33:16 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.60, mean loss = 0.64
+Wed Feb  9 13:33:19 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 7, train loss = 0.68, mean loss = 0.64
+Wed Feb  9 13:33:22 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 8, train loss = 0.44, mean loss = 0.62
+Wed Feb  9 13:33:25 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.64, mean loss = 0.62
+Wed Feb  9 13:33:26 2022
+train Loss: 0.62
+
+[SimpleTimeTracker] out2loss 0.003
+batch 0, val loss = 0.79, mean loss = 0.79
+Wed Feb  9 13:33:29 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.85, mean loss = 0.82
+Wed Feb  9 13:33:31 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.19, mean loss = 0.94
+Wed Feb  9 13:33:32 2022
+val Loss: 0.94
+
+epoch 16 was done for 34.985990 seconds
+Epoch 17/999
+----------
+Wed Feb  9 13:33:35 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.36, mean loss = 0.36
+Wed Feb  9 13:33:38 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.83, mean loss = 0.60
+Wed Feb  9 13:33:41 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 2, train loss = 0.68, mean loss = 0.63
+Wed Feb  9 13:33:44 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 3, train loss = 0.96, mean loss = 0.71
+Wed Feb  9 13:33:47 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.31, mean loss = 0.63
+Wed Feb  9 13:33:49 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.85, mean loss = 0.67
+Wed Feb  9 13:33:52 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 6, train loss = 0.61, mean loss = 0.66
+Wed Feb  9 13:33:55 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 7, train loss = 0.65, mean loss = 0.66
+Wed Feb  9 13:33:57 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.36, mean loss = 0.62
+Wed Feb  9 13:34:00 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.64, mean loss = 0.62
+Wed Feb  9 13:34:02 2022
+train Loss: 0.62
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.81, mean loss = 0.81
+Wed Feb  9 13:34:05 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.85, mean loss = 0.83
+Wed Feb  9 13:34:07 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.17, mean loss = 0.94
+Wed Feb  9 13:34:08 2022
+val Loss: 0.94
+
+epoch 17 was done for 36.021164 seconds
+Epoch 18/999
+----------
+Wed Feb  9 13:34:11 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.35, mean loss = 0.35
+Wed Feb  9 13:34:14 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.80, mean loss = 0.58
+Wed Feb  9 13:34:17 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.73, mean loss = 0.63
+Wed Feb  9 13:34:19 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 3, train loss = 0.91, mean loss = 0.70
+Wed Feb  9 13:34:22 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.27, mean loss = 0.61
+Wed Feb  9 13:34:25 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 5, train loss = 0.79, mean loss = 0.64
+Wed Feb  9 13:34:28 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.58, mean loss = 0.63
+Wed Feb  9 13:34:31 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.66, mean loss = 0.64
+Wed Feb  9 13:34:33 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 8, train loss = 0.40, mean loss = 0.61
+Wed Feb  9 13:34:36 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 9, train loss = 0.63, mean loss = 0.61
+Wed Feb  9 13:34:37 2022
+train Loss: 0.61
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.75, mean loss = 0.75
+Wed Feb  9 13:34:40 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.81, mean loss = 0.78
+Wed Feb  9 13:34:43 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, val loss = 1.16, mean loss = 0.91
+Wed Feb  9 13:34:44 2022
+val Loss: 0.91
+
+epoch 18 was done for 35.684685 seconds
+Epoch 19/999
+----------
+Wed Feb  9 13:34:47 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.34, mean loss = 0.34
+Wed Feb  9 13:34:50 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.78, mean loss = 0.56
+Wed Feb  9 13:34:52 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, train loss = 0.68, mean loss = 0.60
+Wed Feb  9 13:34:55 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 3, train loss = 0.93, mean loss = 0.68
+Wed Feb  9 13:34:58 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.28, mean loss = 0.60
+Wed Feb  9 13:35:00 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 5, train loss = 0.82, mean loss = 0.64
+Wed Feb  9 13:35:03 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 6, train loss = 0.61, mean loss = 0.64
+Wed Feb  9 13:35:06 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.63, mean loss = 0.64
+Wed Feb  9 13:35:08 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.37, mean loss = 0.61
+Wed Feb  9 13:35:11 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.60, mean loss = 0.61
+Wed Feb  9 13:35:13 2022
+train Loss: 0.61
+
+[SimpleTimeTracker] out2loss 0.003
+batch 0, val loss = 0.78, mean loss = 0.78
+Wed Feb  9 13:35:15 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.83, mean loss = 0.81
+Wed Feb  9 13:35:18 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.18, mean loss = 0.93
+Wed Feb  9 13:35:19 2022
+val Loss: 0.93
+
+epoch 19 was done for 34.949944 seconds
+Epoch 20/999
+----------
+Wed Feb  9 13:35:22 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.31, mean loss = 0.31
+Wed Feb  9 13:35:25 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.81, mean loss = 0.56
+Wed Feb  9 13:35:27 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.67, mean loss = 0.60
+Wed Feb  9 13:35:30 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 3, train loss = 0.92, mean loss = 0.68
+Wed Feb  9 13:35:33 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.25, mean loss = 0.59
+Wed Feb  9 13:35:36 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.76, mean loss = 0.62
+Wed Feb  9 13:35:39 2022
+[SimpleTimeTracker] out2loss 0.005
+batch 6, train loss = 0.53, mean loss = 0.61
+Wed Feb  9 13:35:41 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.61, mean loss = 0.61
+Wed Feb  9 13:35:44 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.35, mean loss = 0.58
+Wed Feb  9 13:35:47 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 9, train loss = 0.60, mean loss = 0.58
+Wed Feb  9 13:35:48 2022
+train Loss: 0.58
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.73, mean loss = 0.73
+Wed Feb  9 13:35:51 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.79, mean loss = 0.76
+Wed Feb  9 13:35:53 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, val loss = 1.14, mean loss = 0.89
+Wed Feb  9 13:35:55 2022
+val Loss: 0.89
+
+epoch 20 was done for 35.494330 seconds
+Epoch 21/999
+----------
+Wed Feb  9 13:35:57 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 0, train loss = 0.29, mean loss = 0.29
+Wed Feb  9 13:36:00 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.74, mean loss = 0.52
+Wed Feb  9 13:36:03 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.67, mean loss = 0.57
+Wed Feb  9 13:36:05 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.90, mean loss = 0.65
+Wed Feb  9 13:36:08 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.25, mean loss = 0.57
+Wed Feb  9 13:36:11 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 0.76, mean loss = 0.60
+Wed Feb  9 13:36:14 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 6, train loss = 0.54, mean loss = 0.59
+Wed Feb  9 13:36:16 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.59, mean loss = 0.59
+Wed Feb  9 13:36:19 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.28, mean loss = 0.56
+Wed Feb  9 13:36:22 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.59, mean loss = 0.56
+Wed Feb  9 13:36:23 2022
+train Loss: 0.56
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.70, mean loss = 0.70
+Wed Feb  9 13:36:26 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.79, mean loss = 0.75
+Wed Feb  9 13:36:28 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.16, mean loss = 0.88
+Wed Feb  9 13:36:30 2022
+val Loss: 0.88
+
+epoch 21 was done for 34.926831 seconds
+Epoch 22/999
+----------
+Wed Feb  9 13:36:32 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 0, train loss = 0.28, mean loss = 0.28
+Wed Feb  9 13:36:35 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.70, mean loss = 0.49
+Wed Feb  9 13:36:38 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.61, mean loss = 0.53
+Wed Feb  9 13:36:41 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.82, mean loss = 0.60
+Wed Feb  9 13:36:43 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.24, mean loss = 0.53
+Wed Feb  9 13:36:46 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 0.71, mean loss = 0.56
+Wed Feb  9 13:36:49 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.47, mean loss = 0.55
+Wed Feb  9 13:36:51 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.54, mean loss = 0.55
+Wed Feb  9 13:36:54 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 8, train loss = 0.27, mean loss = 0.52
+Wed Feb  9 13:36:57 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 9, train loss = 0.56, mean loss = 0.52
+Wed Feb  9 13:36:58 2022
+train Loss: 0.52
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.69, mean loss = 0.69
+Wed Feb  9 13:37:01 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.72, mean loss = 0.71
+Wed Feb  9 13:37:04 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.03, mean loss = 0.81
+Wed Feb  9 13:37:05 2022
+val Loss: 0.81
+
+epoch 22 was done for 35.217121 seconds
+Epoch 23/999
+----------
+Wed Feb  9 13:37:07 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.27, mean loss = 0.27
+Wed Feb  9 13:37:10 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 1, train loss = 0.69, mean loss = 0.48
+Wed Feb  9 13:37:13 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.64, mean loss = 0.53
+Wed Feb  9 13:37:16 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 3, train loss = 0.84, mean loss = 0.61
+Wed Feb  9 13:37:19 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.19, mean loss = 0.53
+Wed Feb  9 13:37:21 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 0.73, mean loss = 0.56
+Wed Feb  9 13:37:24 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.50, mean loss = 0.55
+Wed Feb  9 13:37:27 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.51, mean loss = 0.55
+Wed Feb  9 13:37:29 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.26, mean loss = 0.51
+Wed Feb  9 13:37:32 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.58, mean loss = 0.52
+Wed Feb  9 13:37:33 2022
+train Loss: 0.52
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.65, mean loss = 0.65
+Wed Feb  9 13:37:36 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.71, mean loss = 0.68
+Wed Feb  9 13:37:39 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, val loss = 1.03, mean loss = 0.80
+Wed Feb  9 13:37:40 2022
+val Loss: 0.80
+
+epoch 23 was done for 34.655065 seconds
+Epoch 24/999
+----------
+Wed Feb  9 13:37:42 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 0, train loss = 0.26, mean loss = 0.26
+Wed Feb  9 13:37:45 2022
+[SimpleTimeTracker] out2loss 0.006
+batch 1, train loss = 0.68, mean loss = 0.47
+Wed Feb  9 13:37:48 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, train loss = 0.62, mean loss = 0.52
+Wed Feb  9 13:37:50 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.80, mean loss = 0.59
+Wed Feb  9 13:37:53 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.17, mean loss = 0.51
+Wed Feb  9 13:37:56 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.69, mean loss = 0.54
+Wed Feb  9 13:37:59 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 6, train loss = 0.48, mean loss = 0.53
+Wed Feb  9 13:38:01 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.55, mean loss = 0.53
+Wed Feb  9 13:38:04 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.22, mean loss = 0.50
+Wed Feb  9 13:38:07 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 9, train loss = 0.51, mean loss = 0.50
+Wed Feb  9 13:38:08 2022
+train Loss: 0.50
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.68, mean loss = 0.68
+Wed Feb  9 13:38:11 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.73, mean loss = 0.71
+Wed Feb  9 13:38:13 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.05, mean loss = 0.82
+Wed Feb  9 13:38:14 2022
+val Loss: 0.82
+
+epoch 24 was done for 34.739422 seconds
+Epoch 25/999
+----------
+Wed Feb  9 13:38:17 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.20, mean loss = 0.20
+Wed Feb  9 13:38:20 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.69, mean loss = 0.44
+Wed Feb  9 13:38:22 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, train loss = 0.63, mean loss = 0.51
+Wed Feb  9 13:38:25 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.84, mean loss = 0.59
+Wed Feb  9 13:38:28 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.12, mean loss = 0.50
+Wed Feb  9 13:38:31 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 0.71, mean loss = 0.53
+Wed Feb  9 13:38:33 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 6, train loss = 0.44, mean loss = 0.52
+Wed Feb  9 13:38:36 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.53, mean loss = 0.52
+Wed Feb  9 13:38:38 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 8, train loss = 0.22, mean loss = 0.49
+Wed Feb  9 13:38:41 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.55, mean loss = 0.49
+Wed Feb  9 13:38:43 2022
+train Loss: 0.49
+
+[SimpleTimeTracker] out2loss 0.003
+batch 0, val loss = 0.61, mean loss = 0.61
+Wed Feb  9 13:38:45 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, val loss = 0.69, mean loss = 0.65
+Wed Feb  9 13:38:48 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, val loss = 1.05, mean loss = 0.78
+Wed Feb  9 13:38:49 2022
+val Loss: 0.78
+
+epoch 25 was done for 35.509414 seconds
+Epoch 26/999
+----------
+Wed Feb  9 13:38:52 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.21, mean loss = 0.21
+Wed Feb  9 13:38:55 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.69, mean loss = 0.45
+Wed Feb  9 13:38:58 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.58, mean loss = 0.49
+Wed Feb  9 13:39:00 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 3, train loss = 0.81, mean loss = 0.57
+Wed Feb  9 13:39:03 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.11, mean loss = 0.48
+Wed Feb  9 13:39:06 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.69, mean loss = 0.52
+Wed Feb  9 13:39:08 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.46, mean loss = 0.51
+Wed Feb  9 13:39:11 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 7, train loss = 0.52, mean loss = 0.51
+Wed Feb  9 13:39:13 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 8, train loss = 0.19, mean loss = 0.47
+Wed Feb  9 13:39:16 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.50, mean loss = 0.48
+Wed Feb  9 13:39:18 2022
+train Loss: 0.48
+
+[SimpleTimeTracker] out2loss 0.002
+batch 0, val loss = 0.66, mean loss = 0.66
+Wed Feb  9 13:39:21 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.71, mean loss = 0.68
+Wed Feb  9 13:39:23 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, val loss = 1.05, mean loss = 0.81
+Wed Feb  9 13:39:24 2022
+val Loss: 0.81
+
+epoch 26 was done for 34.545006 seconds
+Epoch 27/999
+----------
+Wed Feb  9 13:39:27 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.18, mean loss = 0.18
+Wed Feb  9 13:39:30 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.66, mean loss = 0.42
+Wed Feb  9 13:39:32 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, train loss = 0.57, mean loss = 0.47
+Wed Feb  9 13:39:35 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 3, train loss = 0.78, mean loss = 0.55
+Wed Feb  9 13:39:37 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 0.10, mean loss = 0.46
+Wed Feb  9 13:39:40 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 5, train loss = 0.69, mean loss = 0.50
+Wed Feb  9 13:39:43 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.43, mean loss = 0.49
+Wed Feb  9 13:39:45 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.54, mean loss = 0.49
+Wed Feb  9 13:39:48 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 8, train loss = 0.19, mean loss = 0.46
+Wed Feb  9 13:39:51 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.51, mean loss = 0.47
+Wed Feb  9 13:39:53 2022
+train Loss: 0.47
+
+[SimpleTimeTracker] out2loss 0.003
+batch 0, val loss = 0.66, mean loss = 0.66
+Wed Feb  9 13:39:55 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, val loss = 0.72, mean loss = 0.69
+Wed Feb  9 13:39:58 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 2, val loss = 1.03, mean loss = 0.80
+Wed Feb  9 13:39:59 2022
+val Loss: 0.80
+
+epoch 27 was done for 34.744674 seconds
+Epoch 28/999
+----------
+Wed Feb  9 13:40:02 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 0, train loss = 0.18, mean loss = 0.18
+Wed Feb  9 13:40:04 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.70, mean loss = 0.44
+Wed Feb  9 13:40:07 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 2, train loss = 0.58, mean loss = 0.48
+Wed Feb  9 13:40:10 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 0.81, mean loss = 0.57
+Wed Feb  9 13:40:12 2022
+iscuda= True
+PyTorch Version:  1.10.0
+Torchvision Version:  0.11.1
+opt:
+ Namespace(ampl=441, aug_gt='', batch_output=2, bs=5, cencrop=700, center=False, chidden_dim=[96, 128, 256, 256, 256], classicnorm=False, cmscrop=0, conTrain='', criterion='L2', csvname='598csv9', datapath='C:/cherepashkin1/phenoseed/', dfname='598frame', downsample=1, epoch=1000, expdescr='', expnum='e074', feature_extract=False, framelim=60, gradient_predivide_factor=1.0, gttype='single_file', haf=True, hidden_dim=[32, 9], inputt='img', jobdir='', jobname='e074l010.sh', kernel_sizes=[7, 3, 3, 3, 3, 3], lb='orient', loadh5=False, lr=5e-05, machine='lenovo', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging='batch', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=3, num_sam_points=500, num_workers=0, outputt='orient', parallel='torch', pin_memory=False, print_minibatch=1, pscale=100, rand_angle=False, realjobname='e074l010.sh', rescale=500, rmdirname=True, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=255, steplr=[1000.0, 1.0], transappendix='_image', ufmodel=100000, updateFraction=0.25, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['../../main.py', '-datapath', 'C:/cherepashkin1/phenoseed/', '-realjobname', 'e074l010.sh', '-jobname', 'e074l010.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '1000', '-bs', '5', '-num_input_images', '3', '-framelim', '60', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'lenovo', '-merging', 'batch', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '1', '-dfname', '598frame']
+seed =  0
+path were main.py is located= ../../
+opt.wandb =  
+93
+file to frame csv ../../csv\598frame.csv
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+len train =  48
+train consists of 9 full batches with 5 tensors with 3 views
+the last batch has size of 3 tensors with 3 views
+val consists of 2 full batches with 5 tensors with 3 views
+the last batch has size of 2 tensors with 3 views
+[SimpleTimeTracker] trainit 0.015
+Epoch 0/999
+----------
+Wed Feb  9 13:40:20 2022
+[SimpleTimeTracker] __getitem__ 0.587
+[SimpleTimeTracker] __getitem__ 0.483
+[SimpleTimeTracker] __getitem__ 0.498
+[SimpleTimeTracker] __getitem__ 0.469
+[SimpleTimeTracker] __getitem__ 0.494
+[SimpleTimeTracker] out2loss 1.580
+batch 0, train loss = 0.46, mean loss = 0.46
+Wed Feb  9 13:40:26 2022
+[SimpleTimeTracker] __getitem__ 0.505
+[SimpleTimeTracker] __getitem__ 0.499
+[SimpleTimeTracker] __getitem__ 0.496
+[SimpleTimeTracker] __getitem__ 0.492
+[SimpleTimeTracker] __getitem__ 0.505
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 1.14, mean loss = 0.80
+Wed Feb  9 13:40:28 2022
+[SimpleTimeTracker] __getitem__ 0.494
+[SimpleTimeTracker] __getitem__ 0.488
+[SimpleTimeTracker] __getitem__ 0.496
+[SimpleTimeTracker] __getitem__ 0.484
+[SimpleTimeTracker] __getitem__ 0.472
+[SimpleTimeTracker] out2loss 0.010
+batch 2, train loss = 1.07, mean loss = 0.89
+Wed Feb  9 13:40:31 2022
+[SimpleTimeTracker] __getitem__ 0.520
+[SimpleTimeTracker] __getitem__ 0.478
+[SimpleTimeTracker] __getitem__ 0.518
+[SimpleTimeTracker] __getitem__ 0.484
+[SimpleTimeTracker] __getitem__ 0.514
+[SimpleTimeTracker] out2loss 0.004
+batch 3, train loss = 1.24, mean loss = 0.98
+Wed Feb  9 13:40:33 2022
+[SimpleTimeTracker] __getitem__ 0.499
+[SimpleTimeTracker] __getitem__ 0.516
+[SimpleTimeTracker] __getitem__ 0.482
+[SimpleTimeTracker] __getitem__ 0.503
+[SimpleTimeTracker] __getitem__ 0.485
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 1.19, mean loss = 1.02
+Wed Feb  9 13:40:36 2022
+[SimpleTimeTracker] __getitem__ 0.495
+[SimpleTimeTracker] __getitem__ 0.499
+[SimpleTimeTracker] __getitem__ 0.498
+[SimpleTimeTracker] __getitem__ 0.501
+[SimpleTimeTracker] __getitem__ 0.492
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 1.17, mean loss = 1.04
+Wed Feb  9 13:40:39 2022
+[SimpleTimeTracker] __getitem__ 0.514
+[SimpleTimeTracker] __getitem__ 0.538
+[SimpleTimeTracker] __getitem__ 0.517
+[SimpleTimeTracker] __getitem__ 0.499
+[SimpleTimeTracker] __getitem__ 0.501
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:40:41 2022
+[SimpleTimeTracker] __getitem__ 0.484
+[SimpleTimeTracker] __getitem__ 0.501
+[SimpleTimeTracker] __getitem__ 0.478
+[SimpleTimeTracker] __getitem__ 0.486
+[SimpleTimeTracker] __getitem__ 0.478
+[SimpleTimeTracker] out2loss 0.002
+batch 7, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 13:40:44 2022
+[SimpleTimeTracker] __getitem__ 0.507
+[SimpleTimeTracker] __getitem__ 0.484
+[SimpleTimeTracker] __getitem__ 0.501
+[SimpleTimeTracker] __getitem__ 0.479
+[SimpleTimeTracker] __getitem__ 0.518
+[SimpleTimeTracker] out2loss 0.002
+batch 8, train loss = 1.13, mean loss = 1.05
+Wed Feb  9 13:40:46 2022
+[SimpleTimeTracker] __getitem__ 0.498
+[SimpleTimeTracker] __getitem__ 0.511
+[SimpleTimeTracker] __getitem__ 0.497
+[SimpleTimeTracker] out2loss 0.004
+batch 9, train loss = 0.98, mean loss = 1.04
+Wed Feb  9 13:40:48 2022
+train Loss: 1.04
+
+[SimpleTimeTracker] __getitem__ 0.532

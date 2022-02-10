@@ -67,12 +67,12 @@ rmdirname,True
 steplr,"[1000.0, 1.0]"
 outputt,orient
 ufmodel,100000
-framelim,60
+framelim,6000
 conTrain,
-print_minibatch,1
-aug_gt,"['vector_sign_flip', 'vector_permute', 'svd']"
+print_minibatch,10
+aug_gt,['']
 datapath,C:/cherepashkin1/phenoseed/
-jobname,e074l007.sh
-realjobname,e074l007.sh
+jobname,e074l011.sh
+realjobname,e074l011.sh
 jobdir,
 loadh5,False

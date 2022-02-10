@@ -1,0 +1,258 @@
+iscuda= True
+PyTorch Version:  1.10.0
+Torchvision Version:  0.11.1
+opt:
+ Namespace(ampl=441, aug_gt=['vector_sign_flip', 'vector_permute', 'svd'], batch_output=2, bs=5, cencrop=700, center=False, chidden_dim=[96, 128, 256, 256, 256], classicnorm=False, cmscrop=0, conTrain='', criterion='L2', csvname='598csv9', datapath='C:/cherepashkin1/phenoseed/', dfname='598frame', downsample=1, epoch=1000, expdescr='', expnum='e074', feature_extract=False, framelim=60, gradient_predivide_factor=1.0, gttype='single_file', haf=True, hidden_dim=[32, 9], inputt='img', jobdir='', jobname='e074l007.sh', kernel_sizes=[7, 3, 3, 3, 3, 3], lb='orient', loadh5=False, lr=5e-05, machine='lenovo', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging='batch', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=3, num_sam_points=500, num_workers=0, outputt='orient', parallel='torch', pin_memory=False, print_minibatch=10, pscale=100, rand_angle=False, realjobname='e074l007.sh', rescale=500, rmdirname=True, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=255, steplr=[1000.0, 1.0], transappendix='_image', ufmodel=100000, updateFraction=0.25, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['../../main.py', '-datapath', 'C:/cherepashkin1/phenoseed/', '-realjobname', 'e074l007.sh', '-jobname', 'e074l007.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '1000', '-bs', '5', '-num_input_images', '3', '-framelim', '60', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'lenovo', '-merging', 'batch', '-aug_gt', 'vector_sign_flip', 'vector_permute', 'svd', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
+seed =  0
+path were main.py is located= ../../
+opt.wandb =  
+93
+file to frame csv ../../csv\598frame.csv
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+len train =  48
+train consists of 9 full batches with 5 tensors with 3 views
+the last batch has size of 3 tensors with 3 views
+val consists of 2 full batches with 5 tensors with 3 views
+the last batch has size of 2 tensors with 3 views
+[SimpleTimeTracker] trainit 0.016
+Epoch 0/999
+----------
+Wed Feb  9 12:43:45 2022
+[SimpleTimeTracker] out2loss 1.686
+batch 0, train loss = 0.46, mean loss = 0.46
+Wed Feb  9 12:43:50 2022
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.010
+[SimpleTimeTracker] out2loss 0.005
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.003
+train Loss: 1.04
+
+[SimpleTimeTracker] out2loss 0.389
+batch 0, val loss = 0.17, mean loss = 0.17
+Wed Feb  9 12:44:16 2022
+[SimpleTimeTracker] out2loss 0.303
+[SimpleTimeTracker] out2loss 0.120
+val Loss: 0.16
+
+epoch 0 was done for 37.952403 seconds
+Epoch 1/999
+----------
+Wed Feb  9 12:44:23 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.81, mean loss = 0.81
+Wed Feb  9 12:44:25 2022
+[SimpleTimeTracker] out2loss 0.002
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.004
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.003
+train Loss: 0.86
+
+[SimpleTimeTracker] out2loss 0.300
+batch 0, val loss = 0.14, mean loss = 0.14
+Wed Feb  9 12:44:51 2022
+[SimpleTimeTracker] out2loss 0.313
+[SimpleTimeTracker] out2loss 0.129
+val Loss: 0.15
+
+epoch 1 was done for 35.126706 seconds
+Epoch 2/999
+----------
+Wed Feb  9 12:44:58 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 1.00, mean loss = 1.00
+Wed Feb  9 12:45:01 2022
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.002
+[SimpleTimeTracker] out2loss 0.002
+[SimpleTimeTracker] out2loss 0.002
+[SimpleTimeTracker] out2loss 0.004
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.002
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.002
+train Loss: 0.86
+
+[SimpleTimeTracker] out2loss 0.295
+batch 0, val loss = 0.15, mean loss = 0.15
+Wed Feb  9 12:45:26 2022
+[SimpleTimeTracker] out2loss 0.305
+[SimpleTimeTracker] out2loss 0.119
+val Loss: 0.16
+
+epoch 2 was done for 34.748313 seconds
+Epoch 3/999
+----------
+Wed Feb  9 12:45:33 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 0, train loss = 0.82, mean loss = 0.82
+Wed Feb  9 12:45:35 2022
+[SimpleTimeTracker] out2loss 0.002
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.002
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.002
+[SimpleTimeTracker] out2loss 0.002
+[SimpleTimeTracker] out2loss 0.003
+[SimpleTimeTracker] out2loss 0.003
+iscuda= True
+PyTorch Version:  1.10.0
+Torchvision Version:  0.11.1
+opt:
+ Namespace(ampl=441, aug_gt=['vector_sign_flip', 'vector_permute', 'svd'], batch_output=2, bs=5, cencrop=700, center=False, chidden_dim=[96, 128, 256, 256, 256], classicnorm=False, cmscrop=0, conTrain='', criterion='L2', csvname='598csv9', datapath='C:/cherepashkin1/phenoseed/', dfname='598frame', downsample=1, epoch=1000, expdescr='', expnum='e074', feature_extract=False, framelim=60, gradient_predivide_factor=1.0, gttype='single_file', haf=True, hidden_dim=[32, 9], inputt='img', jobdir='', jobname='e074l007.sh', kernel_sizes=[7, 3, 3, 3, 3, 3], lb='orient', loadh5=False, lr=5e-05, machine='lenovo', maintain=False, maintain_line=False, man_dist=False, measure_time=False, merging='batch', minmax=False, minmax3dimage=False, minmax_f=True, minmax_fn='', model_name='', netname=['cnet'], ngpu=4, noise_input=False, noise_output=False, normalize=False, num_input_images=3, num_sam_points=500, num_workers=0, outputt='orient', parallel='torch', pin_memory=False, print_minibatch=1, pscale=100, rand_angle=False, realjobname='e074l007.sh', rescale=500, rmdirname=True, rot_dirs=False, rotate_output=False, save_output=True, single_folder=False, specie='598', standardize=255, steplr=[1000.0, 1.0], transappendix='_image', ufmodel=100000, updateFraction=0.25, use_adasum=False, use_cuda=True, use_existing_csv=True, use_pretrained=False, use_sep_csv=True, view_sep=False, wandb='', weight_decay=0, zero_angle=True)
+sys.argv:
+ ['../../main.py', '-datapath', 'C:/cherepashkin1/phenoseed/', '-realjobname', 'e074l007.sh', '-jobname', 'e074l007.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '1000', '-bs', '5', '-num_input_images', '3', '-framelim', '60', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'lenovo', '-merging', 'batch', '-aug_gt', 'vector_sign_flip', 'vector_permute', 'svd', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '1', '-dfname', '598frame']
+seed =  0
+path were main.py is located= ../../
+opt.wandb =  
+93
+file to frame csv ../../csv\598frame.csv
+lframe's length after laoding =  5283
+lframe len after excluding all exceptions= 5200
+len train =  48
+train consists of 9 full batches with 5 tensors with 3 views
+the last batch has size of 3 tensors with 3 views
+val consists of 2 full batches with 5 tensors with 3 views
+the last batch has size of 2 tensors with 3 views
+[SimpleTimeTracker] trainit 0.039
+Epoch 0/999
+----------
+Wed Feb  9 12:47:32 2022
+[SimpleTimeTracker] out2loss 1.614
+batch 0, train loss = 0.46, mean loss = 0.46
+Wed Feb  9 12:47:39 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 1.14, mean loss = 0.80
+Wed Feb  9 12:47:42 2022
+[SimpleTimeTracker] out2loss 0.014
+batch 2, train loss = 1.07, mean loss = 0.89
+Wed Feb  9 12:47:44 2022
+[SimpleTimeTracker] out2loss 0.005
+batch 3, train loss = 1.24, mean loss = 0.98
+Wed Feb  9 12:47:47 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 4, train loss = 1.19, mean loss = 1.02
+Wed Feb  9 12:47:50 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 1.17, mean loss = 1.04
+Wed Feb  9 12:47:53 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 12:47:55 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 1.04, mean loss = 1.04
+Wed Feb  9 12:47:58 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 1.13, mean loss = 1.05
+Wed Feb  9 12:48:00 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 9, train loss = 0.98, mean loss = 1.04
+Wed Feb  9 12:48:02 2022
+train Loss: 1.04
+
+[SimpleTimeTracker] out2loss 0.382
+batch 0, val loss = 0.17, mean loss = 0.17
+Wed Feb  9 12:48:05 2022
+[SimpleTimeTracker] out2loss 0.299
+batch 1, val loss = 0.15, mean loss = 0.16
+Wed Feb  9 12:48:08 2022
+[SimpleTimeTracker] out2loss 0.127
+batch 2, val loss = 0.17, mean loss = 0.16
+Wed Feb  9 12:48:09 2022
+val Loss: 0.16
+
+epoch 0 was done for 39.179558 seconds
+Epoch 1/999
+----------
+Wed Feb  9 12:48:12 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 0.81, mean loss = 0.81
+Wed Feb  9 12:48:14 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 1, train loss = 0.81, mean loss = 0.81
+Wed Feb  9 12:48:17 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 2, train loss = 0.85, mean loss = 0.83
+Wed Feb  9 12:48:19 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 3, train loss = 0.99, mean loss = 0.87
+Wed Feb  9 12:48:22 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.72, mean loss = 0.84
+Wed Feb  9 12:48:25 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 5, train loss = 1.00, mean loss = 0.86
+Wed Feb  9 12:48:27 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.82, mean loss = 0.86
+Wed Feb  9 12:48:30 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.79, mean loss = 0.85
+Wed Feb  9 12:48:32 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 8, train loss = 0.91, mean loss = 0.86
+Wed Feb  9 12:48:35 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 9, train loss = 0.92, mean loss = 0.86
+Wed Feb  9 12:48:37 2022
+train Loss: 0.86
+
+[SimpleTimeTracker] out2loss 0.294
+batch 0, val loss = 0.14, mean loss = 0.14
+Wed Feb  9 12:48:40 2022
+[SimpleTimeTracker] out2loss 0.296
+batch 1, val loss = 0.14, mean loss = 0.14
+Wed Feb  9 12:48:42 2022
+[SimpleTimeTracker] out2loss 0.142
+batch 2, val loss = 0.17, mean loss = 0.15
+Wed Feb  9 12:48:44 2022
+val Loss: 0.15
+
+epoch 1 was done for 34.886851 seconds
+Epoch 2/999
+----------
+Wed Feb  9 12:48:46 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 0, train loss = 1.00, mean loss = 1.00
+Wed Feb  9 12:48:49 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 1, train loss = 0.73, mean loss = 0.87
+Wed Feb  9 12:48:52 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 2, train loss = 0.94, mean loss = 0.89
+Wed Feb  9 12:48:55 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 3, train loss = 1.06, mean loss = 0.93
+Wed Feb  9 12:48:57 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 4, train loss = 0.66, mean loss = 0.88
+Wed Feb  9 12:49:00 2022
+[SimpleTimeTracker] out2loss 0.004
+batch 5, train loss = 1.02, mean loss = 0.90
+Wed Feb  9 12:49:03 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 6, train loss = 0.75, mean loss = 0.88
+Wed Feb  9 12:49:05 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 7, train loss = 0.76, mean loss = 0.86
+Wed Feb  9 12:49:08 2022
+[SimpleTimeTracker] out2loss 0.003
+batch 8, train loss = 0.74, mean loss = 0.85
+Wed Feb  9 12:49:11 2022
+[SimpleTimeTracker] out2loss 0.002
+batch 9, train loss = 0.91, mean loss = 0.86
+Wed Feb  9 12:49:12 2022
+train Loss: 0.86
+

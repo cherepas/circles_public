@@ -1,8 +1,8 @@
 import os
 import torch as t
 import numpy as np
-import matplotlib
-matplotlib.use('PS')
+#import matplotlib
+#matplotlib.use('PS')
 import matplotlib.pyplot as plt
 from os.path import join as jn
 import imageio
@@ -10,6 +10,9 @@ from pathlib import Path
 from numpy import linalg as LA
 import csv
 import shutil
+import time
+#from time import time
+from functools import wraps
 
 def newfold(dir1, machine):
     i = 0
@@ -468,12 +471,6 @@ def getOri(pcd0, C, eigsort=True):
         rotangles[j,:] = rot2eul(mator1[j,:,:])
     return mator1, rotangles
 
-def testfun():
-    print('test')
-    # sf(fig, 'figs')
-# def h5read(path, dname):
-#     return np.array(h5py.File(path,'r').get('dataset'))
-
 def plotori(mator, tit, xtit, ylim = (-1, 1), figtype='scatter'):
     fig, ax = plt.subplots(3,3, figsize=(7,7))
     # print(mator[0].shape)
@@ -526,3 +523,7 @@ def saferm(dirname):
                     shutil.rmtree(file_path)
             except Exception as e:
                 print('Failed to delete %s. Reason: %s' % (file_path, e))
+
+# Load point cloud and image
+#np.asarray(open3d.io.read_point_cloud(img_name).points)
+#np.asarray(io.imread(img_name), dtype=np.single)

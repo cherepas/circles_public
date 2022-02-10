@@ -525,7 +525,7 @@ There are 30699 seeds overall in phenoseeder folder, that contains 36 rotation i
 - Use multiple nodes, because after 24 hours it will be stopped
 - 
 # Period 08.02.2022 to 14.02.2022
-- Test validation augmentation on jureca
+- **done** Test validation augmentation on jureca
 - Deliver documents to Dekanat 1
   - Ask whether it is enough to send just translation without official letter from notar 
 - Regress centers of masses
@@ -533,11 +533,25 @@ There are 30699 seeds overall in phenoseeder folder, that contains 36 rotation i
 - Write email to Leif's postdocs, that I would like to participate in their seminar as well.
 
 ## TODO 
-- there is delay between epochs
+- **done** there is delay between epochs
+- check computational time on jureca, what part is slow
+  - check distributed loading with num workers
+- gather all results to one place together with configuration file in order to compare them.
 
 ## Results
-Ablation, if not use all of augmentations, validation is increasing
+Ablation, if not use all of augmentations, validation is increasing up to 0.64. 
 
-![img_29.png](img_29.png)
+![img_31.png](img_31.png)
 
+Loops for augmenetaion takes 0.3 seconds for every minibatch, consisting of 5 images, 3 view each ![img_30.png](img_30.png)
+
+Huge amount on time spending on dataloading, and it is not synchronized in parallel with training loop: 
+![img_32.png](img_32.png)
+
+Dataset 598 consists of 216 Gb, there are 5283*36 images, each with resolution 1000*1800. One image takes approx. 1 Mb. 
+
+Training loop for 3 views, 5200 seeds, 5*3 size of minibatch takes 1380 seconds. Parallel is default torch, machine is workstation. 
+
+## Questions to Hanno
+- How technically it is usually creating dataset? Should it be equal to RAM? 
 
