@@ -24,3 +24,4 @@ __pycache__/transformdef.cpython-38.pyc
 lossmb_train
 lossmb_val
 workspace.xml
+*.pyc
