@@ -1,6 +1,6 @@
 bs,5
-epoch,40
-lr,0.0005
+epoch,100
+lr,5e-05
 minmax,False
 minmax3dimage,False
 normalize,False
@@ -67,12 +67,12 @@ rmdirname,True
 steplr,"[1000.0, 1.0]"
 outputt,orient
 ufmodel,100000
-framelim,6000
+framelim,500
 conTrain,
 print_minibatch,10
-aug_gt,"['vector_sign_flip', 'vector_permute', 'svd']"
+aug_gt,['']
 datapath,D:/cherepashkin1/phenoseed/
-jobname,e074w010.sh
-realjobname,e074w009.sh
+jobname,e074w018.sh
+realjobname,e074w017.sh
 jobdir,
 loadh5,False
