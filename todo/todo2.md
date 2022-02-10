@@ -537,6 +537,7 @@ There are 30699 seeds overall in phenoseeder folder, that contains 36 rotation i
 - check computational time on jureca, what part is slow
   - check distributed loading with num workers
 - gather all results to one place together with configuration file in order to compare them.
+- Figure out, why validation loss is low in the beginning. It is 0.13, although before it was 0.6. 
 
 ## Results
 Ablation, if not use all of augmentations, validation is increasing up to 0.64. 
