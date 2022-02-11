@@ -1,0 +1,2 @@
+Testing to regress scaled on minmax cms, with first 500 seeds, 3 views each. 
+Merging in color channel, because one do not need to replicate ground truth, it is simpler to implement. 
