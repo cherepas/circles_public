@@ -545,7 +545,7 @@ Loops for augmenetaion takes 0.3 seconds for every minibatch, consisting of 5 im
 Huge amount on time spending on dataloading, and it is not synchronized in parallel with training loop: 
 ![img_32.png](img_32.png)
 
-Dataset 598 consists of 216 Gb, there are 5283*36 images, each with resolution 1000*1800. One image takes approx. 1 Mb. 
+Dataset 598 consists of 216 Gb, there are 5283 * 36 images, each with resolution 1000 * 1800. One image takes approx. 1 Mb. 
 
 Training loop for 3 views, 5200 seeds, 5*3 size of minibatch takes 1380 seconds. Parallel is default torch, machine is workstation. 
 
@@ -564,6 +564,7 @@ Training loop for 3 views, 5200 seeds, 5*3 size of minibatch takes 1380 seconds.
 **lr = 1e-6**
 ![](../plot_output/e074/e074w021/loss_out/Average_loss_Loss.png)
 
+![](../notebooks/figs/099.png)
 The next experiment will be whether my experiments are repeatable. Just fix learning rate at 1e-4 and repeat three times.
 
 Jureca 8 nodes, 4 GPU each takes 9 seconds to process an epoch, consisting of 500 seeds, 3 views each. Parallel with horovod, num_worker = 0. 48s for completing the whole script. Means 48s - 5*9s = 3 s for data preparation and output.
@@ -588,12 +589,13 @@ Comparison between single GPU workstation and jureca 8 GPU. Jureca 8 GPU is 8.8 
 Experiments run on workstation are completely repeatable. 
 ![](../notebooks/figs/097.png)
 
-['../../main.py', '-datapath', 'D:/cherepashkin1/phenoseed/', '-realjobname', 'e074w017.sh', '-jobname', 'e074w018.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '100', '-bs', '5', '-num_input_images', '3', '-framelim', '500', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'workstation', '-merging', 'batch', '-aug_gt', '', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
-![](../notebooks/figs/099.png)
+
 ## Questions to Hanno
 - How technically it is usually creating dataset? Should it be equal to RAM?![img_33.png](img_33.png)
 - Does it make sense to test training on small dataset, like 100 or 500 seeds instead of 5300? Can I see that network is training and gives meaningful output if testing on only 500 seeds?
 - In reality, should I use multiple nodes, if it is sufficient to use single node in less than 24 hours? 
+- Why is initialization jumps between different runs, and how to fix it?
+- Why do I have so small loss for one of the minibatches, not like the other minibatches? 
 ## In Jülich
 - Give bike and helmet back
 - **done** Take hdd
