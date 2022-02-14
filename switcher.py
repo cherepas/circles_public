@@ -10,7 +10,7 @@ def _log(message):
 def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
              vox2mm, GT, loss_fn, moments, phase, dirname, i_batch, epoch, index):
     if opt.inputt in ('img', 'f') and \
-            not lb in ('pc+f', 'pose6', 'eul', 'orient') \
+            not lb in ('pc+f', 'pose6', 'eul', 'orient', 'cms') \
             and not opt.outputt == 'f_n':
         outputs, latent = model(inputs)
         # print('outputs', outputs.shape)
@@ -177,6 +177,10 @@ def out2loss(opt, model, inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
         # print(140, fi-st)
     elif all([opt.inputt == 'img', opt.outputt in ('orient'),
             lb in ('orient'), not opt.aug_gt, phase=='val']):
+        outputs = model(inputs)
+        loss = t.mean(loss_fn(GT, outputs))
+        outputs_2, latent = 0, 0
+    elif all([opt.inputt == 'img', opt.outputt == 'cms', lb == 'cms']):
         outputs = model(inputs)
         loss = t.mean(loss_fn(GT, outputs))
         outputs_2, latent = 0, 0

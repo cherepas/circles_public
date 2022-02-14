@@ -532,12 +532,8 @@ There are 30699 seeds overall in phenoseeder folder, that contains 36 rotation i
 - Modify FC layer size for pose regression
 - Write email to Leif's postdocs, that I would like to participate in their seminar as well.
 
-## TODO 
-- **done** there is delay between epochs
-- check computational time on jureca, what part is slow
-  - check distributed loading with num workers
-- gather all results to one place together with configuration file in order to compare them.
-- Figure out, why validation loss is low in the beginning. It is 0.13, although before it was 0.6. 
+
+- 
 
 ## Results
 Ablation, if not use all of augmentations, validation is increasing up to 0.64. 
@@ -553,12 +549,64 @@ Dataset 598 consists of 216 Gb, there are 5283*36 images, each with resolution 1
 
 Training loop for 3 views, 5200 seeds, 5*3 size of minibatch takes 1380 seconds. Parallel is default torch, machine is workstation. 
 
+### Regression of orientation matrix. Testing learning rate on dataset of 500 seeds, 3 view per seed, merging views in batch channel
+['../../main.py', '-datapath', 'D:/cherepashkin1/phenoseed/', '-realjobname', 'e074w017.sh', '-jobname', 'e074w021.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '100', '-bs', '5', '-num_input_images', '3', '-framelim', '500', '-criterion', 'L2', '-rmdirname', '-lr', '1e-6', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'workstation', '-merging', 'batch', '-aug_gt', '', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
+
+**lr = 5e-5**
+![](../plot_output/e074/e074w018/loss_out/Average_loss_Loss.png)
+
+**lr = 1e-5**
+![](../plot_output/e074/e074w019/loss_out/Average_loss_Loss.png)
+
+**lr = 5e-6**
+![](../plot_output/e074/e074w020/loss_out/Average_loss_Loss.png)
+
+**lr = 1e-6**
+![](../plot_output/e074/e074w021/loss_out/Average_loss_Loss.png)
+
+The next experiment will be whether my experiments are repeatable. Just fix learning rate at 1e-4 and repeat three times.
+
+Jureca 8 nodes, 4 GPU each takes 9 seconds to process an epoch, consisting of 500 seeds, 3 views each. Parallel with horovod, num_worker = 0. 48s for completing the whole script. Means 48s - 5*9s = 3 s for data preparation and output.
+For 4 nodes it is 16 seconds per epoch. 
+
+number of nodes | time per epoch, seconds
+--- | :---:
+8 | 9
+4 | 16
+2 | 26
+1 | 48
+
+Jureca 8 nodes, 4 GPU each takes 76 seconds to process an epoch, consisting of 500 seeds, 36 views each. 500 seeds = 400 seeds for train and 100 seeds for validation. batchsize = 1. 
+
+Estimated time, that I need 220 seconds to process an epoch, 500 seeds, 36 views, on 8 jureca GPU.
+
+In the proposal it is written, that for 500 seeds, 36 views, I need 314 seconds with 8 jureca GPUs. 
+
+Comparison between single GPU workstation and jureca 8 GPU. Jureca 8 GPU is 8.8 times faster than single GPU of workstation.
+![img_34.png](img_34.png)
+
+
 ## Questions to Hanno
 - How technically it is usually creating dataset? Should it be equal to RAM?![img_33.png](img_33.png)
-- Does it make sense to test training on small dataset, like 100 or 500 seeds instead of 5300? 
-
+- Does it make sense to test training on small dataset, like 100 or 500 seeds instead of 5300? Can I see that network is training and gives meaningful output if testing on only 500 seeds?
+- In reality, should I use multiple nodes, if it is sufficient to use single node in less than 24 hours? 
 ## In Jülich
 - Give bike and helmet back
-- Take hdd
+- **done** Take hdd
+
+## TODO 
+- **done** there is delay between epochs
+- check computational time on jureca, what part is slow
+  - check distributed loading with num workers
+- gather all results to one place together with configuration file in order to compare them.
+- Figure out, why validation loss is low in the beginning. It is 0.13, although before it was 0.6. 
+- Test whether another algorithm to load h5 is efficient.
+- 16GPix for compute time calculations. Training a small network on 32GPUs with 16GPix takes XXXs wall clock time, i.e.\ XXXh. We assume to need 100 epochs, i.e.\ XXXh per run. 
+- Optimize that on jureca trainit should be only done once on rank==0, and copyied to all the other ranks. 
+- Count, how much runs and for how many epochs did I have in general
+- Save every epoch, how much time did I spent so far and what is the size of the dataset, and how many views in order to count computing time.
+- Insert to excel file all results of experiments, and make results of experiments comparable
+- Calculate computing speed of lenovo thinkpad. 
+
 - 
 

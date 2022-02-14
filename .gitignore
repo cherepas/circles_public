@@ -25,3 +25,4 @@ lossmb_train
 lossmb_val
 workspace.xml
 *.pyc
+drafts
