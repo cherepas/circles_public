@@ -606,6 +606,7 @@ Comparison between single GPU workstation and jureca 8 GPU. Jureca 8 GPU is 8.8 
 - Count, how much runs and for how many epochs did I have in general
 - Save every epoch, how much time did I spent so far and what is the size of the dataset, and how many views in order to count computing time.
 - Insert to excel file all results of experiments, and make results of experiments comparable
+- Calculate computing speed of lenovo thinkpad. 
 
 - 
 
