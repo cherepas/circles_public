@@ -585,7 +585,11 @@ In the proposal it is written, that for 500 seeds, 36 views, I need 314 seconds 
 Comparison between single GPU workstation and jureca 8 GPU. Jureca 8 GPU is 8.8 times faster than single GPU of workstation.
 ![img_34.png](img_34.png)
 
+Experiments run on workstation are completely repeatable. 
+![](../notebooks/figs/097.png)
 
+['../../main.py', '-datapath', 'D:/cherepashkin1/phenoseed/', '-realjobname', 'e074w017.sh', '-jobname', 'e074w018.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '100', '-bs', '5', '-num_input_images', '3', '-framelim', '500', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'workstation', '-merging', 'batch', '-aug_gt', '', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
+![](../notebooks/figs/099.png)
 ## Questions to Hanno
 - How technically it is usually creating dataset? Should it be equal to RAM?![img_33.png](img_33.png)
 - Does it make sense to test training on small dataset, like 100 or 500 seeds instead of 5300? Can I see that network is training and gives meaningful output if testing on only 500 seeds?
