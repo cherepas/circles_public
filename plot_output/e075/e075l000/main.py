@@ -322,6 +322,8 @@ if __name__ == '__main__':
         for dirc in ['netOutputs', 'latent', 'loss_out']:
             Path(jn(dirname, dirc)).mkdir(parents=True, exist_ok=True)
         lossoutdir = jn(dirname, 'loss_out')
+        # with open(jn(dirname,'elapsed_time.txt'), 'w') as f:
+        #     f.write("rescale = ", opt.rescale)
         return y_n, bX, F_Nw, bX, C, y_n2, dirs, \
             prmatw, bigm, matw, batchsum, lossoutdir, GTw
 
@@ -373,6 +375,15 @@ if __name__ == '__main__':
                 print(time.ctime())
             ste = time.time()
             # Each epoch has a training and validation phase
+            # TODO modify that for first validation output happens only once to
+            #  not spent to much time on it
+            # if epoch == 0:
+            #     phase == 'val'
+            #     for i_batch, sample_batched in enumerate(dataloaders[phase]):
+            #         model.eval()
+            #         inputs = sample_batched[0]['image']
+
+
             for pcnt, phase in enumerate(['train', 'val']):
                 if phase == 'train':
                     model.train()  # Set model to training mode
@@ -553,6 +564,8 @@ if __name__ == '__main__':
                               %(phase,epoch,i_batch,np.mean(
                             np.abs(LA.norm(oob,axis=0)-LA.norm(gtb0,axis=0)))))
                         print(time.ctime())
+                    if epoch == 0 and i_batch == 0:
+                        break
                 log1 = all([rank == 0, epoch > epoch0, opt.save_output,
                             lb != 'f_n'])
                 if epoch == epoch0 + 1 and opt.save_output and rank == 0 and \
@@ -640,6 +653,7 @@ if __name__ == '__main__':
             if rank == 0:
                 print('epoch %d was done for %f seconds' %(epoch,
                                                            time.time()-ste))
+            # TODO save ellapsed time to file
         time_elapsed = time.time() - since
         if rank == 0:
             print('Training complete in {:.0f}m {:.0f}s'.format(
