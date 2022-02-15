@@ -322,8 +322,8 @@ if __name__ == '__main__':
         for dirc in ['netOutputs', 'latent', 'loss_out']:
             Path(jn(dirname, dirc)).mkdir(parents=True, exist_ok=True)
         lossoutdir = jn(dirname, 'loss_out')
-        with open(jn(dirname,'elapsed_time.txt'), 'w') as f:
-            f.write("rescale = ", opt.rescale)
+        # with open(jn(dirname,'elapsed_time.txt'), 'w') as f:
+        #     f.write("rescale = ", opt.rescale)
         return y_n, bX, F_Nw, bX, C, y_n2, dirs, \
             prmatw, bigm, matw, batchsum, lossoutdir, GTw
 
