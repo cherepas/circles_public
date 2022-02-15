@@ -545,7 +545,7 @@ Loops for augmenetaion takes 0.3 seconds for every minibatch, consisting of 5 im
 Huge amount on time spending on dataloading, and it is not synchronized in parallel with training loop: 
 ![img_32.png](img_32.png)
 
-Dataset 598 consists of 216 Gb, there are 5283*36 images, each with resolution 1000*1800. One image takes approx. 1 Mb. 
+Dataset 598 consists of 216 Gb, there are 5283 * 36 images, each with resolution 1000 * 1800. One image takes approx. 1 Mb. 
 
 Training loop for 3 views, 5200 seeds, 5*3 size of minibatch takes 1380 seconds. Parallel is default torch, machine is workstation. 
 
@@ -553,8 +553,8 @@ Training loop for 3 views, 5200 seeds, 5*3 size of minibatch takes 1380 seconds.
 ['../../main.py', '-datapath', 'D:/cherepashkin1/phenoseed/', '-realjobname', 'e074w017.sh', '-jobname', 'e074w021.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '100', '-bs', '5', '-num_input_images', '3', '-framelim', '500', '-criterion', 'L2', '-rmdirname', '-lr', '1e-6', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'workstation', '-merging', 'batch', '-aug_gt', '', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
 
 **lr = 5e-5**
-![](../plot_output/e074/e074w018/loss_out/Average_loss_Loss.png)
 
+![](../plot_output/e074/e074w018/loss_out/Average_loss_Loss.png =10x)
 **lr = 1e-5**
 ![](../plot_output/e074/e074w019/loss_out/Average_loss_Loss.png)
 
@@ -564,7 +564,12 @@ Training loop for 3 views, 5200 seeds, 5*3 size of minibatch takes 1380 seconds.
 **lr = 1e-6**
 ![](../plot_output/e074/e074w021/loss_out/Average_loss_Loss.png)
 
+![](../notebooks/figs/099.png)
 The next experiment will be whether my experiments are repeatable. Just fix learning rate at 1e-4 and repeat three times.
+
+## Higher learning rate (1e-4) leads to overfitting 
+
+![](../plot_output/e074/e074w013/loss_out/Average_loss_log10(Loss).png)
 
 Jureca 8 nodes, 4 GPU each takes 9 seconds to process an epoch, consisting of 500 seeds, 3 views each. Parallel with horovod, num_worker = 0. 48s for completing the whole script. Means 48s - 5*9s = 3 s for data preparation and output.
 For 4 nodes it is 16 seconds per epoch. 
@@ -588,17 +593,20 @@ Comparison between single GPU workstation and jureca 8 GPU. Jureca 8 GPU is 8.8 
 Experiments run on workstation are completely repeatable. 
 ![](../notebooks/figs/097.png)
 
-['../../main.py', '-datapath', 'D:/cherepashkin1/phenoseed/', '-realjobname', 'e074w017.sh', '-jobname', 'e074w018.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '100', '-bs', '5', '-num_input_images', '3', '-framelim', '500', '-criterion', 'L2', '-rmdirname', '-lr', '5e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'workstation', '-merging', 'batch', '-aug_gt', '', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
-![](../notebooks/figs/099.png)
+
+
 ## Questions to Hanno
 - How technically it is usually creating dataset? Should it be equal to RAM?![img_33.png](img_33.png)
 - Does it make sense to test training on small dataset, like 100 or 500 seeds instead of 5300? Can I see that network is training and gives meaningful output if testing on only 500 seeds?
 - In reality, should I use multiple nodes, if it is sufficient to use single node in less than 24 hours? 
+- Why is initialization jumps between different runs, and how to fix it?
+- Why do I have so small loss for one of the minibatches, not like the other minibatches? ![img_35.png](img_35.png)
+
 ## In Jülich
 - Give bike and helmet back
 - **done** Take hdd
 
-## TODO 
+## TODO from 31.01 till 07.02
 - **done** there is delay between epochs
 - check computational time on jureca, what part is slow
   - check distributed loading with num workers
@@ -611,6 +619,54 @@ Experiments run on workstation are completely repeatable.
 - Save every epoch, how much time did I spent so far and what is the size of the dataset, and how many views in order to count computing time.
 - Insert to excel file all results of experiments, and make results of experiments comparable
 - Calculate computing speed of lenovo thinkpad. 
-
+- Insert tanh as argparse parameter
+- Check why is for some minibatches loss is much lower, 
+  - how seeds look like for this minibatch?
+  - are they preserved accross epochs?
+- Why does center of masses can't do better than 0.22?  
+- Save output log to output directory. 
+## TODO for period from 14.02 to 21.02
+- check distributed loading with num workers
+- Test whether another algorithm to load tif images is efficient.
+- Save every epoch, how much time did I spent so far and what is the size of the dataset, and how many views in order to count computing time.
+- - Check why is for some minibatches loss is much lower, 
+  - how seeds look like for this minibatch?
+  - are they preserved accross epochs?
+- - Why does center of masses can't do better than 0.22?  
+## Tips from Hanno on 14.02
+- MUST-HAVE!!! Write to Leif's group to participate in group meeting, go on coffee breaks and work with them
+- Regress main axis. Instead of three angels, output only single angle in for of 3-value vector. 
+- Use full power of 36 images, make a ground truth for every of them and treat as separate data entries. 
+- Use loss augmentation for both training and val, or not use at all. 
+  - Calculate augmentation in advance to not spend time on it further. 
+- Read about different precision of operations, like single, float in terms of speed up for GPU. 
+- Calculate loss output in degree, to have sense how to evaluate loss. 
+- Calculate validation and train before first epoch, in order to see from what start with. 
+- Load whole dataset to GPU. 
+  - Check if it will be processed faster, because early stoping and only 10 epochs can be equally as load during the training
+- Run multiple experiments with small resolution of image on single GPU. Because Jureca has 40 Gb GPUs. 
+  - Ask Alessio. 
+  - Use slurm to spawn jobs
+  - Use python spawn
+- Try to use full load of the GPU. Check GPU utilization during the trainig. It can happen that GPU can't process full minibatch in a single run. Then it is used only 50% of GPU, because it waits until small additional piece of data is processed.
+- When see augmentation, reduce fully connected part, increase dataset size. Tweak lr if thing does not converge. 
+- Check that problem that some mini-batches have lower loss than another. Check that their orientation matrix GT is closer to unity matrix or something like that, and model output is also close to unity matrix. 
+  - Check that output of the network are different from each other. 
 - 
+
+## Plan for 15.02
+- **done** Write email to Leif
+- Send documents to Ausländeramt
+- Check RWTH email
+- Check if increasing number of views increase accuracy of coefficient regression
+- Publish issues on jugit
+- Output validation first
+- Calculate loss figure in degree, not in coefficient
+
+## TODO for period from 14.02 to 21.02
+- Consolidate different texts about my project from
+  - PhD seminar
+  - Compute time proposal
+  - Linkedin
+  - Doktorandenvorschlag
 

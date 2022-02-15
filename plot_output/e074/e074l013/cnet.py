@@ -40,7 +40,6 @@ class CNet(torch.nn.Module):
             self.bn2 = torch.nn.BatchNorm2d(96)
             self.bn3 = torch.nn.BatchNorm2d(128)
             current_dim = 128*h*w
-            print(43, current_dim)
         else:
 #        print(new_h, new_w)
 #        self.linear0 = torch.nn.Linear(128*new_h*new_w, 128)
