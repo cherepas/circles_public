@@ -361,7 +361,8 @@ bs | 15
 '-aug_gt' | 'orient'
 ['-epoch', '40', '-bs', '15', '-num_input_images', '3', '-framelim', '6000', '-criterion', 'L2', '-localexp', '', '-lr', '1e-4', '-expnum', 'e067', '-hidden_dim', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'workstation', '-merging', 'color', '-aug_gt', 'orient', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
 
-Validation loss is around 0.02. 
+~~Validation loss is around 0.02~~ - **it is mistake, validation loss is higher**
+Minimum training loss is 0.315. 
 ![](../plot_output/e067/016w/loss_out/Average_loss_Loss.png)
 ![](../plot_output/e067/016w/loss_out/Average_loss_log10(Loss).png)
 
@@ -374,6 +375,7 @@ Validation loss is around 0.02.
 
 Typical learning curve
 
+Here validation loss is not correct!!! It was mistake with minimazing loss. 
 ![](../plot_output/e068/001j/loss_out/Average_loss_Loss.png)
 Minimum train is around 0.3, validation is around 0.02. 
 
@@ -653,15 +655,26 @@ Experiments run on workstation are completely repeatable.
 - Check that problem that some mini-batches have lower loss than another. Check that their orientation matrix GT is closer to unity matrix or something like that, and model output is also close to unity matrix. 
   - Check that output of the network are different from each other. 
 - 
-
+---
 ## Plan for 15.02
 - **done** Write email to Leif
-- Send documents to Ausländeramt
-- Check RWTH email
+- ~~Send documents to Ausländeramt~~
+- ~~Check RWTH email~~
 - Check if increasing number of views increase accuracy of coefficient regression
 - Publish issues on jugit
 - Output validation first
 - Calculate loss figure in degree, not in coefficient
+- Gather results from e074/026 - 028
+- Check whether neural network learns something at all after first epoch. Maybe the minimal loss is already after the first epoch.
+- Check whether network output different from each other. 
+- Register for english course
+- Write Allesio about multiprocess on one GPU
+- Write Jim about hdf5 dataloader
+- Change dataloader that way, to load whole dataset into RAM at once
+- How to change size of a picture in markdown
+- For every experiment calculate minimum train and val loss, and epoch when it happens. 
+- Modify function sf that it save notebook, from what it is originated
+- Print date and number of experiment on the plot
 
 ## TODO for period from 14.02 to 21.02
 - Consolidate different texts about my project from
@@ -669,4 +682,22 @@ Experiments run on workstation are completely repeatable.
   - Compute time proposal
   - Linkedin
   - Doktorandenvorschlag
+
+## Results 
+
+If using training without tanh, it can't reach loss as it was before. 
+
+['../../main.py', '-datapath', 'D:/cherepashkin1/phenoseed/', '-realjobname', 'e074w019.sh', '-jobname', 'e074w026.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '100', '-bs', '5', '-num_input_images', '3', '-framelim', '500', '-criterion', 'L2', '-rmdirname', '-lr', '1e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'workstation', '-merging', 'batch', '-aug_gt', '', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
+
+![](../notebooks/figs/103.png)
+
+Min of val: 
+array([0.34933934, 0.33896489, 0.33958282])
+Min of train:
+array([0.38737675, 0.36118946, 0.36636513])
+Argmin of val:
+[0, 0, 0]
+
+### Consolidated results from previous experiments on orientation
+![](../notebooks/figs/101.png)
 

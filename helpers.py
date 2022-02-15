@@ -336,9 +336,11 @@ def getcenf(el):
     return centre
 
 def sf(fig, dirname):
+    name = './'+dirname+'/'+str(int(os.listdir('./'+dirname+\
+                                        '/')[-1].split('.')[0])+1).zfill(3)
     for i in ['.png', '.pdf']:
-        fig.savefig('./'+dirname+'/'+str(int(os.listdir('./'+dirname+\
-                                        '/')[-1].split('.')[0])+1).zfill(3)+i)
+        fig.savefig(name+i)
+    return name
 
 def prmatread(path):
     with open(path, 'r') as f:

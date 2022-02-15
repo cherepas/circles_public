@@ -322,8 +322,6 @@ if __name__ == '__main__':
         for dirc in ['netOutputs', 'latent', 'loss_out']:
             Path(jn(dirname, dirc)).mkdir(parents=True, exist_ok=True)
         lossoutdir = jn(dirname, 'loss_out')
-        with open(jn(dirname,'elapsed_time.txt'), 'w') as f:
-            f.write("rescale = ", opt.rescale)
         return y_n, bX, F_Nw, bX, C, y_n2, dirs, \
             prmatw, bigm, matw, batchsum, lossoutdir, GTw
 
@@ -375,7 +373,7 @@ if __name__ == '__main__':
                 print(time.ctime())
             ste = time.time()
             # Each epoch has a training and validation phase
-            for pcnt, phase in enumerate(['val', 'train']):
+            for pcnt, phase in enumerate(['train', 'val']):
                 if phase == 'train':
                     model.train()  # Set model to training mode
                 else:
@@ -642,7 +640,6 @@ if __name__ == '__main__':
             if rank == 0:
                 print('epoch %d was done for %f seconds' %(epoch,
                                                            time.time()-ste))
-            # TODO save ellapsed time to file
         time_elapsed = time.time() - since
         if rank == 0:
             print('Training complete in {:.0f}m {:.0f}s'.format(
