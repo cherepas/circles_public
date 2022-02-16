@@ -1,4 +1,4 @@
-bs,15
+bs,8
 epoch,1000
 lr,1e-05
 minmax,False
