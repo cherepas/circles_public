@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b42c7944-045a-4c08-9929-7c8a606be81f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/plot_output/e075/e075l000/elapsed_time.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_output/e075/e075l000inputs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo/img_36.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experiments/e075/e075l000.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/e075/e075l000.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -30,6 +33,7 @@
       <change beforePath="$PROJECT_DIR$/plot_output/e075/e075l000/opt.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plot_output/e075/e075l000/sys_argv.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plot_output/e075/e075l000/transform_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo/todo2.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo/todo2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

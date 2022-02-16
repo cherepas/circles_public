@@ -67,7 +67,7 @@ rmdirname,True
 steplr,"[1000.0, 1.0]"
 outputt,orient
 ufmodel,100000
-framelim,60
+framelim,80
 conTrain,
 print_minibatch,1
 aug_gt,['']

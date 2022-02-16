@@ -566,7 +566,7 @@ Training loop for 3 views, 5200 seeds, 5*3 size of minibatch takes 1380 seconds.
 **lr = 1e-6**
 ![](../plot_output/e074/e074w021/loss_out/Average_loss_Loss.png)
 
-![](../notebooks/figs/099.png)
+![](../notebooks/figs/103.png)
 The next experiment will be whether my experiments are repeatable. Just fix learning rate at 1e-4 and repeat three times.
 
 ## Higher learning rate (1e-4) leads to overfitting 
@@ -636,14 +636,15 @@ Experiments run on workstation are completely repeatable.
   - are they preserved accross epochs?
 - - Why does center of masses can't do better than 0.22?  
 ## Tips from Hanno on 14.02
-- MUST-HAVE!!! Write to Leif's group to participate in group meeting, go on coffee breaks and work with them
+- ~~MUST-HAVE!!! Write to Leif's group to participate in group meeting, go on coffee breaks and work with them~~
 - Regress main axis. Instead of three angels, output only single angle in for of 3-value vector. 
-- Use full power of 36 images, make a ground truth for every of them and treat as separate data entries. 
+- Use full power of 36 images, make a ground truth for every of them and treat as separate data entries. UPDATE - 
+  - it seems to be that it does not matter, how much input images there are, because all learning is only in the first epoch. 
 - Use loss augmentation for both training and val, or not use at all. 
   - Calculate augmentation in advance to not spend time on it further. 
 - Read about different precision of operations, like single, float in terms of speed up for GPU. 
 - Calculate loss output in degree, to have sense how to evaluate loss. 
-- Calculate validation and train before first epoch, in order to see from what start with. 
+- ~~Calculate validation and train before first epoch, in order to see from what start with.~~
 - Load whole dataset to GPU. 
   - Check if it will be processed faster, because early stoping and only 10 epochs can be equally as load during the training
 - Run multiple experiments with small resolution of image on single GPU. Because Jureca has 40 Gb GPUs. 
@@ -657,14 +658,14 @@ Experiments run on workstation are completely repeatable.
 - 
 ---
 ## Plan for 15.02
-- **done** Write email to Leif
+- ~~Write email to Leif~~
 - ~~Send documents to Ausländeramt~~
 - ~~Check RWTH email~~
 - Check if increasing number of views increase accuracy of coefficient regression
 - Publish issues on jugit
-- Output validation first
+- ~~Output validation first~~
 - Calculate loss figure in degree, not in coefficient
-- Gather results from e074/026 - 028
+- ~~Gather results from e074/026 - 028~~
 - Check whether neural network learns something at all after first epoch. Maybe the minimal loss is already after the first epoch.
 - Check whether network output different from each other. 
 - Register for english course
@@ -675,6 +676,9 @@ Experiments run on workstation are completely repeatable.
 - For every experiment calculate minimum train and val loss, and epoch when it happens. 
 - Modify function sf that it save notebook, from what it is originated
 - Print date and number of experiment on the plot
+- Check why validation loss does not go down with training
+- Read book that Hanno shared with me !
+- Check that the input corresponds to the output
 
 ## TODO for period from 14.02 to 21.02
 - Consolidate different texts about my project from
@@ -689,7 +693,7 @@ If using training without tanh, it can't reach loss as it was before.
 
 ['../../main.py', '-datapath', 'D:/cherepashkin1/phenoseed/', '-realjobname', 'e074w019.sh', '-jobname', 'e074w026.sh', '-jobdir', '', '-expnum', 'e074', '-epoch', '100', '-bs', '5', '-num_input_images', '3', '-framelim', '500', '-criterion', 'L2', '-rmdirname', '-lr', '1e-5', '-hidden_dim', '32', '9', '-inputt', 'img', '-outputt', 'orient', '-lb', 'orient', '-no_loadh5', '-minmax_fn', '', '-parallel', 'torch', '-machine', 'workstation', '-merging', 'batch', '-aug_gt', '', '-updateFraction', '0.25', '-steplr', '1000', '1', '-print_minibatch', '10', '-dfname', '598frame']
 
-![](../notebooks/figs/103.png)
+![](../notebooks/figs/099.png)
 
 Min of val: 
 array([0.34933934, 0.33896489, 0.33958282])
@@ -699,5 +703,8 @@ Argmin of val:
 [0, 0, 0]
 
 ### Consolidated results from previous experiments on orientation
-![](../notebooks/figs/101.png)
+
+![wefwfe](../notebooks/figs/101.png)
+
+On workstation there enough capacity when train with rescale 200, 36 images, 8 seeds. 
 
