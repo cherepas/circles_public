@@ -286,7 +286,9 @@ if __name__ == '__main__':
         elif opt.outputt == 'orient' and opt.merging == 'batch':
             orients = lframewh.loc[:, ['orient' +\
                                        str(i) for i in range(9)]].values
-            GTw0 = np.einsum('ijk,nkm->nijm', LA.inv(C),
+            # GTw0 = np.einsum('ijk,nkm->nijm', LA.inv(C),
+            #                  orients.reshape([-1, 3, 3]))
+            GTw0 = np.einsum('ijk,nkm->nijm', C,
                              orients.reshape([-1, 3, 3]))
             GTw = GTw0.reshape([-1,36,9])
         elif opt.outputt == 'cms':
@@ -322,8 +324,13 @@ if __name__ == '__main__':
         for dirc in ['netOutputs', 'latent', 'loss_out']:
             Path(jn(dirname, dirc)).mkdir(parents=True, exist_ok=True)
         lossoutdir = jn(dirname, 'loss_out')
-        # with open(jn(dirname,'elapsed_time.txt'), 'w') as f:
-        #     f.write("rescale = ", opt.rescale)
+        with open(jn(dirname,'elapsed_time.txt'), 'w') as f:
+            f.write("rescale width = " + str(opt.rescale) + "\n" + \
+                    "number of input images = " + str(opt.num_input_images) + "\n" + \
+                    "framelim = " + str(opt.framelim) + "\n" + \
+                    "number of GPUs = " + str(1) + "\n"+\
+                    "epochs = 0" + "\n" + \
+                    "ellapsed time = 0")
         return y_n, bX, F_Nw, bX, C, y_n2, dirs, \
             prmatw, bigm, matw, batchsum, lossoutdir, GTw
 
@@ -345,6 +352,7 @@ if __name__ == '__main__':
                     opt.merging, iscuda)
         lossmb = [np.zeros([opt.epoch*batchsum[0]]),
                   np.zeros([opt.epoch*batchsum[1]])]
+        eltist = time.time()
         for epoch in range(opt.epoch):
             if opt.parallel == 'horovod':
                 samplers = {x: t.utils.data.distributed.DistributedSampler(
@@ -406,8 +414,16 @@ if __name__ == '__main__':
                     fl2int = lambda x : [int(x[i]) for i in range(len(x))]
                     # absolute index
                     index = fl2int(sample_batched[2].tolist())
+                    index2 = sample_batched[3].tolist()
                     angles_list = sample_batched[1].tolist()
                     pathes = lframe.loc[index, 'file_name'].tolist()
+
+                    # print(418, index)
+                    # print(index2)
+                    # print(inputs.shape)
+                    # np.savetxt(dirname+'/inputs', inputs[0,0,:,:], delimiter=',')
+                    # sys.exit()
+
                     sz = inputs.shape
                     if all([lb in ('pc', 'f', 'eul', 'orient'),
                             opt.gttype == 'single_file',
@@ -496,6 +512,9 @@ if __name__ == '__main__':
                         # Get model outputs and calculate loss
                         if opt.measure_time:
                             ts = time.time()
+                        # print(GT.shape)
+                        # np.savetxt(jn(dirname, 'gt'), GT.detach().cpu().numpy(), delimiter=',')
+                        # sys.exit()
                         loss, outputs, outputs_2, latent = out2loss(opt, model,
                             inputs, iscuda, nsp, cbs, y_n2, C, angles_list, lb,
                             vox2mm, GT, loss_fn, moments, phase, dirname,
@@ -654,6 +673,9 @@ if __name__ == '__main__':
                 print('epoch %d was done for %f seconds' %(epoch,
                                                            time.time()-ste))
             # TODO save ellapsed time to file
+            with open(jn(dirname, 'elapsed_time.txt'), 'a') as f:
+                f.write("epochs = " + str(epoch)+"\n" + \
+                        "ellapsed time = " + str(time.time()-eltist))
         time_elapsed = time.time() - since
         if rank == 0:
             print('Training complete in {:.0f}m {:.0f}s'.format(
@@ -716,6 +738,9 @@ if __name__ == '__main__':
                         fln.replace(opt.csvname, opt.specie),
                         'rotation_' + str(angles_list[i]).zfill(3) +
                         '.tif').replace('\\', '/')
+                    # print(736, img_name)
+                    # print(740, fln, idx, self.df.iloc[idx]['index'])
+                    # sys.exit()
                     curim = np.asarray(io.imread(img_name), dtype=np.single)
                     h1, w1 = curim.shape
                     if (h1, w1) == (original_h, original_w):
