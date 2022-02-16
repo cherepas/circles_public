@@ -680,6 +680,8 @@ Experiments run on workstation are completely repeatable.
 - Read book that Hanno shared with me !
 - Check that the input corresponds to the output
 
+# Period from 14.02 to 21.02
+
 ## TODO for period from 14.02 to 21.02
 - Consolidate different texts about my project from
   - PhD seminar
@@ -707,4 +709,10 @@ Argmin of val:
 ![wefwfe](../notebooks/figs/101.png)
 
 On workstation there enough capacity when train with rescale 200, 36 images, 8 seeds. 
+
+***
+## TODO 16.02 
+- ![img_37.png](img_37.png) Check why when training starts, it is already jumps down from previous training, as validation would affect weights. 
+
+
 
