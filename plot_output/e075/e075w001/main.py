@@ -375,7 +375,16 @@ if __name__ == '__main__':
                 print(time.ctime())
             ste = time.time()
             # Each epoch has a training and validation phase
-            for pcnt, phase in enumerate(['val', 'train']):
+            # TODO modify that for first validation output happens only once to
+            #  not spent to much time on it
+            # if epoch == 0:
+            #     phase == 'val'
+            #     for i_batch, sample_batched in enumerate(dataloaders[phase]):
+            #         model.eval()
+            #         inputs = sample_batched[0]['image']
+
+
+            for pcnt, phase in enumerate(['train', 'val']):
                 if phase == 'train':
                     model.train()  # Set model to training mode
                 else:
@@ -555,6 +564,8 @@ if __name__ == '__main__':
                               %(phase,epoch,i_batch,np.mean(
                             np.abs(LA.norm(oob,axis=0)-LA.norm(gtb0,axis=0)))))
                         print(time.ctime())
+                    if epoch == 0 and i_batch == 0:
+                        break
                 log1 = all([rank == 0, epoch > epoch0, opt.save_output,
                             lb != 'f_n'])
                 if epoch == epoch0 + 1 and opt.save_output and rank == 0 and \
