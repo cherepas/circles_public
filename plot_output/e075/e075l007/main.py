@@ -660,7 +660,7 @@ if __name__ == '__main__':
                     t.save(model.state_dict(), jn(dirname,"model_state"))
                 if all([isinstance(latent, t.Tensor), rank == 0, epoch > epoch0, opt.save_output,
                         lb in ('eul', 'orient')]):
-                    # print(765, latent)
+                    print(765, latent)
                     np.savetxt(jn(dirname,'latent','latent_'+phase+'_' + \
                                   str(cnt).zfill(3)),
                                latent.detach().cpu().numpy(), delimiter=',')

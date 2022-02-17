@@ -1,0 +1,15 @@
+rescale width = 500
+number of input images = 1
+framelim = 2500
+number of GPUs = 1
+epochs = 0
+ellapsed time = 0epochs = 0
+ellapsed time = 12.052612066268921epochs = 1
+ellapsed time = 457.4093527793884epochs = 2
+ellapsed time = 904.7689692974091epochs = 3
+ellapsed time = 1344.4639384746552epochs = 4
+ellapsed time = 1783.8591544628143epochs = 5
+ellapsed time = 2233.3585724830627epochs = 6
+ellapsed time = 2681.4263141155243epochs = 7
+ellapsed time = 3115.1211643218994epochs = 8
+ellapsed time = 3561.9068462848663
