@@ -1,4 +1,4 @@
-bs,8
+bs,180
 epoch,1000
 lr,1e-05
 minmax,False
@@ -17,7 +17,7 @@ expnum,e075
 hidden_dim,[9]
 chidden_dim,"[96, 128, 256, 256, 256]"
 kernel_sizes,"[7, 3, 3, 3, 3, 3]"
-num_input_images,36
+num_input_images,1
 model_name,
 netname,['cnet']
 use_pretrained,False
@@ -67,9 +67,9 @@ rmdirname,True
 steplr,"[1000.0, 1.0]"
 outputt,orient
 ufmodel,100000
-framelim,2000
+framelim,6000
 conTrain,
-print_minibatch,10
+print_minibatch,1
 aug_gt,['']
 datapath,D:/cherepashkin1/phenoseed/
 jobname,e075w001.sh
