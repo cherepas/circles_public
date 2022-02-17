@@ -1,16 +1,38 @@
-rescale width = 500
-number of input images = 3
-framelim = 80
+rescale width = 200
+number of input images = 1
+framelim = 6000
 number of GPUs = 1
 epochs = 0
 ellapsed time = 0epochs = 0
-ellapsed time = 11.66077184677124epochs = 1
-ellapsed time = 59.47504234313965epochs = 2
-ellapsed time = 104.57202506065369epochs = 3
-ellapsed time = 151.3497850894928epochs = 4
-ellapsed time = 198.3569724559784epochs = 5
-ellapsed time = 243.91762447357178epochs = 6
-ellapsed time = 288.67522168159485epochs = 7
-ellapsed time = 334.473792552948epochs = 8
-ellapsed time = 380.7674238681793epochs = 9
-ellapsed time = 426.74414825439453
+ellapsed time = 22.31715679168701epochs = 1
+ellapsed time = 856.0732798576355epochs = 2
+ellapsed time = 1636.7641048431396epochs = 3
+ellapsed time = 2405.5266432762146epochs = 4
+ellapsed time = 3172.406296491623epochs = 5
+ellapsed time = 3950.4374182224274epochs = 6
+ellapsed time = 4759.3675220012665epochs = 7
+ellapsed time = 5605.594712257385epochs = 8
+ellapsed time = 6394.874721765518epochs = 9
+ellapsed time = 7181.677407503128epochs = 10
+ellapsed time = 7963.138247013092epochs = 11
+ellapsed time = 8738.743377923965epochs = 12
+ellapsed time = 9542.049217224121epochs = 13
+ellapsed time = 10342.414269447327epochs = 14
+ellapsed time = 11152.592021942139epochs = 15
+ellapsed time = 11955.962057590485epochs = 16
+ellapsed time = 12738.285110712051epochs = 17
+ellapsed time = 13515.211831331253epochs = 18
+ellapsed time = 14289.342896461487epochs = 19
+ellapsed time = 15076.787469387054epochs = 20
+ellapsed time = 15876.066596269608epochs = 21
+ellapsed time = 16668.157088518143epochs = 22
+ellapsed time = 17443.354827404022epochs = 23
+ellapsed time = 18214.33616757393epochs = 24
+ellapsed time = 18983.22473669052epochs = 25
+ellapsed time = 19752.18726706505epochs = 26
+ellapsed time = 20521.00440788269epochs = 27
+ellapsed time = 21299.876348733902epochs = 28
+ellapsed time = 22083.71655702591epochs = 29
+ellapsed time = 22889.235513210297epochs = 30
+ellapsed time = 23694.015514850616epochs = 31
+ellapsed time = 24498.261024951935

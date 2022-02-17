@@ -480,9 +480,11 @@ def plotori(mator, tit, xtit, ylim = (-1, 1), figtype='scatter'):
         for j in range(3):
             for m in mator:
                 if figtype == 'scatter':
-                    ax[i,j].scatter(np.arange(m.shape[0]), m[:,i,j], s=3)
+                    ax[i,j].scatter(np.arange(m.shape[0]), m[:,i,j], s=1)
                 elif figtype == 'line':
                     ax[i,j].plot(m[:,i,j])
+                elif figtype == 'hist':
+                    ax[i,j].hist(m[:,i,j], bins=25)
             ax[i,j].set_ylim(ylim)
             if i in (0,1):
                 ax[i,j].set_xticks([])

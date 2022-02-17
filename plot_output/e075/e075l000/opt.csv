@@ -1,5 +1,5 @@
-bs,5
-epoch,10
+bs,50
+epoch,1000
 lr,1e-05
 minmax,False
 minmax3dimage,False
@@ -10,14 +10,14 @@ classicnorm,False
 ampl,441
 cmscrop,0
 cencrop,700
-rescale,500
+rescale,200
 use_adasum,False
 gradient_predivide_factor,1.0
 expnum,e075
 hidden_dim,[9]
 chidden_dim,"[96, 128, 256, 256, 256]"
 kernel_sizes,"[7, 3, 3, 3, 3, 3]"
-num_input_images,3
+num_input_images,1
 model_name,
 netname,['cnet']
 use_pretrained,False
@@ -67,7 +67,7 @@ rmdirname,True
 steplr,"[1000.0, 1.0]"
 outputt,orient
 ufmodel,100000
-framelim,80
+framelim,6000
 conTrain,
 print_minibatch,1
 aug_gt,['']
